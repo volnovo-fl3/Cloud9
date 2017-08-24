@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>繰り返し処理②_課題2</title>
+    </head>
+
+    <body>
+        <script>
+            // 現在日時を取得
+            var date = new Date();
+            // 現在日時から「年」のみを取得
+            var year = date.getFullYear();
+            
+            var i = 2000;
+            
+            document.write('<h1>2000年から本日までの年をwhile文を利用して全て表示</h1>');
+                
+            while (i <= year) {
+                document.write('<p>' + i + '</p>');
+                i++;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+div {
+    border: solid 3px #ff9900;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span {
+    display: block;
+    margin: 20px;
+    border: solid 1px #ff9900;
+}
+
+h2 {
+    margin: 0px;
+    padding: 10px;
+    background: #ffcc00;
+}
+
+dt {
+    border-bottom: solid 1px #ff9900;
+    margin: 10px 10px 0px 10px;
+    
+}
+
+dd {
+    margin: 0px 20px;
+}
+
+p {
+    display: block;
+    margin: 10px;
+    line-height: 160%
+}
+
+a {
+    display: block;
+    padding: 10px;
+    background: #ffcc00;
+    text-align: center;
+    text-decoration: none;
+}

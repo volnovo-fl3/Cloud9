@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            // 税抜き価格を定義
+            var price = 100;
+            
+            // 税込価格を計算
+            var price_includingtax = including_tax (price);
+            
+            // 税抜き価格を書き出し
+            document.write('税込価格は' + price_includingtax + '円です。');
+            
+            // 関数including_tax
+            function including_tax (price) {
+                var tax = price * 1.08;
+                return tax;
+            }
+        </script>
+    </body>
+</html>

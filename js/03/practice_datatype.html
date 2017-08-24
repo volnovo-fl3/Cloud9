@@ -1,0 +1,89 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <ol>
+        <li>
+            <p>最初、変数に数値型の値(例,100)を代入し、その後、文字列(例, '100')で上書きし、document.write( )メソッドで表示してみましょう。</p>
+            <script>
+                var data = 10;
+                data = '100';
+                document.write('変数の値は ' + data + '<br>');
+            </script>
+        </li>
+        <li>
+            <p>NULLを代入した変数をdocument.write( )メソッドで表示してみましょう。</p>
+            <script>
+                data = null;
+                document.write('変数の値は ' + data + '<br>');
+            </script>
+        </li>
+        <li>
+            <p>NULLを代入した変数をconsole.log( )メソッドで表示してみましょう。</p>
+            <script>
+                console.log(data);
+            </script>
+        </li>
+        <li>
+            <p>NULLを代入した変数をalert( )メソッドで表示してみましょう。</p>
+            <script>
+                alert(data);
+            </script>
+        </li>
+        <li>
+            <p>論理型を代入した変数をdocument.write( )メソッドで表示してみましょう。</p>
+            <script>
+                var data = true;
+                document.write('変数の値は ' + data + '<br>')
+            </script>
+        </li>
+        <li>
+            <p>論理型を代入した変数をconsole.log( )メソッドで表示してみましょう。</p>
+            <script>
+                console.log(data);
+            </script>
+        </li>
+        <li>
+            <p>論理型を代入した変数をconsole.log( )メソッドで表示してみましょう。</p>
+            <script>
+                alert(data);
+            </script>
+        </li>
+        <li>
+            <p>下記のプログラムのdocument.write( )の部分に、対象の変数の型名を入れて表示してください。</p>
+            <script>
+                var q_1 = '1'
+                document.write(q_1 + 'の型は「文字列型」です。<br>');
+                
+                var q_2 = 1;
+                document.write(q_2 + 'の型は「数値型」です。<br>');
+                
+                var q_3 = 'true';
+                document.write(q_3 + 'の型は「文字列型」です。<br>');
+                
+                var q_4 = true;
+                document.write(q_4 + 'の型は「論理型」です。<br>');
+                
+                var q_5 = null;
+                document.write(q_5 + 'の型は「null」です。<br>');
+                
+                var q_6 = '';
+                document.write(q_6 + 'の型は「null」です。<br>');
+                
+                var q_7 = 'undefined'
+                document.write(q_7 + 'の型は「文字列型」です。<br>');
+                
+                var q_8;
+                document.write(q_8 + 'の型は「null」です。<br>');
+                
+                var q_9 = 10 + '20';
+                document.write(q_9 + 'の型は「文字列型」です。<br>');
+                
+                var q_10 = 10 + 10 + '20';
+                document.write(q_10 + 'の型は「文字列型」です。<br>');
+            </script>
+        </li>
+    </ol>
+</body>
+</html>

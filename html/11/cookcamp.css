@@ -1,0 +1,199 @@
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+form {
+    display: flex;
+}
+
+/*--- ヘッダー ---*/
+header {
+    padding: 20px 0px 10px 0px;
+    border-bottom: solid 1px #664433;
+}
+.flexbox_header {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0px 0px 0px;
+}
+.headerlist {
+    width: 190px;
+    text-align: center;
+    color: #726250;
+    border-right: 1px solid #726250;
+}
+.headerlist:last-child{
+    border-right: 0;
+}
+
+
+/*--- フッター ---*/
+footer {
+    padding: 20px 0px;
+    border-top: solid 1px #606060;
+    text-align: center;
+    font-size: 12px;
+}
+.flexbox_footer {
+    display: flex;
+    justify-content: center;
+    /* ↑ 参考にしました。 http://www.acky.info/tips/css/00011.html(display: flex; を使うリストの中央寄せ) */
+    list-style-type: none;
+    padding: 0px 0px 10px 0px;
+}
+.footerlist {
+    width: 200px;
+    text-align: center;
+    color: #606060;
+    border-right: 1px solid #726250;
+}
+.footerlist:last-child{
+    border-right: 0;
+}
+
+
+/*-- 検索ボックス --*/
+.search {
+    display: flex;
+    width: 350px;
+    margin-left: auto;
+}
+.search_Textbox {
+    width: 75%;
+}
+.search_Button {
+    width: 25%;
+}
+
+
+/*--- 中段 ---*/
+h1 {
+    background-image: url("CookCamp/images/icon/dish.png");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding: 10px 10px 10px 38px;
+    font-size: 18px;
+    color: white;
+    background-color: #9cbb1c;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 14px;
+    color: #5e2a10;
+    padding-bottom: 10px;
+}
+
+section {
+    font-size: 12px;
+    padding-bottom: 12px;
+    color: #303030;
+    line-height: 150%
+}
+
+.main_BackgroundColor {
+    background-color: #f0f6da;
+}
+.maincontents {
+    padding: 10px 0px;
+}
+.margin_TopBottom {
+    margin: 10px 0px;
+}
+.margin_RightLeft {
+    margin: 0px 10px;
+}
+.padding_content {
+    padding: 10px;
+}
+
+.navilist {
+    margin: 0px 10px;
+    border-bottom: dotted 1px;
+}
+.navilist:last-child{
+    border-bottom: 0;
+}
+
+.navilist div {
+    display: inline-block;
+    background-image: url("CookCamp/images/icon/arrow.png");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    vertical-align: middle;
+    line-height: 30px;
+    padding-left: 20px
+}
+
+.menuUl{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.menuUl li{
+    width: 105px;
+    text-align: center;
+}
+.menuUl figcaption{
+    padding-top: 5px;
+    text-align: center;
+    font-size: 6px;
+}
+
+/*--- 汎用 ---*/
+
+.container {
+    width: 960px;
+    margin: 0px auto;
+}
+
+.flexbox {
+    display: flex;
+}
+.flex_1 {
+    flex: 1;
+}
+.flex_3 {
+    flex: 3;
+}
+.TextColor_LightBrown {
+    color: #726250;
+}
+.TextColor_LightGray {
+    color: #a0a0a0;
+}
+.Background_White {
+    background-color: white;
+}
+.image_size {
+    width:100%;
+}
+.centering {
+    text-align: center;
+}
+.righting {
+    text-align: right;
+}
+
+.tudukiwoyomu {
+    display: inline;
+    background-image: url("CookCamp/images/icon/arrow.png");
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 15px;
+    color: #fc8833;
+    font-size: 13px;
+    height: 16px;
+    text-align: left center;
+}
+
+.danraku {
+    text-indent: 1em;
+}

@@ -1,0 +1,21 @@
+h1{
+    border-bottom: solid 1px #000000;
+}
+
+ul {
+    padding: 0px;
+}
+
+li {
+    border: solid 1px #660099;
+    margin: 10px 0px;
+    width: 50%;
+    color: #0000ff;
+    background-color: #ffffcc;
+    text-align: center;
+    list-style-type: none;
+}
+
+a {
+    display: block;
+}

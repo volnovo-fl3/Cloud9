@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>バリデーション 課題</title>
+        <style>
+        span {
+        	color: red;
+        }
+        </style>
+    </head>
+
+    <body>
+        <form method="post" action="./practice-validation.php">
+            <p>
+                ユーザID：<input type="text" name="userid">
+            </p>
+            <p>
+                年齢：<input type="text" name="age">
+            </p>
+            <p>
+                メールアドレス：<input type="text" name="email">
+            </p>
+            <p>
+                電話番号(携帯も含む)：<input type="text" name="tel">
+            </p>
+            <p>
+                <input type="submit" value="送信">
+            </p>
+        </form>
+        <hr>
+        <h3>メアド正規表現「/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/iD」を解析</h3>
+        <ol>
+            <li>
+                <p>/<span>^([a-z0-9\+_\-]+)</span>(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/iD</p>
+                <p>先頭の文字は 半角数字 or 半角英文字 or + or - or _ である</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)<span>(\.[a-z0-9\+_\-]+)</span>*@([a-z0-9\-]+\.)+[a-z]{2,6}$/iD</p>
+                <p>2文字目以降の文字は <span>.</span> or 半角数字 or 半角英文字 or + or - or _ である</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)<span>*</span>@([a-z0-9\-]+\.)+[a-z]{2,6}$/iD</p>
+                <p>2 の処理を０回以上繰り返す</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*<span>@</span>([a-z0-9\-]+\.)+[a-z]{2,6}$/iD</p>
+                <p>@ が含まれる</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@<span>([a-z0-9\-]+\.)+</span>[a-z]{2,6}$/iD</p>
+                <p>@ 以降は</p>
+                <p>{(半角数字 or 半角英文字 or - ) × 任意の回数 + . } × 任意の回数</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+<span>[a-z]{2,6}$/</span>i<span>D</span></p>
+                <p>. 以降は、2〜6文字の半角英文字で終了</p>
+            </li>
+            <li>
+                <p>/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/<span>i</span>D</p>
+                <p><span>i</span> : 大文字小文字を区別しない</p>
+            </li>
+        </ol>
+    </body>
+</html>

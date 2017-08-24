@@ -1,0 +1,29 @@
+body {
+    margin: 0px;
+}
+
+header, main, nav, aside, section {
+    border:solid 1px;
+}
+
+footer {
+    border-bottom: solid 1px;
+}
+
+img {
+    width: 300px;
+}
+
+.hyoujiWidth {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flexChildren_auto {
+    flex: auto;
+}

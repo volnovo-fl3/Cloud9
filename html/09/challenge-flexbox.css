@@ -1,0 +1,52 @@
+.block-group {
+  margin: 0 auto;
+  width: 500px;
+  border: solid 2px;
+}
+
+.blockA {
+  height: 50px;
+  background-color: #ff0000;
+}
+
+.blockB {
+  background-color: #00ff00;
+  height: 50px;
+}
+
+.blockC {
+  height: 100px;
+  background-color: #0000ff;
+}
+
+.blockD {
+  height: 50px;
+  background-color: #ffff00;
+}
+
+.blockE {
+  height: 50px;
+  background-color: #ff00ff;
+}
+
+.blockF {
+  height: 50px;
+  background-color: #ffffff;
+}
+
+.blockG {
+  height: 50px;
+  background-color: #00ffff;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flexboxChildren_1 {
+  flex: 1;
+}
+
+.flexboxChildren_3 {
+  flex: 3;
+}

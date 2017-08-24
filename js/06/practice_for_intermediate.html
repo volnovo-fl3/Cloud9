@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>繰り返し処理①_課題3</title>
+    </head>
+
+    <body>
+        <script>
+            document.write('<h1>繰り返し処理を利用し、九九を作成</h1>');
+
+            for (right = 1; right <= 9; right++) {
+                
+                document.write('<p>');
+
+                for (left = 1; left <= 9; left++) {
+                    document.write(left + '*' + right + '=' + left * right);
+                    document.write('  ');
+                }
+                
+                document.write('</p>');
+            }
+
+        </script>
+    </body>
+</html>

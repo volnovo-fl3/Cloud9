@@ -1,0 +1,18 @@
+/* class属性の場合、 属性値(名前)の前に「.」(ドット)をつける */
+
+.font24 {
+    font-size: 24px;
+}
+.font36 {
+    font-size: 36px;
+}
+
+.red {
+    color: #ff0000;
+}
+.green {
+    color: #00ff00;
+}
+.blue {
+    color: #0000ff;
+}

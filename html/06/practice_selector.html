@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CSSセレクタ課題2</title>
+    <link rel="stylesheet" href="practice_selector.css">
+</head>
+
+<body>
+  <section>
+    <h1>私のおすすめレストラン</h1>
+    <p>私が今までに利用したレストランの中からおすすめのお店を紹介します。</p>
+    
+    <div class="OsusumeRestaurant">
+      <h2>おすすめのレストラン一覧</h2>
+      <ul>
+        <li>レストランA</li>
+        <li class="red background_pink">レストランB</li>
+        <li class="background_pink">レストランC</li>
+        <li>レストランD</li>
+        <li class="red">レストランE</li>
+      </ul>
+      <div class="background_gray">
+        <p><span class="background_pink">ピンク</span>の背景色はレストランは女性に特におすすめです<br/>
+        <span class="red">赤</span>の文字色はファミリー向けのお店です</p>
+      </div>
+    </div>
+    <br/>
+    <div class="OsusumeDish">
+      <h2>各レストランのおすすめ料理</h2>
+      <dl>
+        <dt>
+          レストランA
+          <dd>フレンチトースト</dd>
+        </dt>
+        <dt>
+          レストランB <span class="yellow">★<span>
+          <dd>パンケーキ</dd>
+        </dt>
+        <dt>
+          レストランC
+          <dd>シーザーサラダ</dd>
+        </dt>
+        <dt>
+          レストランD <span class="yellow">★<span>
+          <dd>ハンバーグ</dd>
+        </dt>
+        <dt>
+          レストランE
+          <dd>ミートスパゲッティ</dd>
+        </dt>
+      </dl>
+      <div class="background_gray">
+        <p class="info_padding"><span class="yellow">★</span> は雑誌で紹介されたお店です</p>
+      </div>      
+    </div>
+
+  </section>
+</body>
+</html>

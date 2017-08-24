@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>繰り返し処理①_課題1</title>
+    </head>
+
+    <body>
+        <script>
+            var num;
+            num = 0;
+            
+            for (var i = 0; i <= 100; i++) {
+                if (i % 3 == 0){
+                    num = num + i
+                }
+            }
+            
+            document.write('<p>1から100までの間で、3の倍数の数だけを足した合計値</p>');
+            document.write(num);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>繰り返し処理②_課題1</title>
+    </head>
+
+    <body>
+        <script>
+            var i = 0;
+            var sum = 0
+            
+            document.write('<h1>1+2+3+…と足される数を1ずつ増やしながら足していき<br>和が1000を超えるときの足される数値と、合計値を表示</h1>');
+            
+            while (sum < 1000) {
+                sum = sum + i
+                i++;
+            }
+            
+            document.write('<p>足される数値:' + i + '</p>');
+            document.write('<p>合計値:' + sum + '</p>');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+section {
+    background: #ffefd5;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: serif;
+    font-size: 16px;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+dt {
+    font-weight: bold;
+    padding-top: 5px;
+    border-left: solid 10px #0000ff;
+    border-bottom: dotted 1px #0000ff;
+}
+dd {
+    margin-left: 20px;
+    padding-bottom: 5px;
+}
+
+.red {
+    color: #ff0000;
+}
+.yellow {
+    color: #ffff00;
+}
+
+.background_pink {
+    background: #ffc0cb;
+}
+
+/* おすすめレストラン紹介用のクラス */
+.OsusumeRestaurant {
+    background: #ffffff;
+    border: solid 1px #ff0000;
+    padding: 20px;
+}
+
+/* おすすめ料理紹介用のクラス */
+.OsusumeDish {
+    background: #ffffff;
+    border: solid 1px #0000ff;
+    padding: 20px;
+}
+
+/* グレー背景の説明用のクラス */
+.background_gray {
+    background: #dcdcdc;
+    padding: 0px 5px;
+}

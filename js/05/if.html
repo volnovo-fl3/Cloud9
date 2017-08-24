@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>条件分岐</title>
+    </head>
+
+    <body>
+        <script>
+        //---------------------------------------------------
+            document.write('<h1>数値の大小</h1>');
+
+            // 0 ~ 100 のランダムな数字を取得
+            var rand = Math.floor(Math.random() * 101);
+            document.write('<p>rand: ' + rand + '</p>');
+            document.write('<p>rand >=80: ' + (rand >= 80) + '</p>');
+            document.write('<p>rand <=30: ' + (rand <= 30) + '</p>');
+            
+            if (rand >= 80) {
+                document.write('<p>randは80以上</p>');
+            } else if (rand <= 30) {
+                document.write('<p>randは30以下</p>');
+            } else {
+                document.write('<p>randは30より大きく80より小さい</p>');
+            }
+            
+            // 60以上の場合
+            if (rand >= 60) {
+                document.write('<p>合格！！</p>');
+            }
+            
+            //---------------------------------------------------
+            // 0 ~ 1 のランダムな数字を取得
+            var rand2 = Math.floor(Math.random() * 2);
+            
+            // 1 の場合
+            if (rand2 === 1) {
+                document.write('<p>当たり</p>');
+            // 1 以外の場合
+            } else {
+                document.write('<p>ハズレ</p>');
+            }
+        //---------------------------------------------------
+            document.write('<br>');
+            document.write('<h1>「==」と「===」の違い</h1>');
+            
+            var bool = true; // 論理型
+            var num = 1; // 数値型
+            
+            if (bool == num) {
+                document.write('<p>bool == num is true</p>')
+            } else {
+                document.write('<p>bool == num is false</p>')
+            }
+            document.write('bool + num = ');
+            document.write(bool + num); // 2
+            
+        </script>
+    </body>
+</html>

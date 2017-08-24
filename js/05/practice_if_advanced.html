@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>条件分岐_課題4</title>
+    </head>
+
+    <body>
+        <script>
+            // 0 ~ 2 のランダムな数字を取得
+            var rand1 = Math.floor(Math.random() * 3);
+            var rand2 = Math.floor(Math.random() * 3);
+            var rand3 = Math.floor(Math.random() * 3);
+            document.write('<p>rand1: ' + rand1 + '</p>');
+            document.write('<p>rand2: ' + rand2 + '</p>');
+            document.write('<p>rand3: ' + rand3 + '</p>');
+            
+            var int_upper;
+            var int_upperest;
+            var str_upper;
+            var str_upperest;
+            var hyouji;
+            
+            if (rand1 > rand2){
+                int_upper = rand1;
+                str_upper = 'rand1';
+            } else if (rand1 < rand2) {
+                int_upper = rand2;
+                str_upper = 'rand2';
+            } else {
+                int_upper = rand2;
+                str_upper = 'rand1とrand2';
+            }
+            
+            if (int_upper > rand3){
+                str_upperest = str_upper;
+            } else if (int_upper < rand3) {
+                str_upperest = 'rand3';
+            } else {
+                str_upperest = str_upper + 'とrand3'
+            }
+            
+            if (str_upperest == 'rand1とrand2とrand3') {
+                hyouji = '3つは同じ値です。'
+            }
+            else {
+                hyouji = '一番値が大きいのは' + str_upperest + 'です。'
+            }
+            
+            document.write('<br>');
+            document.write('<p>' + hyouji + '</p>');
+        </script>
+    </body>
+</html>

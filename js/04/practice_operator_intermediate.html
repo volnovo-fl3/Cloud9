@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>演算子_課題2</title>
+    </head>
+
+    <body>
+        <script>
+            var apple = 100;
+            var grape = 150;
+            
+            document.write('りんご1つ ' + apple + '円（税抜き）<br>');
+            document.write('グレープ1つ ' + grape + '円（税抜き）<br>');
+            document.write('<br>');
+            
+            document.write('税抜き価格100円のりんご3個と、税抜き価格150円のグレープを2個購入した際の合計金額(税込み)を計算<br>');
+            
+            document.write('りんご：(税抜き)' + apple + '円 → ');
+            apple = apple * 1.08;
+            document.write('(税込)' + apple + '円<br>');
+            document.write('グレープ：(税抜き)' + grape + '円 → ');
+            grape = grape * 1.08;
+            document.write('(税込)' + grape + '円<br>');
+            
+            // 計算
+            var sum;
+            sum = apple * 3 + grape * 2;
+            
+            document.write('りんご3個とグレープ2個の税込合計価格：' + sum + '円');
+        </script>
+    </body>
+</html>

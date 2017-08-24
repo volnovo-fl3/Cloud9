@@ -1,0 +1,30 @@
+body {
+  background-color: #ffffff;
+}
+
+h2 {
+  color: #0000ff;
+  background-color: #00ffff;
+  font-size: 20px;
+  text-align: center;
+  border-top: dotted 3px #0000ff;
+  border-bottom: dotted 3px #0000ff;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  font-size: 16px;
+  color: #f8b500;
+}
+
+ul {
+  list-style-type: square;
+}
+
+span {
+  font-size: 18px;
+  color: #ff0000;
+}
