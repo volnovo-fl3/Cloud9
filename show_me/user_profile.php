@@ -82,7 +82,7 @@ try {
           // 取得できている時
           if(isset($look_user) === TRUE && count($look_user) > 0) {
             
-            $page_title = $page_title . '(' . $look_user[0]['user_name'] . ' さん)';
+            $page_title = $look_user[0]['user_name'] . ' さん';
             
             // 削除されたユーザーかどうか
             if (isset($look_user[0]['deleted_datetime']) === TRUE) {

@@ -7500,3 +7500,254 @@
 [23-Aug-2017 13:39:47 Asia/Tokyo] PHP Notice:  Undefined offset: 5 in /home/ubuntu/workspace/show_me/user_info.php on line 235
 [23-Aug-2017 13:39:47 Asia/Tokyo] PHP Stack trace:
 [23-Aug-2017 13:39:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[25-Aug-2017 15:49:17 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/show_me/item_list.php on line 143
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Notice:  Undefined variable: password in /home/ubuntu/workspace/show_me/item_list.php on line 60
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Notice:  Undefined variable: user_name in /home/ubuntu/workspace/show_me/item_list.php on line 60
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Notice:  Use of undefined constant items_list - assumed 'items_list' in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 13
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:82
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 20
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:29:43 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:82
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP Notice:  Use of undefined constant items_list - assumed 'items_list' in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 13
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:82
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 20
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 16:30:35 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:82
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:36:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:37:12 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:37:55 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:350
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:351
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP Notice:  Use of undefined constant sekected - assumed 'sekected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:38:08 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:351
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:39:08 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:39:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP Notice:  Undefined index: item_img in /home/ubuntu/workspace/show_me/model/M_function.php on line 718
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP   2. check_uploadpicture_select() /home/ubuntu/workspace/show_me/item_info.php:122
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP Notice:  Undefined index: item_img in /home/ubuntu/workspace/show_me/model/M_function.php on line 718
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP   2. check_uploadpicture_select() /home/ubuntu/workspace/show_me/item_info.php:234
+[25-Aug-2017 21:40:07 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'show_me.drink_master' doesn't exist' in /home/ubuntu/workspace/show_me/model/M_function.php:479
+Stack trace:
+#0 /home/ubuntu/workspace/show_me/model/M_function.php(479): PDO->prepare('?    insert int...')
+#1 /home/ubuntu/workspace/show_me/item_info.php(258): insert_item_table_list(Object(PDO), '???????????????...', 0, '', 'testtest', '', '1', '50', '', '2017-08-25 21:4...', '1', '2,4,5', '1,3,6,7,11,13,1...')
+#2 {main}
+  thrown in /home/ubuntu/workspace/show_me/model/M_function.php on line 479
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:41:33 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:41:35 Asia/Tokyo] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'show_me.drink_master' doesn't exist' in /home/ubuntu/workspace/show_me/model/M_function.php:479
+Stack trace:
+#0 /home/ubuntu/workspace/show_me/model/M_function.php(479): PDO->prepare('?    insert int...')
+#1 /home/ubuntu/workspace/show_me/item_info.php(258): insert_item_table_list(Object(PDO), '???????????????...', 0, '', 'testtest', '', '1', '50', '', '2017-08-25 21:4...', '1', '2,4,5', '1,3,6,7,11,13,1...')
+#2 {main}
+  thrown in /home/ubuntu/workspace/show_me/model/M_function.php on line 479
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:42:58 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:43:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:45:11 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 21:47:22 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:347
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:362
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 22:35:51 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:362
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:362
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 22:37:07 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:362
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 28
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 28
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:43:33 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 28
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 28
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:45:49 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 25
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 29
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 25
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Notice:  Undefined variable: item_id in /home/ubuntu/workspace/show_me/view/V_item_list.php on line 29
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_list.php:0
+[25-Aug-2017 22:48:06 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_list.php:81
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 304
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 329
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 22:50:59 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 304
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 329
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:00:34 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:03:33 Asia/Tokyo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/show_me/item_info.php on line 313
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 304
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_info.php on line 311
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:369
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:04:10 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:369
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:369
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:06:40 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:369
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP Stack trace:
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[25-Aug-2017 23:07:41 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 59
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 99
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:08:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 00:09:37 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 92
+[26-Aug-2017 00:09:37 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:09:37 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 59
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 93
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:12:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 00:14:18 Asia/Tokyo] PHP Notice:  Undefined index: target_item_id in /home/ubuntu/workspace/show_me/item_details.php on line 99
+[26-Aug-2017 00:14:18 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 00:14:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_details.php:0
+[26-Aug-2017 01:49:49 Asia/Tokyo] PHP Notice:  Undefined variable: search_where in /home/ubuntu/workspace/show_me/mypage.php on line 56
+[26-Aug-2017 01:49:49 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 01:49:49 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[26-Aug-2017 01:57:47 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361

@@ -391,88 +391,87 @@ function get_user_by_id($dbh, $user_id) {
 * 商品一覧を取得する
 *
 * @param obj $dbh DBハンドル
+* @param str $where 検索条件
 * @return array 商品一覧配列データ
 */
-function get_drinks_table_list($dbh) {
+function get_items_table_list($dbh, $where) {
 
   //SQL文を作成
-  $sql = '
+  $sql = "
     select
-      dm.drink_id as drink_id
-      ,drink_name
+      item_id
+      ,item_name
       ,price
-      ,img
-      ,status
+      ,item_introduction
+      ,item_introduction_detail
+      ,item_img
+      ,item_status
       ,stock
-      ,dm.update_datetime as master_update
-      ,ds.update_datetime as stock_update
+      ,seller_user_id
+      ,u.user_name as seller_user_name
+      ,i.created_datetime
+      ,i.updated_datetime
+      ,i.deleted_datetime
+      ,main_category
+      ,c.category_name as main_category_name
+      ,c.category_color
+      ,i.categories
+      ,i.skills
     from
-      drink_master as dm
-      inner join drink_stock as ds on dm.drink_id = ds.drink_id
-    ;';
+      items as i
+      left join users as u on i.seller_user_id = u.user_id
+      left join categories_mastar as c on i.main_category = c.category_id
+    $where
+    ;";
     
   // クエリ実行
   return get_as_array($dbh, $sql);
     
 }
 
-/**
-* 商品を単品で取得する（id指定）
-*
-* @param obj $dbh DBハンドル
-* @return array 商品一覧配列データ
-*/
-function get_drink_by_id($dbh, $drink_id) {
-
-  //SQL文を作成
-  $sql = '
-    select
-      dm.drink_id as drink_id
-      ,drink_name
-      ,price
-      ,img
-      ,status
-      ,stock
-      ,dm.update_datetime as master_update
-      ,ds.update_datetime as stock_update
-    from
-      drink_master as dm
-      inner join drink_stock as ds on dm.drink_id = ds.drink_id
-    where
-      dm.drink_id = ' . $drink_id . ';';
-    
-  // クエリ実行
-  return get_as_array($dbh, $sql);
-    
-}
 
 /**
 * 商品一覧に新規登録
-* 新規登録できた場合は、drink_idを返す
+* 新規登録できた場合は、item_idを返す
 *
 * @param obj $dbh DBハンドル
 * @param str $new_img_filename アップロードした画像のパス
 * @param str $access_datetime 登録・更新日時
-* @return int $new_drinkid 新しく登録した商品のID (0であれば登録失敗している可能性大！)
+* @return int $new_item_id 新しく登録した商品のID (0であれば登録失敗！)
 */
-function insert_drink_table_list($dbh, $new_img_filename, $access_datetime) {
+function insert_item_table_list
+  ($dbh, $item_name, $price, $item_introduction, $item_introduction_detail, $new_img_filename, $item_status, $stock, $seller_user_id, $access_datetime, $main_category, $categories, $skills) {
   
-  $new_drinkid = 0;
+  $new_item_id = 0;
 
   //SQL文を作成
   $sql = '
-    insert into drink_master
+    insert into items
     (
-      drink_name
+      item_name
       ,price
-      ,img
-      ,status
-      ,create_datetime
-      ,update_datetime
+      ,item_introduction
+      ,item_introduction_detail
+      ,item_img
+      ,item_status
+      ,stock
+      ,seller_user_id
+      ,created_datetime
+      ,updated_datetime
+      ,main_category
+      ,categories
+      ,skills
     )
     values
     (
       ?
+      ,?
+      ,?
+      ,?
+      ,?
+      ,?
+      ,?
+      ,?
       ,?
       ,?
       ,?
@@ -485,146 +484,216 @@ function insert_drink_table_list($dbh, $new_img_filename, $access_datetime) {
   $stmt = $dbh->prepare($sql);
   
   //値をバインド
-  $stmt->bindValue(1, $_POST[TOOL_INS_NAME], PDO::PARAM_STR);
-  $stmt->bindValue(2, $_POST[TOOL_INS_PRICE], PDO::PARAM_INT);
-  $stmt->bindValue(3, $new_img_filename, PDO::PARAM_STR);
-  $stmt->bindValue(4, $_POST[TOOL_INS_STATUS], PDO::PARAM_STR);
-  $stmt->bindValue(5, $access_datetime, PDO::PARAM_STR);
-  $stmt->bindValue(6, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(1, $item_name, PDO::PARAM_STR);
+  $stmt->bindValue(2, $price, PDO::PARAM_INT);
+  $stmt->bindValue(3, $item_introduction, PDO::PARAM_STR);
+  $stmt->bindValue(4, $item_introduction_detail, PDO::PARAM_STR);
+  $stmt->bindValue(5, $new_img_filename, PDO::PARAM_STR);
+  $stmt->bindValue(6, $item_status, PDO::PARAM_INT);
+  $stmt->bindValue(7, $stock, PDO::PARAM_INT);
+  $stmt->bindValue(8, $seller_user_id, PDO::PARAM_INT);
+  $stmt->bindValue(9, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(10, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(11, $main_category, PDO::PARAM_INT);
+  $stmt->bindValue(12, $categories, PDO::PARAM_STR);
+  $stmt->bindValue(13, $skills, PDO::PARAM_STR);
   
   //SQLを実行
   $stmt->execute();
   
   //追加したレコードののIDを取得
-  $new_drinkid = $dbh->lastInsertId();
+  $new_item_id = $dbh->lastInsertId();
   
-  return $new_drinkid;
+  return $new_item_id;
     
 }
 
 /**
-* 商品ごとの個数を新規登録
+* 商品情報を更新する
+* （画像以外の基本情報）
 *
 * @param obj $dbh DBハンドル
-* @param int $drink_id 商品のID
-* @param str $access_datetime 登録・更新日時
 */
-function insert_drinkstock_table_list($dbh, $drink_id, $access_datetime) {
-  
+function update_item_infomation
+  ($dbh, $item_id, $item_name, $price, $item_introduction, $item_introduction_detail, $item_status, $stock, $access_datetime, $main_category, $categories, $skills) {
+    
   //SQL文を作成
   $sql = '
-    insert into drink_stock
-    (
-      drink_id
-      ,stock
-      ,create_datetime
-      ,update_datetime
-    )
-    values
-    (
-      ?
-      ,?
-      ,?
-      ,?
-    )
+    update items
+    set
+      item_name = ?
+      , price = ?
+      , item_introduction = ?
+      , item_introduction_detail = ?
+      , item_status = ?
+      , stock = ?
+      , updated_datetime = ?
+      , main_category = ?
+      , categories = ?
+      , skills = ?
+    where
+      item_id = ?
     ;';
     
   //SQL実行準備
   $stmt = $dbh->prepare($sql);
   
   //値をバインド
-  $stmt->bindValue(1, $drink_id, PDO::PARAM_INT);
-  $stmt->bindValue(2, $_POST[TOOL_INS_STOCK], PDO::PARAM_INT);
+  $stmt->bindValue(1, $item_name, PDO::PARAM_STR);
+  $stmt->bindValue(2, $price, PDO::PARAM_INT);
+  $stmt->bindValue(3, $item_introduction, PDO::PARAM_STR);
+  $stmt->bindValue(4, $item_introduction_detail, PDO::PARAM_STR);
+  $stmt->bindValue(5, $item_status, PDO::PARAM_INT);
+  $stmt->bindValue(6, $stock, PDO::PARAM_INT);
+  $stmt->bindValue(7, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(8, $main_category, PDO::PARAM_INT);
+  $stmt->bindValue(9, $categories, PDO::PARAM_STR);
+  $stmt->bindValue(10, $skills, PDO::PARAM_STR);
+  $stmt->bindValue(11, $item_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+/**
+* 商品情報を更新する
+* （画像のみ）
+*
+* @param obj $dbh DBハンドル
+*/
+function update_item_image
+  ($dbh, $item_id, $item_img, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update items
+    set
+      item_img = ?
+      ,updated_datetime = ?
+      ,last_login_datetime = ?
+    where
+      item_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $item_img, PDO::PARAM_STR);
+  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
   $stmt->bindValue(3, $access_datetime, PDO::PARAM_STR);
-  $stmt->bindValue(4, $access_datetime, PDO::PARAM_STR);
-  
+  $stmt->bindValue(4, $item_id, PDO::PARAM_INT);
+
   //SQLを実行
   $stmt->execute();
-  
 }
 
 
+
+//------------------------------------------------------------
+// データベース操作系
+// (カート)
+//------------------------------------------------------------
 /**
-* 商品ごとの個数を変更
+* カート一覧を取得する
 *
 * @param obj $dbh DBハンドル
-* @param str $access_datetime 登録・更新日時
+* @param str $where 検索条件
+* @return array 商品一覧配列データ
 */
-function update_drinkstock($dbh, $stock, $access_datetime, $drink_id) {
-  
+function get_carts_table_list($dbh, $where) {
+
   //SQL文を作成
-  $sql = '
-    update drink_stock
-    set
-      stock = ?
-      ,update_datetime = ?
-    where
-      drink_id = ?
-    ;';
+  $sql = "
+    select
+      cart.cart_id
+      ,cart.buyer_user_id
+      ,cart.item_id
+      ,i.item_name
+      ,i.item_img
+      ,i.price
+      ,cart.amount
+      ,i.price * cart.amount as item_sum_price
+      ,i.seller_user_id
+      ,seller.user_name
+      ,seller.user_affiliation
+      ,seller.user_img
+      ,i.main_category
+      ,cm.category_color
+      ,cart.created_datetime
+      ,cart.updated_datetime
+      ,cart.bought_datetime
+      ,cart.deleted_datetime
+    from
+      carts as cart
+      left join items as i on cart.item_id = i.item_id
+      left join users as seller on i.seller_user_id = seller.user_id
+      left join categories_mastar as cm on i.main_category = cm.category_id
+    $where
+    ;";
     
-  //SQL実行準備
-  $stmt = $dbh->prepare($sql);
-  
-  //値をバインド
-  $stmt->bindValue(1, $stock, PDO::PARAM_INT);
-  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
-  $stmt->bindValue(3, $drink_id, PDO::PARAM_INT);
-
-  //SQLを実行
-  $stmt->execute();
-
-}
-
-/**
-* 商品ごとの公開ステータスを変更
-*
-* @param obj $dbh DBハンドル
-* @param str $access_datetime 登録・更新日時
-*/
-function update_drinkstatus($dbh, $access_datetime) {
-  
-  //SQL文を作成
-  $sql = '
-    update drink_master
-    set
-      status = ?
-      ,update_datetime = ?
-    where
-      drink_id = ?
-    ;';
+  // クエリ実行
+  return get_as_array($dbh, $sql);
     
-  //SQL実行準備
-  $stmt = $dbh->prepare($sql);
-  
-  //値をバインド
-  $stmt->bindValue(1, $_POST[TOOL_UPD_STATUS], PDO::PARAM_INT);
-  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
-  $stmt->bindValue(3, $_POST[TOOL_GET_ID], PDO::PARAM_INT);
-
-  //SQLを実行
-  $stmt->execute();
-
 }
 
 /**
-* 購入履歴を新規登録
+* カートに入れている(未精算の)商品の、点数と合計金額を取得
 *
 * @param obj $dbh DBハンドル
-* @param int $drink_id 商品のID
+* @param str $where 検索条件
+* @return array 商品一覧配列データ
+*/
+function get_carts_unpaid_sum($dbh, $buyer_user_id) {
+
+  //SQL文を作成
+  $sql = "
+    select
+      sum(c.amount) as cart_sum_amount
+      ,sum(i.price * c.amount) as cart_sum_price
+    from
+      carts as c
+		left join items as i on c.item_id = i.item_id
+    where
+      c.bought_datetime is null
+      and c.deleted_datetime is null
+      and c.buyer_user_id = $buyer_user_id
+  	group by
+  	  c.buyer_user_id
+    ;";
+    
+  // クエリ実行
+  return get_as_array($dbh, $sql);
+    
+}
+
+/**
+* カートに入れる
+* （テーブルに新規登録）
+*
+* @param obj $dbh DBハンドル
 * @param str $access_datetime 登録・更新日時
 */
-function insert_drink_history($dbh, $drink_id, $access_datetime) {
+function insert_carts_table_list
+  ($dbh, $buyer_user_id, $item_id, $amount, $access_datetime) {
   
+  $new_carts_id = 0;
+
   //SQL文を作成
   $sql = '
-    insert into drink_history
+    insert into carts
     (
-      drink_id
-      ,create_datetime
+      buyer_user_id
+      ,item_id
+      ,amount
+      ,created_datetime
+      ,updated_datetime
     )
     values
     (
       ?
+      ,?
+      ,?
+      ,?
       ,?
     )
     ;';
@@ -633,12 +702,21 @@ function insert_drink_history($dbh, $drink_id, $access_datetime) {
   $stmt = $dbh->prepare($sql);
   
   //値をバインド
-  $stmt->bindValue(1, $drink_id, PDO::PARAM_INT);
-  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(1, $buyer_user_id, PDO::PARAM_INT);
+  $stmt->bindValue(2, $item_id, PDO::PARAM_INT);
+  $stmt->bindValue(3, $amount, PDO::PARAM_INT);
+  $stmt->bindValue(4, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(5, $access_datetime, PDO::PARAM_STR);
 
   //SQLを実行
   $stmt->execute();
   
+  /*
+  //追加したレコードののIDを取得
+  $new_carts_id = $dbh->lastInsertId();
+  
+  return $new_carts_id;
+  */
 }
 
 

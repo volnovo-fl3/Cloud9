@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------------
-マイページ
+カート確認
 ------------------------------------------*/
 
 // 設定ファイル読み込み
@@ -14,7 +14,8 @@ $user_id = '';
 $user = [];
 $categories_master = [];
 $skills_master = [];
-$carts_unpaid = [];
+$carts_unpaid_sum = [];
+$carts_unpaid_list = [];
 
 $search_where = '';
 //----------------------//
@@ -52,10 +53,15 @@ try {
       $user = get_user_by_id($dbh, $user_id);
       $categories_master = get_categories_table_list($dbh);
       $skills_master = get_skills_table_list($dbh);
-      $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
+      $carts_unpaid_sum = get_carts_unpaid_sum($dbh, $user_id);
       
       // 検索条件のwhere文を作成し、検索
-      $items_list = get_items_table_list($dbh, $search_where);
+      $search_where =
+        "where
+          cart.bought_datetime is null
+          and cart.deleted_datetime is null
+          and cart.buyer_user_id = $user_id";
+      $carts_unpaid_list = get_carts_table_list($dbh, $search_where);
       
     } catch (PDOException $e) {
         // 例外をスロー
@@ -68,7 +74,7 @@ try {
 
 
 /*=====================================================*/
-// マイページテンプレートファイル読み込み
-include_once './view/V_mypage.php';
+// カート確認テンプレートファイル読み込み
+include_once './view/V_cart_list.php';
 
 ?>
