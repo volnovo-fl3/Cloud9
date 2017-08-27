@@ -24,6 +24,7 @@ $pay_money = ''; //支払い金額
 $cart_id = ''; // 削除・更新用
 $amount_change = '';
 
+$cart_ids_paid = []; //購入後のカートIDを配列で
 //----------------------//
 
 
@@ -163,17 +164,23 @@ try {
                   
                   //2. カートの"購入日"を入力
                   bought_carts_item($dbh, $unpaid_item['cart_id'], $access_datetime);
-
+                  
                   //3. 商品の在庫を減らす
                   change_item_stock_by_bought
                     ($dbh, $unpaid_item['item_id'], $unpaid_item['amount'], $access_datetime);
+                    
+                  $cart_ids_paid[] = $unpaid_item['cart_id'];
                 }
                 
                 // コミット処理
                 $dbh->commit();
                 
+                setcookie('cart_ids_paid', implode(',', $cart_ids_paid));
+                setcookie('cart_price_paid', $carts_unpaid_sum[0]['cart_sum_price']);
+                setcookie('cart_amount_paid', $carts_unpaid_sum[0]['cart_sum_amount']);
+                
                 //----- 4. 登録完了ページへ -----//
-                header('location: item_list.php');
+                header('location: cart_paid_result.php');
                 exit;
                 //-------------------------------//
                 

@@ -9,9 +9,6 @@ require_once './conf/const.php';
 require_once './model/M_function.php';
 
 //----- 変数初期化 -----//
-$page_type = 'all_list';
-$page_name = '商品一覧';
-
 $user_id = '';
 $user = [];
 $categories_master = [];
@@ -38,23 +35,12 @@ else {
 //------------------------------------------------------------
 // 残ってなければ、ログイン画面へ
 //------------------------------------------------------------
+  
   header('location: login.php');
   exit;
+
 }
 
-
-//------------------------------------------------------------
-// ページタイプを取得
-// seller_list であれば $page_type を変更
-//------------------------------------------------------------
-if((isset($_GET) === TRUE) && (count($_GET) > 0)){
-  if((isset($_GET['page_type']) === TRUE) && (mb_strlen($_GET['page_type']) > 0)){
-    if($_GET['page_type'] === 'seller_list'){
-      $page_name = '出品一覧';
-      $page_type = $_GET['page_type'];
-    }
-  }
-}
 
 
 //------------------------------------------------------------
@@ -76,16 +62,9 @@ try {
       $skills_master = get_skills_table_list($dbh);
       $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
       
-      if ($page_type === 'all_list') {
-        // 検索条件のwhere文を作成し、検索
-        $search_where = 'where i.deleted_datetime is null';
-        $items_list = get_items_table_list($dbh, $search_where);
-      }
-      else if ($page_type === 'seller_list') {
-        // 検索条件のwhere文を作成し、検索
-        $search_where = 'where i.seller_user_id = ' . $user_id;
-        $items_list = get_items_table_list($dbh, $search_where);
-      }
+      // 検索条件のwhere文を作成し、検索
+      $search_where = 'where i.deleted_datetime is null';
+      $items_list = get_items_table_list($dbh, $search_where);
       
     } catch (PDOException $e) {
         // 例外をスロー
@@ -101,7 +80,7 @@ try {
 
 
 /*=====================================================*/
-// 商品一覧画面テンプレートファイル読み込み
+// ログイン画面テンプレートファイル読み込み
 include_once './view/V_item_list.php';
 
 ?>

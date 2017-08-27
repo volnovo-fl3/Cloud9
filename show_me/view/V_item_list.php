@@ -2,11 +2,11 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title><?php print SITE_NAME ?> | 商品一覧</title>
+    <title><?php print SITE_NAME ?> | <?php print $page_name ?></title>
   </head>
 
   <body>
-    <h1>商品一覧</h1>
+    <h1><?php print $page_name ?></h1>
     
     <?php
       if((isset($carts_unpaid) === TRUE) && (count($carts_unpaid) > 0)){

@@ -974,6 +974,31 @@ function id_to_name($array_master, $str_selected, $column_id, $column_name)
   return $array_result;
 }
 
+/**
+* 【購入結果など】
+* コンマ区切りのID(文字列)を
+* SQLの検索条件(文字列)で返す
+*
+* @param str $str_id コンマ区切りのID
+* @param str $column_id idの列名
+* @return str $str_where SQLのwhere句
+*/
+function str_id_to_where_id($str_id, $column_id)
+{
+  $array_id = explode(',', $str_id);
+  $search_where = 'where ';
+  
+  $i = 1;
+  foreach ($array_id as $key => $id) {
+    // 2回目以降は "or" を追加
+    if($i >= 2) {
+      $search_where = $search_where . ' or ';
+    }
+    $search_where = $search_where . $column_id . ' = ' . $id;
+    $i++;
+  }
+  return $search_where;
+}
 
 
 //------------------------------------------------------------
