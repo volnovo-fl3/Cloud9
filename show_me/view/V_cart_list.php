@@ -9,13 +9,30 @@
     <h1>カート確認</h1>
     
     <?php
+      if((isset($err_msg) === TRUE) && (count($err_msg) > 0)){
+    ?>
+    <ul>
+    <?php
+        foreach($err_msg as $key => $error) {
+    ?>
+      <li>
+        <p><?php print $error?></p>
+      </li>
+    <?php
+        }
+    ?>
+    </ul>
+    <?php
+      }
+    ?>
+    
+    <?php
       if((isset($user) === TRUE) && (count($user) > 0)){
     ?>
     <p><?php print $user[0]['user_name']; ?> さん</p>
     <?php
       }
     ?>
-    
     
     <?php
       if((isset($carts_unpaid_sum) === TRUE) && (count($carts_unpaid_sum) > 0)){
@@ -40,11 +57,27 @@
           foreach($carts_unpaid_list as $key => $cart){
     ?>
       <li>
-        <?php print $cart['item_name']?>
-        <li>¥<?php print $cart['price']?></li>
-        <li><?php print $cart['amount']?>個</li>
-        <li>出品：<?php print $cart['user_name']?>さん</li>
-        <li><?php print $cart['category_color']?></li>
+        <h3><?php print $cart['item_name']?></h3>
+        <p>¥<?php print $cart['price']?></p>
+        <p><?php print $cart['amount']?>個</p>
+        <form method="post" enctype="multipart/form-data">
+          (
+          <input type="number" name="amount_change">
+          個に変更
+          <input type="hidden" name="process_kind" value="cart_item_amount_change">
+          <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
+          <input type="submit" value="変更">
+          )
+        </form>
+        <p>出品：<?php print $cart['user_name']?>さん</p>
+        <p><?php print $cart['category_color']?></p>
+        <form method="post" enctype="multipart/form-data">
+          <div>
+            <input type="hidden" name="process_kind" value="cart_item_delete">
+            <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
+            <input type="submit" value="カートから削除">
+          </div>
+        </form>
       </li>
     <?php
           }
@@ -60,7 +93,6 @@
           <input type="number" name="pay_money">
         </label>
         <input type="hidden" name="process_kind" value="cart_item_pay">
-        <input type="hidden" name="user_id" value="<?php print $user_id?>">
         <input type="submit" value="購入する">
       </div>
     </form>    

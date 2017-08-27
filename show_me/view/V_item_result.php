@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <p><?php print $item_name ?> <?php print $str_mode ?>しました。</p>
+    <p><?php print entity_str($item_name) ?> <?php print entity_str($str_mode) ?>しました。</p>
     <form method="post" enctype="multipart/form-data" action='item_details.php'>
       <div>
         <input type="hidden" name="process_kind" value="to_item_details">

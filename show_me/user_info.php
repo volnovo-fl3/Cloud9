@@ -15,7 +15,7 @@ $page_name = 'ユーザー新規登録';
 $mode = 0; //0:新規登録 1:更新
 
 // 更新時に使用
-$target_user_id = '';
+$target_user_id = 0;
 $target_user = []; //更新用
 $selected_categories = [];
 $selected_skills = [];
@@ -85,8 +85,14 @@ else
     
     if(check_null($password) === FALSE) {
       $err_msg[] = 'パスワードを入力してください';
+    } else if(check_str_password($password) === FALSE) {
+      $err_msg[] = 'パスワードに使用できるのは半角英数字です';
+    } else if(mb_strlen($password, HTML_CHARACTER_SET) < 6) {
+      $err_msg[] = 'パスワードは6文字以上で入力してください';
     } else if(check_str_count($password, 40) === FALSE) {
       $err_msg[] = 'パスワードは40文字以内で入力してください';
+    } else if(check_str_password($password, 40) === FALSE) {
+      $err_msg[] = 'パスワードに使用できるのは半角英数字です';
     }
     
     if(check_str_count($user_affiliation, 100) === FALSE) {
@@ -202,7 +208,7 @@ try {
     
       // エラー配列に何も入っていなければ、画像 → DB の順で登録
       if (count($err_msg) === 0) {
-    
+        
         if
         (
           // ファイルを選択していて
@@ -215,95 +221,108 @@ try {
           $err_msg[] = 'ファイルアップロードに失敗しました';
         
         
-        //【DB】トランザクション処理
+        // DB処理
         } else {
-
-          //------------------------------------------------------------
-          // 新規登録処理
-          //------------------------------------------------------------
-          if ($_POST['process_kind'] === 'user_insert') {
+          
+          // 同名ユーザーチェック
+          if((isset($_POST['target_user_id']) === TRUE) && (mb_strlen($_POST['target_user_id']) > 0)) {
+            $target_user_id = $_POST['target_user_id'];
+            var_dump($target_user_id);
+            var_dump(check_same_name($dbh, $user_name, $target_user_id));
+          }
+          if(check_same_name($dbh, $user_name, $target_user_id) === FALSE) {
+            $err_msg[] = '同名のユーザーが存在します。ユーザー名を変更してください。';
+          }
+          
+          // エラー配列に何も入っていなければ、DBに登録
+          if (count($err_msg) === 0) {
             
-            var_dump($_POST['process_kind']);
-            try {
-            
-              // DBにINSERTし、返り値として新レコードのIDも取得
-              $new_user_id = 0;
-              $new_user_id =
-                insert_user_table_list
-                ($dbh, $password, $user_name, $user_affiliation, $user_self_introduction, $new_img_filename, $categories, $skills, $access_datetime);
-                
-              var_dump($_POST[$new_user_id]);
+            //------------------------------------------------------------
+            // 新規登録処理
+            //------------------------------------------------------------
+            if ($_POST['process_kind'] === 'user_insert') {
               
-              // O以上のIDを取得できていれば、クッキーにユーザーIDを保存
-              if ($new_user_id > 0) {
+              var_dump($_POST['process_kind']);
+              try {
+              
+                // DBにINSERTし、返り値として新レコードのIDも取得
+                $new_user_id = 0;
+                $new_user_id =
+                  insert_user_table_list
+                  ($dbh, $password, $user_name, $user_affiliation, $user_self_introduction, $new_img_filename, $categories, $skills, $access_datetime);
+                  
+                var_dump($_POST[$new_user_id]);
                 
-                setcookie('user_id', $new_user_id);
+                // O以上のIDを取得できていれば、クッキーにユーザーIDを保存
+                if ($new_user_id > 0) {
+                  
+                  setcookie('user_id', $new_user_id);
+                  
+                  //---------- マイページへ ----------//
+                  header('location: mypage.php');
+                  exit;
+                  //----------------------------------//
+                  
+                // IDがOであればエラーのため、ストックテーブルの処理をしない
+                } else {
+                  $err_msg[] = 'データの登録に失敗しました。';
+                }
                 
+              } catch (PDOException $e) {
+                
+                $err_msg[] = 'データの登録処理に失敗しました。';
+                // 例外をスロー
+                throw $e;
+              }
+            }
+            
+            //------------------------------------------------------------
+            // 更新処理
+            //------------------------------------------------------------
+            else if ($_POST['process_kind'] === 'user_update') {
+              
+              var_dump($_POST['target_user_id']);
+              
+              // トランザクション！！
+              $dbh->beginTransaction();
+  
+              try {
+                
+                if (isset($_POST['target_user_id']) === TRUE){
+                  // 画像以外の基本情報を更新
+                  update_user_infomation
+                    ($dbh, $_POST['target_user_id'], $password, $user_name, $user_affiliation, $user_self_introduction, $categories, $skills, $access_datetime);
+                }
+                
+                if (isset($_POST['radio_img_change']) === TRUE){
+                  // 画像を更新
+                  if ($_POST['radio_img_change'] === '1') {
+                    update_user_image($dbh, $_POST['target_user_id'], $new_img_filename, $access_datetime);
+                  }
+                }
+                
+                // コミット処理
+                $dbh->commit();
+                print 'コミット';
+  
                 //---------- マイページへ ----------//
                 header('location: mypage.php');
                 exit;
                 //----------------------------------//
                 
-              // IDがOであればエラーのため、ストックテーブルの処理をしない
-              } else {
-                $err_msg[] = 'データの登録に失敗しました。';
+              } catch (PDOException $e) {
+                $err_msg[] = 'データの更新処理に失敗しました。';
+                // ロールバック
+                $dbh->rollback();
+                // 例外をスロー
+                throw $e;
               }
               
-            } catch (PDOException $e) {
-              
-              $err_msg[] = 'データの登録処理に失敗しました。';
-              // 例外をスロー
-              throw $e;
-            }
-          }
-          
-          //------------------------------------------------------------
-          // 更新処理
-          //------------------------------------------------------------
-          else if ($_POST['process_kind'] === 'user_update') {
-            
-            var_dump($_POST['target_user_id']);
-            
-            // トランザクション！！
-            $dbh->beginTransaction();
-
-            try {
-              
-              if (isset($_POST['target_user_id']) === TRUE){
-                // 画像以外の基本情報を更新
-                update_user_infomation
-                  ($dbh, $_POST['target_user_id'], $password, $user_name, $user_affiliation, $user_self_introduction, $categories, $skills, $access_datetime);
-              }
-              
-              if (isset($_POST['radio_img_change']) === TRUE){
-                // 画像を更新
-                if ($_POST['radio_img_change'] === '1') {
-                  update_user_image($dbh, $_POST['target_user_id'], $new_img_filename, $access_datetime);
-                }
-              }
-              
-              // コミット処理
-              $dbh->commit();
-              print 'コミット';
-
-              //---------- マイページへ ----------//
-              header('location: mypage.php');
-              exit;
-              //----------------------------------//
-              
-            } catch (PDOException $e) {
-              $err_msg[] = 'データの更新処理に失敗しました。';
-              // ロールバック
-              $dbh->rollback();
-              // 例外をスロー
-              throw $e;
             }
             
           }
-          
         }
       }
-      
     }
   }
   

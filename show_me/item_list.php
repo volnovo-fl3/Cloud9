@@ -63,6 +63,7 @@ try {
       $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
       
       // 検索条件のwhere文を作成し、検索
+      $search_where = 'where i.deleted_datetime is null';
       $items_list = get_items_table_list($dbh, $search_where);
       
     } catch (PDOException $e) {

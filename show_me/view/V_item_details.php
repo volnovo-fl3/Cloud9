@@ -30,7 +30,7 @@
       <p>¥<?php print $look_item[0]['price']?></p>
       
       <?php //在庫があれば購入できる
-        if($look_item[0]['price'] > 0) {
+        if($look_item[0]['stock'] > 0) {
       ?>
       <p>在庫 <?php print $look_item[0]['stock']?> 点</p>
       <form method="post" enctype="multipart/form-data">
@@ -117,6 +117,13 @@
         <input type="hidden" name="process_kind" value="to_update_item_info">
         <input type="hidden" name="target_item_id" value="<?php print $look_item[0]['item_id']?>">
         <input type="submit" value="商品情報を変更する">
+      </div>
+    </form>
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <input type="hidden" name="process_kind" value="delete_item">
+        <input type="hidden" name="target_item_id" value="<?php print $look_item[0]['item_id']?>">
+        <input type="submit" value="この商品を削除する">
       </div>
     </form>
     <?php

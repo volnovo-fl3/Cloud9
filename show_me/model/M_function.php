@@ -8,9 +8,15 @@
 * @param str  $str 変換前文字
 * @return str 変換後文字
 */
-function entity_str($str) {
-
-  return htmlspecialchars($str, ENT_QUOTES, HTML_CHARACTER_SET);
+function entity_str($var) {
+  
+  // string型であればエンコードを整備
+  if(is_string($var) === TRUE) {
+    return htmlspecialchars($var, ENT_QUOTES, HTML_CHARACTER_SET);
+  // string型でなければ処理しない
+  } else {
+    return $var;
+  }
 }
 
 /**
@@ -80,7 +86,7 @@ function get_as_array($dbh, $sql) {
   }
   
   if (isset($rows) === TRUE) {
-    return $rows;
+    return entity_assoc_array($rows);
   }
 }
 
@@ -587,6 +593,64 @@ function update_item_image
   $stmt->execute();
 }
 
+/**
+* 商品を削除する
+*
+* @param obj $dbh DBハンドル
+*/
+function delete_item
+  ($dbh, $item_id, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update items
+    set
+      deleted_datetime = ?
+    where
+      item_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(2, $item_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+/**
+* 【購入処理】
+* 商品の個数を購入分減らす
+*
+* @param obj $dbh DBハンドル
+*/
+function change_item_stock_by_bought
+  ($dbh, $item_id, $amount, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update items
+    set
+      stock = stock - ?
+      ,updated_datetime = ?
+    where
+      item_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $amount, PDO::PARAM_INT);
+  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(3, $item_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
 
 
 //------------------------------------------------------------
@@ -610,7 +674,9 @@ function get_carts_table_list($dbh, $where) {
       ,cart.item_id
       ,i.item_name
       ,i.item_img
+      ,i.item_status
       ,i.price
+      ,i.stock
       ,cart.amount
       ,i.price * cart.amount as item_sum_price
       ,i.seller_user_id
@@ -719,6 +785,140 @@ function insert_carts_table_list
   */
 }
 
+/**
+* カート内の商品の個数を変更する
+*
+* @param obj $dbh DBハンドル
+*/
+function change_cart_item_amount
+  ($dbh, $cart_id, $amount_change, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update carts
+    set
+      amount = ?
+      ,updated_datetime = ?
+    where
+      cart_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $amount_change, PDO::PARAM_INT);
+  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(3, $cart_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+/**
+* カートから商品を削除する
+*
+* @param obj $dbh DBハンドル
+*/
+function delete_carts_item
+  ($dbh, $cart_id, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update carts
+    set
+      deleted_datetime = ?
+    where
+      cart_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(2, $cart_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+/**
+* 【購入処理】
+* カートのレコードに購入フラグを立てる
+*
+* @param obj $dbh DBハンドル
+*/
+function bought_carts_item
+  ($dbh, $cart_id, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update carts
+    set
+      bought_datetime = ?
+    where
+      cart_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(2, $cart_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+
+
+//------------------------------------------------------------
+// データベース操作系
+// (作品系)
+//------------------------------------------------------------
+/**
+* 【購入処理】
+* 作品テーブルに新規登録
+*
+* @param obj $dbh DBハンドル
+* @param str $access_datetime 登録・更新日時
+*/
+function insert_products_table_list
+  ($dbh, $cart_id, $access_datetime) {
+  
+  $new_carts_id = 0;
+
+  //SQL文を作成
+  $sql = '
+    insert into products
+    (
+      cart_id
+      ,created_datetime
+      ,updated_datetime
+    )
+    values
+    (
+      ?
+      ,?
+      ,?
+    )
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $cart_id, PDO::PARAM_INT);
+  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(3, $access_datetime, PDO::PARAM_STR);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+
 
 //------------------------------------------------------------
 // ログアウト処理
@@ -795,7 +995,7 @@ function check_null($chk_value)
 }
 
 /**
-* 値の文字数チェック（値がnullではないことが前提）
+* 値の最大文字数チェック（値がnullではないことが前提）
 *
 * @param str $chk_value 送られてきた値の名前
 * @param int $max_str_count 送られてきた値文字数
@@ -838,6 +1038,81 @@ function check_int_status($chk_value)
   } else {
     return FALSE;
   }
+}
+
+/**
+* パスワードチェック（半角英数字かどうか）
+*
+* @param str $chk_value 送られてきた値
+* @return bool TRUE:エラーなし FALSEエラーあり
+*/
+function check_str_password($chk_value)
+{
+  $pattern = '/[A-Za-z0-9]*/';  // 左に検索するパターンを記述してください
+  
+  if (preg_match($pattern, $chk_value) ) {
+    return TRUE;
+  } else {
+    return FALSE;
+  }
+}
+
+/**
+* 【ユーザー新規登録・更新】
+* 同名ユーザーが存在するかどうか
+*
+* @param str $chk_value 送られてきた値
+* @param str $str_where SQL検索条件
+* @return bool TRUE:エラーなし FALSEエラーあり
+*/
+function check_same_name($dbh, $chk_value, $user_id)
+{
+  //※ユーザー新規登録の時は$user_id = 0
+  
+  //SQL文を作成
+  $sql = '
+    select
+    	count(user_name) as chk_count
+    from
+    	users
+    where
+    	user_name = ?
+    	and user_id <> ?
+    ;';
+    
+  try {
+    // SQL文を実行する準備
+    $stmt = $dbh->prepare($sql);
+    
+    //値をバインド
+    $stmt->bindValue(1, $chk_value, PDO::PARAM_STR);
+    $stmt->bindValue(2, $user_id, PDO::PARAM_INT);
+
+    // SQLを実行
+    $stmt->execute();
+    
+    // レコードの取得
+    $rows = $stmt->fetchAll();
+    
+  } catch (PDOException $e) {
+    echo 'データを取得できませんでした。理由：'.$e->getMessage();
+  }
+  
+  // 配列を取得できていれば、カウント数を確認
+  if (isset($rows) === TRUE) {
+    
+    var_dump($rows);
+    
+    if ($rows[0]['chk_count'] === 0) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  // そもそも配列を取得できていない
+  } else {
+    return FALSE;
+  }
+  
 }
 
 

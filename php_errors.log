@@ -7751,3 +7751,216 @@ Stack trace:
 [26-Aug-2017 01:57:47 Asia/Tokyo] PHP Stack trace:
 [26-Aug-2017 01:57:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
 [26-Aug-2017 01:57:47 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[26-Aug-2017 10:46:28 Asia/Tokyo] PHP Notice:  Undefined index: $pay_money in /home/ubuntu/workspace/show_me/cart_list.php on line 49
+[26-Aug-2017 10:46:28 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 10:46:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[26-Aug-2017 10:46:56 Asia/Tokyo] PHP Notice:  Undefined offset: 0 in /home/ubuntu/workspace/show_me/cart_list.php on line 59
+[26-Aug-2017 10:46:56 Asia/Tokyo] PHP Stack trace:
+[26-Aug-2017 10:46:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:01:43 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/show_me/cart_list.php on line 167
+[27-Aug-2017 15:22:52 Asia/Tokyo] PHP Notice:  Undefined variable: amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 73
+[27-Aug-2017 15:22:52 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:22:52 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP Notice:  Undefined index: cart_item_amount_change in /home/ubuntu/workspace/show_me/cart_list.php on line 65
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP Notice:  Undefined variable: cart_item_amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 73
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:23:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:25:13 Asia/Tokyo] PHP Notice:  Undefined variable: amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 73
+[27-Aug-2017 15:25:13 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:25:13 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:26:46 Asia/Tokyo] PHP Notice:  Undefined variable: amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 76
+[27-Aug-2017 15:26:46 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:26:46 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:27:51 Asia/Tokyo] PHP Notice:  Undefined variable: amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 81
+[27-Aug-2017 15:27:51 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:27:51 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:28:26 Asia/Tokyo] PHP Notice:  Undefined variable: amount_change個に変更 in /home/ubuntu/workspace/show_me/cart_list.php on line 85
+[27-Aug-2017 15:28:26 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:28:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 15:38:39 Asia/Tokyo] PHP Notice:  Undefined variable: change_amount in /home/ubuntu/workspace/show_me/cart_list.php on line 177
+[27-Aug-2017 15:38:39 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 15:38:39 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 26
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
+[27-Aug-2017 16:11:36 Asia/Tokyo] PHP   2. entity_assoc_array() /home/ubuntu/workspace/show_me/cart_list.php:158
+[27-Aug-2017 16:20:08 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/show_me/cart_list.php on line 160
+[27-Aug-2017 16:20:17 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/ubuntu/workspace/show_me/cart_list.php on line 160
+[27-Aug-2017 17:48:39 Asia/Tokyo] PHP Fatal error:  Cannot redeclare delete_carts_item() (previously declared in /home/ubuntu/workspace/show_me/model/M_function.php:595) in /home/ubuntu/workspace/show_me/model/M_function.php on line 838
+[27-Aug-2017 17:48:39 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 17:48:39 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[27-Aug-2017 17:49:18 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[27-Aug-2017 17:50:37 Asia/Tokyo] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/show_me/item_details.php on line 194
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP Stack trace:
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[27-Aug-2017 18:03:29 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361

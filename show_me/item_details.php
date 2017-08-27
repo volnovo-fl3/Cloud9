@@ -73,15 +73,24 @@ if((isset($_POST)) && (count($_POST) > 0)) {
       if ($item_to_carts_amount > $item_to_carts_stock) {
         $err_to_cart[] = '現在の在庫（' . $item_to_carts_stock . '個）よりたくさん買うことはできません。';
       }
+      
+    } else {
+      $err_msg[] = '情報がありません。';
     }
-    
+  }
+  
+  //------- 商品を削除するとき -------//
+  else if($_POST['process_kind'] === 'item_to_carts')
+  {
+    if((isset($_POST['target_item_id'])) && ($_POST['target_item_id'] > 0)) {
+      $target_item_id = $_POST['target_item_id'];
+    }
     else {
       $err_msg[] = 'サーバーから商品情報を取得できませんでした。';
     }
   }
+
   
-} else {
-  $err_msg[] = '情報がありません。';
 }
 
 
@@ -163,8 +172,18 @@ try {
           }
         }
         
+        //------- 商品を削除するとき -------//
+        else if($_POST['process_kind'] === 'delete_item')
+        {
+          delete_item($dbh, $target_item_id, $access_datetime);
+          
+          //---------- 商品一覧ページへ ----------//
+          header('location: item_list.php');
+          exit;
+          //----------------------------------//  
+        }
+        
       }
-    
     }
   }
 
