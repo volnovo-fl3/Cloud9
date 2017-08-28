@@ -34,7 +34,7 @@
       }
     ?>
     
-    <a href="#"><p>作品一覧</p></a>
+    <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/product_list.php"><p>制作リスト</p></a>
     <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/item_list.php?page_type=all_list"><p>商品一覧</p></a>
     <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/item_info.php"><p>商品を出品する</p></a>
     <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/item_list.php?page_type=seller_list"><p>出品商品一覧</p></a>

@@ -8095,3 +8095,200 @@ Stack trace:
 [27-Aug-2017 21:42:18 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/cart_list.php:0
 [27-Aug-2017 21:42:18 Asia/Tokyo] PHP   2. implode() /home/ubuntu/workspace/show_me/cart_list.php:180
 [27-Aug-2017 21:43:13 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/show_me/cart_list.php on line 180
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:24 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Notice:  Undefined variable: cart in /home/ubuntu/workspace/show_me/view/V_product_list.php on line 68
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_list.php:0
+[28-Aug-2017 16:36:42 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_list.php:63
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined index: product_img in /home/ubuntu/workspace/show_me/product_details.php on line 93
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 97
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 98
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: page_title in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 5
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: page_title in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 9
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 29
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 30
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 33
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 64
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 69
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 72
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/view/V_item_details.php on line 113
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:22:56 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined index: product_img in /home/ubuntu/workspace/show_me/product_details.php on line 93
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 97
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 98
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined index: productor_user_name in /home/ubuntu/workspace/show_me/view/V_product_details.php on line 37
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined index: product_status in /home/ubuntu/workspace/show_me/view/V_product_details.php on line 38
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined index: product_comment in /home/ubuntu/workspace/show_me/view/V_product_details.php on line 39
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Notice:  Undefined index: productor_user_id in /home/ubuntu/workspace/show_me/view/V_product_details.php on line 54
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:24:26 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_details.php:121
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 97
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP Notice:  Undefined variable: look_item in /home/ubuntu/workspace/show_me/product_details.php on line 98
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 17:26:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_details.php:0
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP Notice:  Undefined index: item_img in /home/ubuntu/workspace/show_me/model/M_function.php on line 1274
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP   2. check_uploadpicture_select() /home/ubuntu/workspace/show_me/item_info.php:138
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[28-Aug-2017 20:03:44 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: item_name in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: price in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: item_introduction in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: item_introduction_detail in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: item_status in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: stock in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: main_category in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: categories in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Notice:  Undefined variable: skills in /home/ubuntu/workspace/show_me/product_info.php on line 187
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:15:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:39:43 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:39:43 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:39:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:39:43 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:233
+[28-Aug-2017 21:41:39 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:41:39 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:41:39 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:41:39 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:236
+[28-Aug-2017 21:42:33 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:42:33 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:42:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:42:33 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:236
+[28-Aug-2017 21:43:50 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 85
+[28-Aug-2017 21:43:50 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:43:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:43:58 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 85
+[28-Aug-2017 21:43:58 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:43:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:44:27 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:44:27 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:44:27 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:44:27 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:236
+[28-Aug-2017 21:45:50 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:45:50 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:45:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:45:50 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:236
+[28-Aug-2017 21:46:16 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_product_info.php on line 79
+[28-Aug-2017 21:46:16 Asia/Tokyo] PHP Stack trace:
+[28-Aug-2017 21:46:16 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
+[28-Aug-2017 21:46:16 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:233

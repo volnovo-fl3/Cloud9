@@ -879,6 +879,71 @@ function bought_carts_item
 // (作品系)
 //------------------------------------------------------------
 /**
+* 制作リストを取得する
+*
+* @param obj $dbh DBハンドル
+* @param str $where 検索条件
+* @return array 商品一覧配列データ
+*/
+function get_products_table_list($dbh, $where) {
+
+  //SQL文を作成
+  $sql = "
+    SELECT
+    	p.product_id
+    	,p.cart_id
+    	,cart.bought_datetime
+    	/* 商品 */
+    	,i.item_id
+    	,i.item_name
+    	,i.price        
+    	,i.item_introduction
+    	,i.item_introduction_detail
+    	,i.item_img
+    	,i.item_status
+    	,i.stock
+    	,i.created_datetime
+    	,i.updated_datetime
+    	,i.deleted_datetime
+    	,i.main_category
+    	,cm.category_name as main_category_name
+    	,cm.category_color
+    	,i.categories
+    	,i.skills
+    	/* 出品者 */
+    	,i.seller_user_id
+    	,seller.user_name as seller_user_name
+    	,seller.user_affiliation as seller_user_affiliation
+    	,seller.user_img as seller_user_img
+    	/* 制作者 */
+    	,cart.buyer_user_id as productor_user_id
+    	,productor.user_name as productor_user_name
+    	,productor.user_affiliation as productor_user_affiliation
+    	,productor.user_img as productor_user_img
+    	/* 作品情報 */
+    	,p.product_link
+    	,p.product_img
+    	,p.product_comment
+    	,p.product_status
+    	,p.created_datetime
+    	,p.updated_datetime
+    	,p.deleted_datetime
+    FROM
+    	products as p
+    	left join carts as cart on p.cart_id = cart.cart_id
+    	left join items as i on cart.item_id = i.item_id
+    	left join categories_mastar as cm on i.main_category = cm.category_id
+    	left join users as seller on i.seller_user_id = seller.user_id
+    	left join users as productor on cart.buyer_user_id = productor.user_id
+    $where
+    ;";
+    
+  // クエリ実行
+  return get_as_array($dbh, $sql);
+    
+}
+
+/**
 * 【購入処理】
 * 作品テーブルに新規登録
 *
@@ -918,6 +983,98 @@ function insert_products_table_list
   $stmt->execute();
 }
 
+/**
+* 作品を削除する
+*
+* @param obj $dbh DBハンドル
+*/
+function delete_products_item
+  ($dbh, $product_id, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update products
+    set
+      deleted_datetime = ?
+    where
+      product_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(2, $product_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+
+/**
+* 作品情報を更新する
+* （画像以外の基本情報）
+*
+* @param obj $dbh DBハンドル
+*/
+function update_product_infomation
+  ($dbh, $product_id, $product_link, $product_comment, $product_status, $access_datetime) {
+    
+  //SQL文を作成
+  $sql = '
+    update products
+    set
+      product_link = ?
+      ,product_comment = ?
+      ,product_status = ?
+      ,updated_datetime = ?
+    where
+      product_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $product_link, PDO::PARAM_STR);
+  $stmt->bindValue(2, $product_comment, PDO::PARAM_STR);
+  $stmt->bindValue(3, $product_status, PDO::PARAM_INT);
+  $stmt->bindValue(4, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(5, $product_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
+/**
+* 作品情報を更新する
+* （画像のみ）
+*
+* @param obj $dbh DBハンドル
+*/
+function update_product_image
+  ($dbh, $product_id, $item_img, $access_datetime) {
+  
+  //SQL文を作成
+  $sql = '
+    update products
+    set
+      product_img = ?
+      ,updated_datetime = ?
+    where
+      product_id = ?
+    ;';
+    
+  //SQL実行準備
+  $stmt = $dbh->prepare($sql);
+  
+  //値をバインド
+  $stmt->bindValue(1, $product_img, PDO::PARAM_STR);
+  $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+  $stmt->bindValue(3, $product_id, PDO::PARAM_INT);
+
+  //SQLを実行
+  $stmt->execute();
+}
 
 
 //------------------------------------------------------------
@@ -998,6 +1155,32 @@ function str_id_to_where_id($str_id, $column_id)
     $i++;
   }
   return $search_where;
+}
+
+/**
+* 【作品ステータス】
+* 作品ステータス(int)を文字列で返す
+*
+* @param int $int DBに登録されたステータス
+* @return str ステータス(文字列)
+*/
+function product_status_int_to_str($int)
+{
+  if((isset($int) === TRUE) && (mb_strlen($int) > 0)){
+    
+    if($int === 0) {
+      return '未完成';
+    }
+    else if($int === 1){
+      return '完成(公開中)';
+    }
+    else if($int === 2){
+      return '完成(非公開)';
+    }
+    
+  } else {
+    return 'エラー';
+  }
 }
 
 
