@@ -37,6 +37,18 @@ h1 {
   padding: 10px;
 }
 
+.must {
+  color: red;
+  font-size: 12px;
+  margin: 0px 5px;
+}
+.tips {
+  color: #494949;
+  font-size: 12px;
+  margin: 0px 5px;
+}
+
+
 /*--- 表示幅(コンテナ要素を使用) ---*/
 .container {
   width: 80%;
@@ -353,6 +365,52 @@ footer p {
 .details p {
   padding-left: 20px;
   font-size: 16px;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   line-height: 1.5em;
+}
+
+
+
+/* ----------------------------------
+ユーザー・商品・作品の登録/更新用
+----------------------------------*/
+.insert_update_form {
+  width: 70%;
+  margin: 0px auto;
+}
+.insert_update_form h2 {
+  font-size: 20px;
+  margin-top: 15px;
+  padding-bottom: 3px;
+  color: #494949;
+  text-align: center
+}
+.insert_update_form .block {
+  margin: 20px auto;
+}
+.insert_update_form .subject{
+  display: flex;
+	justify-content: flex-end;
+	margin-right: 7px;
+}
+.insert_update_form .text_width{
+  width: 70%;
+}
+.insert_update_form textarea{
+  width: 70%;
+  min-height: 200px;
+}
+.insert_update_form .chkbox_list {
+  display: flex;
+  width: 85%;
+  line-height: 2em;
+
+  /* ↓↓ 参考にしました http://sutara79.hatenablog.com/entry/2016/09/27/112337 ↓↓ */
+  /* 横並びに表示する */
+  flex-direction: row;
+  /* 画面幅に収まらない場合は折り返す */
+  flex-wrap: wrap;        
+}
+.insert_update_form .chkbox {
+  margin-right: 15px;
 }

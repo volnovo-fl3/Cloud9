@@ -67,15 +67,19 @@
         
       <?php // エラーがあれば表示
       if (isset($err_msg) && count($err_msg) > 0) {
-        foreach ($err_msg as $key => $error) {
       ?>
         <div class="error_message_box">
           <ul>
+      <?php
+        foreach ($err_msg as $key => $error) {
+      ?>
             <li><p><?php print entity_str($error)?></p></li>
+      <?php
+        }
+      ?>
           </ul>
         </div>
       <?php
-        }
       }
       
       // エラーがなければユーザー情報表示
@@ -94,7 +98,7 @@
           <p><?php print str_is_regist($look_user[0]['user_affiliation'])?></p>
           <h2>自己紹介</h2>
           <p>
-            <?php print str_is_regist($look_user[0]['user_self_introduction'])?>
+            <?php print nl2br(htmlspecialchars(str_is_regist($look_user[0]['user_self_introduction']), ENT_QUOTES, "UTF-8"), false)?>
           </p>
           
           <h2>対応カテゴリ</h2>

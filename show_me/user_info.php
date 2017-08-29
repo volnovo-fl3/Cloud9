@@ -34,6 +34,8 @@ $categories = '';
 $skills = '';
 $new_img_filename = '';
 
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -181,6 +183,10 @@ try {
           $skills = $target_user[0]['skills'];
           $user_img = image_link($target_user[0]['user_img']);
           
+          // ヘッダー用
+          $header_user_name = $user_name;
+          $header_user_img = $user_img;
+          
           // 値が入っていれば配列化
           if(mb_strlen($categories, HTML_CHARACTER_SET) > 0) {
             $selected_categories = explode(',', $categories);
@@ -227,8 +233,6 @@ try {
           // 同名ユーザーチェック
           if((isset($_POST['target_user_id']) === TRUE) && (mb_strlen($_POST['target_user_id']) > 0)) {
             $target_user_id = $_POST['target_user_id'];
-            var_dump($target_user_id);
-            var_dump(check_same_name($dbh, $user_name, $target_user_id));
           }
           if(check_same_name($dbh, $user_name, $target_user_id) === FALSE) {
             $err_msg[] = '同名のユーザーが存在します。ユーザー名を変更してください。';

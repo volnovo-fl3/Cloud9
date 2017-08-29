@@ -14,7 +14,7 @@
     <div id="login">
       
       <img src="font_icon/light.png" class="light_image_size block_center_width"></img>
-      <p class="sub_title">クリエイターのための課題販売サイト</p>
+      <p class="sub_title wf-notosansjapanese">クリエイターのための課題販売サイト</p>
       <img src="font_icon/logo01.png" class="logo01_image_size block_center_width"></img>
       
       <div class="login_form">

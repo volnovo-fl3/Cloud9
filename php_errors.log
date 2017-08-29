@@ -8533,3 +8533,331 @@ Stack trace:
 [30-Aug-2017 02:06:03 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/show_me/view/V_user_profile.php on line 142
 [30-Aug-2017 02:06:03 Asia/Tokyo] PHP Stack trace:
 [30-Aug-2017 02:06:03 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_profile.php:0
+[30-Aug-2017 04:38:57 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 109
+[30-Aug-2017 04:38:57 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:38:57 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[30-Aug-2017 04:38:57 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Notice:  Use of undefined constant selected_category_id - assumed 'selected_category_id' in /home/ubuntu/workspace/show_me/view/V_user_info.php on line 238
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_info.php:0
+[30-Aug-2017 04:47:05 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_info.php:349
