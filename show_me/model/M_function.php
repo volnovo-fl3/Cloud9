@@ -309,7 +309,7 @@ function update_user_last_login_datetime
 
 /**
 * 【ログイン】
-* ユーザー名とパスワードから、ユーザーIDを取得する
+* ユーザー名とパスワードから、ユーザーID・ユーザー名・画像を取得する
 *
 * @param obj $dbh DBハンドル
 * @param str $password パスワード
@@ -319,10 +319,17 @@ function update_user_last_login_datetime
 function get_user_for_login($dbh, $password, $user_name) {
 
   //SQL文を作成
-  $sql =
-    "select user_id from users where password = '$password' and user_name = '$user_name';";
-  var_dump($sql);
-    
+  $sql = "
+    select
+      user_id
+      ,user_name
+      ,user_img
+    from
+      users
+    where
+      password = '$password'
+      and user_name = '$user_name'
+    ;";
 
   // クエリ実行
   return get_as_array($dbh, $sql);
@@ -1180,6 +1187,21 @@ function product_status_int_to_str($int)
     
   } else {
     return 'エラー';
+  }
+}
+
+/**
+* DBから取得した値が空であれば未登録メッセージを返す。
+*
+* @param str $str DBに登録された文字列
+* @return str ステータス(文字列)
+*/
+function str_is_regist($str)
+{
+  if((isset($str) === TRUE) && (mb_strlen($str) > 0)){
+    return $str;
+  } else {
+    return '登録されていません';
   }
 }
 

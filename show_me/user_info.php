@@ -257,6 +257,8 @@ try {
                 if ($new_user_id > 0) {
                   
                   setcookie('user_id', $new_user_id);
+                  setcookie('user_name', $user_name);
+                  setcookie('user_img', $new_img_filename);
                   
                   //---------- マイページへ ----------//
                   header('location: mypage.php');

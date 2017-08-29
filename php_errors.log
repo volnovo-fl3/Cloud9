@@ -8292,3 +8292,244 @@ Stack trace:
 [28-Aug-2017 21:46:16 Asia/Tokyo] PHP Stack trace:
 [28-Aug-2017 21:46:16 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/product_info.php:0
 [28-Aug-2017 21:46:16 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/product_info.php:233
+[29-Aug-2017 17:19:54 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[29-Aug-2017 17:19:54 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 17:19:54 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[29-Aug-2017 17:19:54 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 17:44:39 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:07:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:02 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:51 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:54 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:09:58 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:10:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:11:00 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:12:52 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:14:43 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:15:33 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 123
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 124
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:25:20 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:26:47 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:29:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 28
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 29
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:30:03 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 127
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 128
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 31
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 32
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:31:41 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 128
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 129
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:35:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 31
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 32
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:35:29 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 128
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 129
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/mypage.php on line 31
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/mypage.php on line 32
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:37:13 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 128
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 129
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 131
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 132
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:39:12 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP Notice:  Undefined index: user_name in /home/ubuntu/workspace/show_me/login.php on line 28
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 29
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:42:28 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 18:44:22 Asia/Tokyo] PHP Notice:  Undefined index: user_img in /home/ubuntu/workspace/show_me/login.php on line 29
+[29-Aug-2017 18:44:22 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 18:44:22 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/login.php:0
+[29-Aug-2017 21:17:22 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[29-Aug-2017 21:17:22 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 21:17:22 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[29-Aug-2017 21:17:22 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Notice:  Undefined variable: categories_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 65
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:65
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Notice:  Undefined variable: skills_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 66
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:66
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/show_me/view/V_mypage.php on line 93
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:01:48 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/mypage.php:83
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Notice:  Undefined variable: categories_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 65
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:65
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Notice:  Undefined variable: skills_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 66
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:66
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/show_me/view/V_mypage.php on line 93
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:01 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/mypage.php:83
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Notice:  Undefined variable: categories_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 65
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:65
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Notice:  Undefined variable: skills_mastar in /home/ubuntu/workspace/show_me/mypage.php on line 66
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/show_me/model/M_function.php on line 1126
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   2. id_to_name() /home/ubuntu/workspace/show_me/mypage.php:66
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/show_me/view/V_mypage.php on line 93
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:04:15 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/mypage.php:83
+[29-Aug-2017 23:05:37 Asia/Tokyo] PHP Notice:  Array to string conversion in /home/ubuntu/workspace/show_me/view/V_mypage.php on line 93
+[29-Aug-2017 23:05:37 Asia/Tokyo] PHP Stack trace:
+[29-Aug-2017 23:05:37 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/mypage.php:0
+[29-Aug-2017 23:05:37 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/mypage.php:85
+[30-Aug-2017 00:07:40 Asia/Tokyo] PHP Notice:  Use of undefined constant selected - assumed 'selected' in /home/ubuntu/workspace/show_me/view/V_item_info.php on line 65
+[30-Aug-2017 00:07:40 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 00:07:40 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/item_info.php:0
+[30-Aug-2017 00:07:40 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/item_info.php:361
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP Notice:  Undefined variable: header_user_img in /home/ubuntu/workspace/show_me/view/V_user_profile.php on line 24
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_profile.php:0
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_profile.php:119
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP Notice:  Undefined variable: header_user_name in /home/ubuntu/workspace/show_me/view/V_user_profile.php on line 28
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_profile.php:0
+[30-Aug-2017 00:11:19 Asia/Tokyo] PHP   2. include_once() /home/ubuntu/workspace/show_me/user_profile.php:119
+[30-Aug-2017 02:04:25 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/show_me/view/V_user_profile.php on line 142
+[30-Aug-2017 02:04:25 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 02:04:25 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_profile.php:0
+[30-Aug-2017 02:06:03 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/show_me/view/V_user_profile.php on line 142
+[30-Aug-2017 02:06:03 Asia/Tokyo] PHP Stack trace:
+[30-Aug-2017 02:06:03 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/show_me/user_profile.php:0

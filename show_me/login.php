@@ -15,6 +15,9 @@ $logout_message = '';
 $user_name = '';
 $password = '';
 $iink_page = ''; //ログインが切れる前にクッキーに保存されていたページ
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -22,8 +25,8 @@ $iink_page = ''; //ログインが切れる前にクッキーに保存されて�
 // CookieにユーザーIDが残っていれば、ID表示
 //------------------------------------------------------------
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
-  
-  var_dump($_COOKIE['user_id']);
+  $header_user_name = entity_str($_COOKIE['user_name']);
+  $header_user_img = entity_str($_COOKIE['user_img']);
 }
 
 else {
@@ -115,12 +118,14 @@ try {
         try {
           
           $user = get_user_for_login($dbh, $password, $user_name);
-          
+
           // IDを取得できていれば、クッキーにユーザーIDを保存
           if(isset($user) === TRUE && count($user) > 0) {
             if ($user[0]['user_id'] > 0) {
               
               setcookie('user_id', $user[0]['user_id']);
+              setcookie('user_name', $user[0]['user_name']);
+              setcookie('user_img', image_link($user[0]['user_img']));
               
               //---------- マイページへ ----------//
               header('location: mypage.php');

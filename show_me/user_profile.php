@@ -21,6 +21,9 @@ $skills_name_list = [];
 
 $page_title = 'ユーザー情報';
 $look_user_img = 'no';
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -30,6 +33,8 @@ $look_user_img = 'no';
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   
   $my_user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
 } else {
   
   //---------- ログインページへ ----------//
