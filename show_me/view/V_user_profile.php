@@ -19,16 +19,25 @@
             <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/mypage.php"><img src="font_icon/logo02.png" class="logo02_image_size"></a>
           </div>
           <div class="user_name_image flex_1">
+            
             <div class="flexbox position_set">
               <div class="user_img">
-                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel"></img>
+                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel_radius"></img>
               </div>
+              
+            <?php
+            if((mb_strlen($header_user_name) > 0) && (mb_strlen($header_user_img) > 0)) {
+            ?>
               <div class="block_center_height">
                 <div>
                   <p><?php print $header_user_name?> さん</p>
                   <p class="logout"><a href="https://codeincubate-tanakanoboru.c9users.io/show_me/logout.php">ログアウト</a></p>
                 </div>
               </div>
+            <?php
+            }
+            ?>
+            
             </div>
           </div>
         </div>
@@ -130,7 +139,6 @@
           <p>登録されていません</p>
         </div>
         
-        
       </div>
       
       <?php
@@ -138,6 +146,7 @@
       ?>
       
     </main>
+    
     
     <!-- 下段 -->
     <footer>

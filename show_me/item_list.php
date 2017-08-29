@@ -21,6 +21,9 @@ $carts_unpaid = [];
 $err_msg = [];
 $items_list = [];
 $search_where = '';
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 // Cookieにページ遷移履歴を保存
@@ -32,6 +35,8 @@ setcookie('last_page', 'login.php');
 //------------------------------------------------------------
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   $user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
 }
 
 else {

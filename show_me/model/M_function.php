@@ -422,6 +422,8 @@ function get_items_table_list($dbh, $where) {
       ,stock
       ,seller_user_id
       ,u.user_name as seller_user_name
+      ,u.user_affiliation as seller_user_affiliation
+      ,u.user_img as seller_user_img
       ,i.created_datetime
       ,i.updated_datetime
       ,i.deleted_datetime
@@ -687,9 +689,9 @@ function get_carts_table_list($dbh, $where) {
       ,cart.amount
       ,i.price * cart.amount as item_sum_price
       ,i.seller_user_id
-      ,seller.user_name
-      ,seller.user_affiliation
-      ,seller.user_img
+      ,seller.user_name as seller_user_name
+      ,seller.user_affiliation as seller_user_affiliation
+      ,seller.user_img as seller_user_img
       ,i.main_category
       ,cm.category_color
       ,cart.created_datetime

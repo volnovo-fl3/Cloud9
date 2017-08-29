@@ -27,6 +27,10 @@
   <head>
     <meta charset="UTF-8">
     <title><?php print SITE_NAME ?> | <?php print $page_name ?></title>
+    <link rel="shortcut icon" href="font_icon/favicon.ico">
+    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/show_me.css">
   </head>
 
   <body>
@@ -100,7 +104,7 @@
       <?php
         if (count($categories_master) > 0) {
       ?>
-      <select name="item_status">
+      <select name="main_category">
       <?php
           foreach($categories_master as $key => $category) {
       ?>

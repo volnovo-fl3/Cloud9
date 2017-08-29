@@ -19,16 +19,25 @@
             <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/mypage.php"><img src="font_icon/logo02.png" class="logo02_image_size"></a>
           </div>
           <div class="user_name_image flex_1">
+            
             <div class="flexbox position_set">
               <div class="user_img">
-                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel"></img>
+                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel_radius"></img>
               </div>
+              
+            <?php
+            if((mb_strlen($header_user_name) > 0) && (mb_strlen($header_user_img) > 0)) {
+            ?>
               <div class="block_center_height">
                 <div>
                   <p><?php print $header_user_name?> さん</p>
                   <p class="logout"><a href="https://codeincubate-tanakanoboru.c9users.io/show_me/logout.php">ログアウト</a></p>
                 </div>
               </div>
+            <?php
+            }
+            ?>
+            
             </div>
           </div>
         </div>
@@ -60,6 +69,7 @@
       </div>
     </header>
     
+    
     <!-- 中段 -->
     <main class="Background_Color_white">
       <div class="container flexbox">
@@ -69,7 +79,7 @@
           <div class="add_row user_profiles_panel_back">
             <div class="user_profiles_panel">
               <div class="image_panel_200 block_center_width">
-                <img src="<?php print IMAGE_DIRECTORY . $user_img; ?>" class="image_size_to_panel"></img>
+                <img src="<?php print IMAGE_DIRECTORY . $user_img; ?>" class="image_size_to_panel_radius"></img>
               </div>
               <p class="inline_center_width"><?php print $user[0]['user_name'] ?> さん</p>
               <?php

@@ -46,7 +46,7 @@
             
             <div class="flexbox position_set">
               <div class="user_img">
-                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel"></img>
+                <img src="<?php print IMAGE_DIRECTORY . $header_user_img; ?>" class="image_size_to_panel_radius"></img>
               </div>
               
             <?php
@@ -92,6 +92,7 @@
         </div>
       </div>
     </header>
+    
     
     <!-- 中段 -->
     <main class="Background_Color_white">
@@ -301,6 +302,7 @@
       </div>
       
     </main>
+    
     
     <!-- 下段 -->
     <footer>
