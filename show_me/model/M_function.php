@@ -1061,7 +1061,7 @@ function update_product_infomation
 * @param obj $dbh DBハンドル
 */
 function update_product_image
-  ($dbh, $product_id, $item_img, $access_datetime) {
+  ($dbh, $product_id, $product_img, $access_datetime) {
   
   //SQL文を作成
   $sql = '

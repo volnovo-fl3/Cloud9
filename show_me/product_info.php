@@ -24,6 +24,9 @@ $look_item_img = 'no';
 $product_link = '';
 $product_status = '';
 $product_comment = '';
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -33,6 +36,9 @@ $product_comment = '';
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   
   $my_user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
+  
 } else {
   
   //---------- ログインページへ ----------//
@@ -198,8 +204,8 @@ try {
                   // コミット処理
                   $dbh->commit();
                   
-                  //---------- 作品詳細ページへ ----------//
-                  header('location: product_details.php');
+                  //---------- 制作リストへ ----------//
+                  header('location: product_list.php');
                   exit;
                   //----------------------------------//
                     

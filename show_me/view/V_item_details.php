@@ -176,7 +176,7 @@
             <input type="submit" class="display_block block_center_width" value="商品情報を変更する">
           </div>
         </form>
-        <form method="post" enctype="multipart/form-data" action='item_list.php'>
+        <form method="post" enctype="multipart/form-data">
           <div class="add_row">
             <input type="hidden" name="process_kind" value="delete_item">
             <input type="hidden" name="target_item_id" value="<?php print $look_item[0]['item_id']?>">

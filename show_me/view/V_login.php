@@ -18,6 +18,7 @@
       <img src="font_icon/logo01.png" class="logo01_image_size block_center_width"></img>
       
       <div class="login_form">
+        <!--
         <?php //ログアウト後であれば表示
           if (isset($logout_message) && mb_strlen($logout_message, HTML_CHARACTER_SET) > 0)
         ?>
@@ -26,6 +27,7 @@
         </div>
         <?php
         ?>
+        -->
         
         <?php //エラーメッセージを表示
         if (isset($err_msg) && count($err_msg) > 0) {

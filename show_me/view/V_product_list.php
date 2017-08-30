@@ -122,7 +122,7 @@
             <div class="item_panel02" style="background-color:<?php print $product['category_color']?>;">
               
               <div class="item_img">
-                <img src="<?php print IMAGE_DIRECTORY . image_link($product['item_img']); ?>" class="image_size_to_panel_radius"></img>
+                <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>" class="image_size_to_panel_radius"></img>
               </div>
               
               <div class="item_info">
@@ -181,7 +181,5 @@
       </div>
     </footer>
     
-
-    <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/logout.php"><p>ログアウト</p></a>
   </body>
 </html>
