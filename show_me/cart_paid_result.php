@@ -17,7 +17,29 @@ $cart_amount_paid = 0;
 
 $search_where = '';
 $paid_item_list = [];
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
+
+
+// Cookieにページ遷移履歴を保存
+setcookie('last_page', 'mypage.php');
+
+// ユーザーIDを取得
+if (isset($_COOKIE['user_id']) === TRUE) {
+  $user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
+}
+// 取得できなければ、ログイン画面へ
+else {
+  //---------- ログインページへ ----------//
+  header('location: login.php');
+  exit;
+  //----------------------------------//
+}
+
 
 
 //------------------------------------------------------------

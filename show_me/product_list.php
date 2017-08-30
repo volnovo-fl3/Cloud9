@@ -13,6 +13,9 @@ $user_id = '';
 
 $search_where = '';
 $products_list = [];
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -25,6 +28,8 @@ setcookie('product_list', 'login.php');
 //------------------------------------------------------------
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   $user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
 }
 
 else {

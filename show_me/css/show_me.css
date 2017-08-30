@@ -100,6 +100,9 @@ h1 {
 .inline_center_width {
   text-align: center
 }
+.inline_right_width {
+  text-align: right;
+}
 
 .flexbox {
   display: flex;
@@ -182,6 +185,11 @@ h1 {
   margin-bottom:0.5em;
 }
 
+.flex_right_center_height {
+  display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
 
 
 /*-------------------------
@@ -375,6 +383,10 @@ footer p {
   margin-bottom: 5px;
   line-height: 1.5em;
 }
+.details .stock {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 
 
@@ -423,7 +435,6 @@ footer p {
 }
 
 
-
 /* ----------------------------------
 商品表示用のパネル01(横長)
 ----------------------------------*/
@@ -440,7 +451,7 @@ footer p {
   position:relative;
 }
 .item_panel01 .item_info{
-  width: 100%;
+  width: 85%;
   margin: 5px;
 }
 .item_panel01 .item_title{
@@ -458,8 +469,78 @@ footer p {
   margin-top: 5px;
   font-size: 24px;
 }
-.item_detail {
+.item_button_parent {
+  width: 15%;
+  position:relative;
+}
+.item_button {
+  /*background-color: white*/;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: 90px 0px;
+  width: 100%;
+}
+.item_button02 {
+  /*background-color: white*/;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: 70px 0px;
+  width: 100%;
+}
+.item_amont {
+  width: 40px;
+}
+
+
+/* ----------------------------------
+商品表示用のパネル02(縦パネル)
+----------------------------------*/
+.item_plate{
   display: flex;
-  justify-content: flex-end;
-  margin-left: 50px;
+  width: 100%;
+  line-height: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;        
+
+}
+
+.item_panel02 {
+  height: 500px;
+  width: 350px;
+  margin-right: 20px;
+  color: #494949;
+}
+.item_panel02 .item_img{
+  height: 335px;
+  width: 335px;
+  position:relative;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+.item_panel02 .item_info{
+  width: 95%;
+  max-height:100px;
+  margin: 5px;
+  overflow: hidden;
+}
+.item_panel02 .item_title{
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 1px dashed #494949;
+}
+.item_panel02 .seller_name{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.item_panel02 .price{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 24px;
 }

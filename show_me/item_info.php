@@ -40,6 +40,9 @@ $main_category = '1';
 $categories = '';
 $skills = '';
 $new_img_filename = '';
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -49,6 +52,9 @@ $new_img_filename = '';
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   
   $my_user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
+  
 } else {
   
   //---------- ログインページへ ----------//
@@ -277,6 +283,7 @@ try {
                 
                 setcookie('item_id', $new_item_id);
                 setcookie('item_name', $item_name);
+                setcookie('item_img', image_link($new_img_filename));
                 setcookie('item_info_mode', 0);
                 
                 //---------- 商品登録結果ページへ ----------//
@@ -326,6 +333,7 @@ try {
 
               setcookie('item_id', $_POST['target_item_id']);
               setcookie('item_name', $item_name);
+              setcookie('item_img', image_link($new_img_filename));
               setcookie('item_info_mode', 1);
               
               //---------- 商品登録結果ページへ ----------//

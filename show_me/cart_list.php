@@ -25,6 +25,9 @@ $cart_id = ''; // 削除・更新用
 $amount_change = '';
 
 $cart_ids_paid = []; //購入後のカートIDを配列で
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -34,6 +37,8 @@ setcookie('last_page', 'mypage.php');
 // ユーザーIDを取得
 if (isset($_COOKIE['user_id']) === TRUE) {
   $user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
 }
 // 取得できなければ、ログイン画面へ
 else {
@@ -61,9 +66,6 @@ if((isset($_POST)) && (count($_POST) > 0)) {
     
     //--- カートの個数を変更 ---//
     else if($_POST['process_kind'] === 'cart_item_amount_change') {
-      
-      var_dump($_POST);
-      print "<br>";
       
       if((isset($_POST['cart_id'])) && (mb_strlen($_POST['cart_id']) > 0)) {
         $cart_id = $_POST['cart_id'];

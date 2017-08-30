@@ -69,6 +69,7 @@
       </div>
     </header>
     
+    
     <!-- 中段 -->
     <main class="Background_Color_white">
       <div class="container padding_top_10">
@@ -210,13 +211,8 @@
                   <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>" class="image_size_to_panel_radius"></img>
                 </div>
                 <div class="item_info">
-                  <div class="item_title flexbox">
+                  <div class="item_title">
                     <p><?php print $item['item_name']?></p>
-                    <form method="post" enctype="multipart/form-data" action='item_details.php'>
-                      <input type="hidden" name="process_kind" value="to_item_details">
-                      <input type="hidden" name="target_item_id" value="<?php print $item['item_id']?>">
-                      <input type="submit" class="item_detail" value="商品の詳細を見る">
-                    </form>
                   </div>
                   <p class="price">¥<?php print $item['price']?></p>
                   <p class="seller_name">
@@ -227,6 +223,15 @@
                       }
                     ?>
                     による出品</p>
+                </div>
+                <div class="item_button_parent">
+                  <div class="item_button">
+                    <form method="post" enctype="multipart/form-data" action='item_details.php'>
+                      <input type="hidden" name="process_kind" value="to_item_details">
+                      <input type="hidden" name="target_item_id" value="<?php print $item['item_id']?>">
+                      <input type="submit" class="block" value="商品の詳細を見る">
+                    </form>
+                  </div>
                 </div>
                 
 
@@ -242,7 +247,7 @@
           
         </div>
       </div>
-    </main>      
+    </main>
       
     
     

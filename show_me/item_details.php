@@ -26,6 +26,9 @@ $look_item_img = 'no';
 $err_to_cart = []; //カート用のエラー
 $item_to_carts_amount = 0;
 $item_to_carts_stock = 0;
+
+$header_user_name = '';
+$header_user_img = '';
 //----------------------//
 
 
@@ -35,6 +38,9 @@ $item_to_carts_stock = 0;
 if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   
   $my_user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
+
 } else {
   
   //---------- ログインページへ ----------//

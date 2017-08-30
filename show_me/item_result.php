@@ -10,14 +10,40 @@ require_once './conf/const.php';
 require_once './model/M_function.php';
 
 
+//----- 変数初期化 -----//
 $item_id = '';
 $item_name = '';
+$item_img = '';
 $str_mode = '';
+
+$header_user_name = '';
+$header_user_img = '';
+//----------------------//
+
+
+//------------------------------------------------------------
+// Cookieに商品IDが残っていれば取得、残っていなければログイン画面へ
+//------------------------------------------------------------
+if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
+  
+  $my_user_id = $_COOKIE['user_id'];
+  $header_user_name = $_COOKIE['user_name'];
+  $header_user_img = $_COOKIE['user_img'];
+  
+} else {
+  
+  //---------- ログインページへ ----------//
+  header('location: login.php');
+  exit;
+  //----------------------------------//  
+}
+
 
 // 登録できていれば処理続行
 if (isset($_COOKIE['item_id']) === TRUE) {
   $item_id = $_COOKIE['item_id'];
   $item_name = $_COOKIE['item_name'];
+  $item_img = $_COOKIE['item_img'];
   $str_mode = $_COOKIE['item_info_mode'];
   
   if((int)$str_mode === 0){
@@ -25,8 +51,6 @@ if (isset($_COOKIE['item_id']) === TRUE) {
   } else {
     $str_mode = 'の情報を変更';
   }
-  
-  print 'item_ID: ' . $item_id;
 }
 // 登録できていなければ
 else {
