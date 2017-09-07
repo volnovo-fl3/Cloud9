@@ -37,6 +37,7 @@ $item_img = '';
 $item_status = '1';
 $stock = '0';
 $main_category = '1';
+$checked_categories = [];
 $categories = '';
 $skills = '';
 $new_img_filename = '';
@@ -78,6 +79,9 @@ else
   //------------------------------------------------------------
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
+    print '【$_POST】';
+    var_dump($_POST);
+    print "<br>";
     
     //--- 変数に入力値を代入 ---//
     
@@ -101,13 +105,21 @@ else
     }
     if(isset($_POST['main_category']) === TRUE) {
       $main_category = $_POST['main_category'];
-    }
-    if(isset($_POST['checked_categories']) === TRUE) {
-      $categories = implode(',', $_POST['checked_categories']);
+      $checked_categories[] = $main_category;
+      
+      if(isset($_POST['checked_categories']) === TRUE) {
+        $checked_categories = array_unique(array_merge($checked_categories, $_POST['checked_categories']));
+      }
+      
+      asort($checked_categories, SORT_NUMERIC);
+      $categories = implode(',', $checked_categories);
     }
     if(isset($_POST['checked_skills']) === TRUE) {
       $skills = implode(',', $_POST['checked_skills']);
     }
+    
+    print '【$checked_categories】';  
+    var_dump($checked_categories);
     
     
     //--- 出品登録エラーチェック ---//
@@ -166,12 +178,11 @@ else
   }
 }
 
-/*
 print "mode : $mode";
 print "<br>";
 var_dump($_POST);
 print "<br>";
-*/
+
 
 //------------------------------------------------------------
 // DBに接続
@@ -356,7 +367,6 @@ try {
       
     }
   }
-  
 
 } catch (Exception $e) {
   $err_msg[] = $e->getMessage();

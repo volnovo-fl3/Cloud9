@@ -1,3 +1,20 @@
+<script>
+  // 検索条件をリセット
+  function search_reset(){
+    
+    // 検索ワードをリセット
+    var all_serch_word = document.getElementsByClassName("search_word");
+    for(i=0; i<all_serch_word.length; i++){
+      all_serch_word[i].value = '';
+    }
+    // チェックボックスをリセット
+    var all_serch_chkbox = document.getElementsByClassName("serch_chkbox");
+    for(i=0; i<all_serch_chkbox.length; i++){
+      all_serch_chkbox[i].checked = false;
+    }
+  }
+</script>
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -83,7 +100,13 @@
               <div class="user_profiles_panel">
                 <h2 class="inline_center_width">検索条件</h2>
                 
-                <form>
+                <input type="button" class="display_block block_center_width" onclick="search_reset()" value="検索条件をリセット">
+                
+                <form action="#">
+                  
+                  <h3>検索ワード</h3>
+                  <p class="tips">商品名・商品説明・出品者・所属団体から検索できます。</p>
+                  <input type="text" name="search_word" value="<?php print $search_word?>" class="search_word">
                   
                   <h3>カテゴリ</h3>
                   <?php
@@ -94,17 +117,15 @@
                     <input
                       type="checkbox"
                       name="checked_categories[]"
+                      class="serch_chkbox"
                       value="<?php print $category['category_id']?>"
                       <?php
-                        // 更新時、既に登録されている項目にはチェックを入れておく
-                        if ($mode === 1){
-                          if (count($selected_categories) > 0){
-                            foreach($selected_categories as $key => $selected_category_id) {
-                              if ($category['category_id'] === $selected_category_id) {
+                        if (count($checked_categories) > 0){
+                          foreach($checked_categories as $key => $checked_category_id) {
+                            if ($category['category_id'] === (int)$checked_category_id) {
                       ?>
                       checked="checked"
                       <?php
-                              }
                             }
                           }
                         }
@@ -125,17 +146,15 @@
                     <input
                       type="checkbox"
                       name="checked_skills[]"
+                      class="serch_chkbox"
                       value="<?php print $skill['skill_id']?>"
                       <?php
-                        // 更新時、既に登録されている項目にはチェックを入れておく
-                        if ($mode === 1){
-                          if (count($selected_skills) > 0){
-                            foreach($selected_skills as $key => $selected_skill_id) {
-                              if ($skill['skill_id'] === $selected_skill_id) {
+                        if (count($checked_skills) > 0){
+                          foreach($checked_skills as $key => $checked_skill_id) {
+                            if ($skill['skill_id'] === (int)$checked_skill_id) {
                       ?>
                       checked="checked"
                       <?php
-                              }
                             }
                           }
                         }
@@ -149,7 +168,6 @@
 
                   <hr>
                   
-                  <input type="hidden" name="process_kind" value="item_search">
                   <input type="submit" class="display_block block_center_width" value="この条件で検索">
 
                 </form>

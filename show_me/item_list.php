@@ -21,6 +21,11 @@ $carts_unpaid = [];
 $err_msg = [];
 $items_list = [];
 $search_where = '';
+$search_array = '';
+$search_word = '';
+
+$checked_categories = [];
+$checked_skills = [];
 
 $header_user_name = '';
 $header_user_img = '';
@@ -48,16 +53,29 @@ else {
 }
 
 
-//------------------------------------------------------------
-// ページタイプを取得
-// seller_list であれば $page_type を変更
-//------------------------------------------------------------
 if((isset($_GET) === TRUE) && (count($_GET) > 0)){
+  //------------------------------------------------------------
+  // ページタイプを取得
+  // seller_list であれば $page_type を変更
+  //------------------------------------------------------------
   if((isset($_GET['page_type']) === TRUE) && (mb_strlen($_GET['page_type']) > 0)){
     if($_GET['page_type'] === 'seller_list'){
       $page_name = '出品一覧';
       $page_type = $_GET['page_type'];
     }
+  }
+  
+  //------------------------------------------------------------
+  // 検索条件を取得
+  //------------------------------------------------------------
+  if ((isset($_GET['checked_categories'])) and (count($_GET['checked_categories']) > 0)){
+    $checked_categories = $_GET['checked_categories'];
+  }
+  if ((isset($_GET['checked_skills'])) and (count($_GET['checked_skills']) > 0)){
+    $checked_skills = $_GET['checked_skills'];
+  }
+  if ((isset($_GET['search_word'])) and (mb_strlen($_GET['search_word']) > 0)){
+    $search_word = $_GET['search_word'];
   }
 }
 
@@ -84,6 +102,35 @@ try {
       if ($page_type === 'all_list') {
         // 検索条件のwhere文を作成し、検索
         $search_where = 'where i.deleted_datetime is null';
+        
+        
+        //------------------------------------------
+        // 画面上で指定した検索条件をwhere文に追加
+
+        if(count($checked_categories) > 0) {
+          $search_array = $search_array . '(' . array_to_str_where('i.categories', $checked_categories) .')';
+        }
+        if(count($checked_skills) > 0) {
+          if (mb_strlen($search_array) > 0) {
+            $search_array = $search_array . ' or ';
+          }
+          $search_array = $search_array . '(' . array_to_str_where('i.skills', $checked_skills) .')';
+        }
+        if (mb_strlen($search_array) > 0){
+          $search_where = $search_where . ' and (' . $search_array . ')';
+        }
+        
+        if (mb_strlen($search_word) > 0){
+          $search_where = $search_where . ' and i.item_name like \'%'. $search_word .'%\'';
+          $search_where = $search_where . ' or i.item_introduction like \'%'. $search_word .'%\'';
+          $search_where = $search_where . ' or i.item_introduction_detail like \'%'. $search_word .'%\'';
+          $search_where = $search_where . ' or u.user_name like \'%'. $search_word .'%\'';
+          $search_where = $search_where . ' or u.user_affiliation like \'%'. $search_word .'%\'';
+        }
+        
+        //------------------------------------------
+        
+        
         $items_list = get_items_table_list($dbh, $search_where);
       }
       else if ($page_type === 'seller_list') {

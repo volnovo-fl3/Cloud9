@@ -349,6 +349,15 @@ footer p {
   padding-left: 15px;
   font-size: 12px;
 }
+.user_profiles_panel input[type="text"]{
+  margin-left: 5px;
+  width: 90%;
+}
+.user_profiles_panel input[type="button"], .user_profiles_panel input[type="submit"]{
+  margin: 10px auto;
+  width: 70%;
+}
+
 
 
 

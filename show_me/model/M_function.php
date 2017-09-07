@@ -1167,6 +1167,44 @@ function str_id_to_where_id($str_id, $column_id)
 }
 
 /**
+* 【商品検索用】
+* チェックしたリストの配列を
+* where句にして返す
+*
+* @param str $str_column クエリの列名
+* @param array $array カテゴリ・使用ソフトなどの配列
+* @return $str_where where句
+*/
+function array_to_str_where($str_column, $array)
+{
+  $str_where = '';
+  
+  // 引数$arrayが空なら動作させない
+  if(count($array) > 0) {
+    
+    $i = 1;
+    foreach($array as $key => $array_material) {
+      
+      // 2個目以降なら or を追加
+      if ($i > 1) {
+        $str_where = $str_where . ' or ';
+      }
+      
+      $str_where = $str_where . '('.
+        $str_column .' like \'%,'. $array_material .',%\''  //「,●,」を検索
+        .' or '. $str_column .' like \''. $array_material .',%\''  //「●,」を検索
+        .' or '. $str_column .' like \'%,'. $array_material .'\''  //「,●」を検索
+        .' or '. $str_column .' = ' . '\''. $array_material .'\''  //「●」を検索
+        .')';
+      $i ++;
+    }
+  }
+  
+  return $str_where;
+}
+
+
+/**
 * 【作品ステータス】
 * 作品ステータス(int)を文字列で返す
 *
@@ -1193,6 +1231,7 @@ function product_status_int_to_str($int)
 }
 
 /**
+* 【商品・作品 詳細画面】
 * DBから取得した値が空であれば未登録メッセージを返す。
 *
 * @param str $str DBに登録された文字列

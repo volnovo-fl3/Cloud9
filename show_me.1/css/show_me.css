@@ -1,0 +1,556 @@
+/* -----------------------------------
+CodeIncubate最終課題
+Show me! スタイルシート
+Create 2017.08.29 volnovo
+----------------------------------- */
+
+/*--- googleのwebフォント ---*/
+.wf-notosansjapanese {
+  font-family: "Noto Sans Japanese";
+}
+
+button, input, select, textarea {
+  /* 参考 https://developer.mozilla.org/ja/docs/Learn/HTML/Forms/Styling_HTML_forms#Fonts_and_text */
+  font-family: "Noto Sans Japanese";
+}
+
+a {
+  text-decoration: none;
+  color: #494949;
+}
+a:visited {
+  color: #494949;
+}
+a:hover {
+  border-bottom: 1px solid #494949;
+}
+
+main {
+  min-height: 600px;
+  padding: 20px 0px;
+}
+
+h1 {
+  background-color: #F8BA00;
+  border-radius: 20px;
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+}
+
+.must {
+  color: red;
+  font-size: 12px;
+  margin: 0px 5px;
+}
+.tips {
+  color: #494949;
+  font-size: 12px;
+  margin: 0px 5px;
+}
+
+
+/*--- 表示幅(コンテナ要素を使用) ---*/
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+.sub_container {
+  width: 85%;
+  margin: 0px auto;
+}
+
+.add_row {
+  margin-top: 10px;
+}
+.add_colmun_right {
+  margin-left: 10px;
+}
+.padding_top_10 {
+  padding-top: 10px;
+}
+.padding_side_10 {
+  padding: 0px 10px;
+}
+
+
+/* -----------------------------------
+汎用
+----------------------------------- */
+.Background_Color_default {
+  background-color: #F8BA00;
+}
+.Background_Color_white {
+  background-color: white;
+}
+.Text_Color_red {
+  color: red;
+}
+
+.display_block {
+  display: block;
+}
+.block_center_width {
+  margin-left: auto;
+  margin-right: auto;
+}
+.block_center_height {
+  display: flex;
+	align-items: center;
+}
+.inline_center_width {
+  text-align: center
+}
+.inline_right_width {
+  text-align: right;
+}
+
+.flexbox {
+  display: flex;
+}
+.flex_1 {
+  flex: 1;
+}
+.flex_2 {
+  flex: 2;
+}
+.flex_3 {
+  flex: 3;
+}
+.flex_4 {
+  flex: 4;
+}
+
+.image_size {
+  width:100%;
+}
+.image_panel_200 {
+  width: 200px;
+  height: 200px;
+  position:relative;
+}
+.image_panel_500 {
+  width: 500px;
+  height: 500px;
+  position:relative;
+}
+.image_size_to_panel{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%
+}
+.image_size_to_panel_radius{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.position_set {
+  /* 子要素のポジションをセンタリング(特に縦の)したいときに使う */
+  position:relative;
+}
+
+.message_box {
+  font-size: 12px;
+  background-color:#ffffdb;
+  border: 2px solid #F8BA00;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.error_message_box {
+  font-size: 12px;
+  background-color: #E2B2C0;
+  border: 2px solid #A3003A;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.error_message_box ul{
+  padding-left: 20px;
+}
+.error_message_box li:not(:last-child) {
+  /* http://desire-designer.boo.jp/wp/?p=167 を参考にしました。*/
+  margin-bottom:0.5em;
+}
+
+.flex_right_center_height {
+  display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+
+/*-------------------------
+ヘッダー
+-------------------------*/
+header {
+  margin: 0px;
+}
+header .contents_line {
+  border-bottom: solid 1px #dcdcdc;
+  padding: 10px 0px;
+}
+header .logo02_image_size {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto 0px;
+  width:400px;
+}
+header .user_name_image {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  margin: auto 0px;
+}
+header .user_img{
+  height: 85px;
+  width: 85px;
+  margin-right: 8px;
+  position:relative;
+}
+header .logout{
+  margin-top: 10px;
+  font-size: 11px;
+}
+.flexbox_header {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.headerlist {
+  width: 190px;
+  text-align: center;
+  border-right: 1px solid #dcdcdc;
+}
+.headerlist:last-child{
+  border-right: 0;
+}
+
+
+
+/*-------------------------
+フッター
+-------------------------*/
+footer {
+    padding: 10px 0px;
+    border-top: solid 1px #dcdcdc;
+    text-align: center;
+    font-size: 12px;
+}
+.flexbox_footer {
+    display: flex;
+    justify-content: center;
+    /* ↑ 参考にしました。 http://www.acky.info/tips/css/00011.html(display: flex; を使うリストの中央寄せ) */
+    list-style-type: none;
+    padding: 0px 0px 10px 0px;
+}
+.footerlist {
+    width: 200px;
+    text-align: center;
+    color: #494949;
+    border-right: 1px solid #494949;
+}
+.footerlist:last-child{
+    border-right: 0;
+}
+footer p {
+    color: #494949;
+}
+
+
+
+/* ----------------------------------
+ログイン画面用
+----------------------------------*/
+#login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#login .light_image_size {
+  display: block;
+  /*width:200px;*/
+}
+#login .sub_title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight:bold;
+}
+#login .logo01_image_size {
+  display: block;
+  width:400px;
+}
+#login .login_form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+#login .login_form_input {
+  font-size: 14px;
+  margin: 7px auto;
+  width: 90%;
+}
+#login .login_form_input p{
+  display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+
+
+/* ----------------------------------
+メインページ用
+----------------------------------*/
+.user_profiles_panel_back {
+  border: 1px solid #bfbfbf;
+  background-color: #dfdfdf;
+}
+.user_profiles_panel {
+  border: 1px solid #bfbfbf;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+.user_profiles_panel p{
+  margin-bottom: 5px; 
+  line-height: 1.5em;
+  color: #494949;
+}
+.user_profiles_panel h2{
+  font-size: 20px;
+}
+.user_profiles_panel h3{
+  margin-top: 10px;
+  padding-bottom: 3px;
+  color: #494949;
+  border-bottom: 1px dashed #494949;
+}
+.user_profiles_panel .name_list{
+  padding-left: 15px;
+  font-size: 12px;
+}
+
+
+
+/* ----------------------------------
+ユーザー情報確認画面用
+----------------------------------*/
+.user_profiles_image {
+  max-width:300px;
+  max-height:300px;
+  border-radius: 5px;
+}
+
+
+
+/* ----------------------------------
+ユーザー・商品・作品の詳細確認用
+----------------------------------*/
+.details {
+  width: 50%;
+  margin: 0px auto;
+  color: #494949;
+}
+.details h2 {
+  font-size: 20px;
+  margin-top: 15px;
+  padding-bottom: 3px;
+  color: #494949;
+  border-bottom: 1px dashed #494949;
+}
+.details p {
+  padding-left: 20px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 1.5em;
+}
+.details .stock {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* ----------------------------------
+ユーザー・商品・作品の登録/更新用
+----------------------------------*/
+.insert_update_form {
+  width: 70%;
+  margin: 0px auto;
+}
+.insert_update_form h2 {
+  font-size: 20px;
+  margin-top: 15px;
+  padding-bottom: 3px;
+  color: #494949;
+  text-align: center
+}
+.insert_update_form .block {
+  margin: 20px auto;
+}
+.insert_update_form .subject{
+  display: flex;
+	justify-content: flex-end;
+	margin-right: 7px;
+}
+.insert_update_form .text_width{
+  width: 70%;
+}
+.insert_update_form textarea{
+  width: 70%;
+  min-height: 200px;
+}
+.insert_update_form .chkbox_list {
+  display: flex;
+  width: 85%;
+  line-height: 2em;
+
+  /* ↓↓ 参考にしました http://sutara79.hatenablog.com/entry/2016/09/27/112337 ↓↓ */
+  /* 横並びに表示する */
+  flex-direction: row;
+  /* 画面幅に収まらない場合は折り返す */
+  flex-wrap: wrap;        
+}
+.insert_update_form .chkbox {
+  margin-right: 15px;
+}
+
+
+/* ----------------------------------
+商品表示用のパネル01(横長)
+----------------------------------*/
+.item_panel01 {
+  display: flex;
+  margin-bottom: 10px;
+  min-height: 200px;
+  color: #494949;
+}
+.item_panel01 .item_img{
+  height: 200px;
+  width: 200px;
+  margin: 5px;
+  position:relative;
+}
+.item_panel01 .item_info{
+  width: 85%;
+  margin: 5px;
+}
+.item_panel01 .item_title{
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 1px dashed #494949;
+}
+.item_panel01 .seller_name{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.item_panel01 .price{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 24px;
+}
+.item_button_parent {
+  width: 15%;
+  position:relative;
+}
+.item_button {
+  /*background-color: white*/;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: 90px 0px;
+  width: 100%;
+}
+.item_button02 {
+  /*background-color: white*/;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: 70px 0px;
+  width: 100%;
+}
+.item_amont {
+  width: 40px;
+}
+
+
+/* ----------------------------------
+商品表示用のパネル02(縦パネル)
+----------------------------------*/
+.item_plate{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;        
+
+}
+
+.item_panel02 {
+  height: 500px;
+  width: 350px;
+  margin-right: 20px;
+  color: #494949;
+}
+.item_panel02 .item_img{
+  height: 335px;
+  width: 335px;
+  position:relative;
+  margin: 0px auto;
+  padding-top: 10px;
+}
+.item_panel02 .item_info{
+  width: 95%;
+  max-height:100px;
+  margin: 5px;
+  overflow: hidden;
+}
+.item_panel02 .item_title{
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 1px dashed #494949;
+}
+.item_panel02 .seller_name{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.item_panel02 .price{
+  padding-left:15px;
+  margin-top: 5px;
+  font-size: 24px;
+}
+
+
+/* ----------------------------------
+プロダクト確認画面用
+----------------------------------*/
+.product_details_image {
+  max-width:600px;
+  max-height:600px;
+  border-radius: 10px;
+}

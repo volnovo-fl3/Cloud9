@@ -1,0 +1,209 @@
+-- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
+--
+-- Host: 0.0.0.0    Database: show_me
+-- ------------------------------------------------------
+-- Server version	5.5.54-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `carts`
+--
+
+DROP TABLE IF EXISTS `carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `carts` (
+  `cart_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'カートID',
+  `buyer_user_id` int(11) NOT NULL COMMENT '購入者のユーザID',
+  `item_id` int(11) NOT NULL COMMENT '商品ID',
+  `amount` int(11) NOT NULL COMMENT '購入予定商品数',
+  `created_datetime` datetime NOT NULL COMMENT '登録日時',
+  `updated_datetime` datetime NOT NULL COMMENT '更新日時',
+  `bought_datetime` datetime DEFAULT NULL COMMENT '購入日時',
+  `deleted_datetime` datetime DEFAULT NULL COMMENT '削除日時',
+  PRIMARY KEY (`cart_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 COMMENT='カート';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carts`
+--
+
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (1,2,1,1,'2017-08-26 00:48:34','2017-08-27 16:34:36','2017-08-27 16:34:53',NULL),(2,2,2,2,'2017-08-26 00:49:39','2017-08-27 16:34:45','2017-08-27 16:34:53',NULL),(3,6,1,1,'2017-08-27 18:31:29','2017-08-27 18:31:29','2017-08-27 18:32:00',NULL),(4,2,5,1,'2017-08-27 19:17:34','2017-08-27 19:17:34',NULL,'2017-08-27 19:17:55'),(5,6,5,1,'2017-08-27 19:28:14','2017-08-27 19:28:14','2017-08-27 19:28:42',NULL),(6,6,1,1,'2017-08-27 19:48:39','2017-08-27 19:48:39',NULL,NULL),(7,2,4,1,'2017-08-27 21:40:40','2017-08-27 21:40:40','2017-08-27 21:41:06',NULL),(8,2,4,1,'2017-08-27 21:41:58','2017-08-27 21:41:58','2017-08-27 21:42:18',NULL),(9,2,4,1,'2017-08-27 21:43:06','2017-08-27 21:43:06','2017-08-27 21:43:47',NULL),(10,2,4,1,'2017-08-27 21:45:45','2017-08-27 21:45:45','2017-08-27 21:46:02',NULL),(11,1,1,1,'2017-08-30 08:51:37','2017-08-30 10:49:20',NULL,'2017-08-30 10:50:40'),(12,1,2,1,'2017-08-30 11:02:42','2017-08-30 11:25:25','2017-08-30 11:25:36',NULL),(13,1,6,1,'2017-08-30 11:31:49','2017-08-30 11:31:49','2017-08-30 11:43:15',NULL),(14,1,1,1,'2017-08-30 11:47:17','2017-08-30 11:47:17',NULL,'2017-08-30 11:47:22'),(15,1,1,1,'2017-08-30 11:47:37','2017-08-30 11:47:37','2017-08-30 11:47:45',NULL),(16,1,1,1,'2017-08-30 11:48:05','2017-08-30 11:48:05','2017-08-30 11:48:12',NULL),(17,1,1,1,'2017-08-30 11:49:27','2017-08-30 11:49:27','2017-08-30 11:49:40',NULL),(18,7,12,1,'2017-08-30 17:38:30','2017-08-30 17:38:30','2017-08-30 17:39:33',NULL),(19,7,11,1,'2017-08-30 17:38:43','2017-08-30 17:38:43','2017-08-30 17:39:33',NULL),(20,7,13,1,'2017-08-30 17:38:59','2017-08-30 17:38:59','2017-08-30 17:39:33',NULL),(21,15,8,1,'2017-08-30 19:15:54','2017-08-30 19:15:54','2017-08-30 19:16:16',NULL),(22,15,9,1,'2017-08-30 19:16:06','2017-08-30 19:16:06','2017-08-30 19:16:16',NULL),(23,10,15,1,'2017-09-02 01:08:14','2017-09-02 01:08:14','2017-09-02 01:08:38',NULL);
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories_mastar`
+--
+
+DROP TABLE IF EXISTS `categories_mastar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories_mastar` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'カテゴリID',
+  `category_name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'カテゴリ名',
+  `category_color` varchar(10) CHARACTER SET utf8 NOT NULL COMMENT '表示するパネルの色',
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COMMENT='カテゴリマスタ';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories_mastar`
+--
+
+LOCK TABLES `categories_mastar` WRITE;
+/*!40000 ALTER TABLE `categories_mastar` DISABLE KEYS */;
+INSERT INTO `categories_mastar` VALUES (1,'空間演出','#ffe0e0'),(2,'雑誌・広告制作','#ffe0ef'),(3,'ＤＴＰ・ＣＡＤ','#ffe0ff'),(4,'Web制作','#efe0ff'),(5,'イラスト・グラフィック','#e0e0ff'),(6,'映像制作','#e0efff'),(7,'音楽制作','#e0ffff'),(8,'ゲーム制作','#e0ffef'),(9,'その他','#e0ffe0');
+/*!40000 ALTER TABLE `categories_mastar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `items` (
+  `item_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品ID',
+  `item_name` varchar(100) CHARACTER SET utf8 NOT NULL COMMENT '商品名',
+  `price` int(11) NOT NULL COMMENT '価格',
+  `item_introduction` varchar(2000) CHARACTER SET utf8 DEFAULT NULL COMMENT 'varchar',
+  `item_introduction_detail` varchar(2000) CHARACTER SET utf8 DEFAULT NULL COMMENT 'varchar',
+  `item_img` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '商品画像',
+  `item_status` int(11) NOT NULL DEFAULT '1' COMMENT '公開フラグ(0:非公開 1:公開)',
+  `stock` int(11) NOT NULL COMMENT '在庫数',
+  `seller_user_id` int(11) NOT NULL COMMENT '出品者のユーザーID',
+  `created_datetime` datetime NOT NULL COMMENT '登録日時',
+  `updated_datetime` datetime DEFAULT NULL COMMENT '更新日時',
+  `deleted_datetime` datetime DEFAULT NULL COMMENT '削除フラグ',
+  `main_category` int(11) NOT NULL COMMENT 'メインカテゴリ',
+  `categories` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'サブカテゴリ',
+  `skills` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '使用ソフト',
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COMMENT='商品情報';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `items`
+--
+
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES (1,'テスト商品001',100,'','testtest','',0,35,1,'2017-08-25 21:43:00','2017-08-30 11:49:40','2017-08-30 15:11:34',8,'',''),(2,'テスト商品002',20,'tset説明','test詳細説明','',1,17,2,'2017-08-25 22:38:55','2017-08-30 11:25:36','2017-08-30 15:13:25',1,'1,5','6,9,12,13,14'),(3,'テスト商品003',6000,'test003','削除テスト用','c654d9efcf9b50150daa228c98f88e9a36bbe67d.jpg',7,1,2,'2017-08-27 17:50:22','2017-08-27 17:50:22','2017-08-27 18:02:27',1,'5,6,7','18,21,22'),(4,'a<br>あ<br>㈱',30,'a<br>あ<br>㈱','a<br>あ<br>㈱a<br>あ<br>㈱a<br>あ<br>㈱','',1,1,2,'2017-08-27 18:03:46','2017-08-27 21:46:02','2017-08-30 15:13:21',1,'',''),(5,'test',0,'testです。','test test test','fd73a3cd2face39add7ea789dff73dc5c64d1685.jpeg',1,0,6,'2017-08-27 18:52:52','2017-08-27 19:28:42','2017-08-30 15:12:47',1,'1','6'),(6,'<--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字-->',5000,'<--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字-->\r\n<--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字-->\r\n<--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字--><--10文字-->','<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n<--10文字-->\r\n','cd15faf25dd153832bd1c85aad6c60e2ce1d4d3f.jpg',1,19,1,'2017-08-30 09:18:38','2017-08-30 11:43:15','2017-08-30 15:11:42',5,'2,4,5,9','12,16,17'),(7,'【先着5名】モデルハウス設計',4000,'モデルハウスの設計図を作成してください。<br>\r\n<br>\r\n使用ソフトは指定いたしません。<br>\r\n内容についてもお任せしますが、提出の際にはどのようなケースを想定したか<br>\r\nWordもしくはテキストファイルを添付してください。','【具体的な情報】<br>\r\n・東京都調布市<br>\r\n・京王線、急行停車駅から徒歩15分<br>\r\n・土地面積 109.25㎡～118.28㎡<br>\r\n<br>\r\nその他、具体的な情報をお求めの方は<br>\r\n株式会社ガガーリン工務店<br>\r\n担当：北島<br>\r\nまでお問い合わせください。','7f28b0252cd69fcd9a105d50e84a94a9595cdc36.png',0,5,8,'2017-08-30 15:08:51','2017-08-30 15:20:43',NULL,1,'1,9','2,3,4,5,6'),(8,'【素材指定あり】楽曲アレンジ',2000,'DJブース「Techno-Classic」の拡大に向けてスタッフを募集します。\r\n指定の音源を課題曲とし、アレンジしてください。\r\n使用ソフトは問いません。\r\n\r\n尚、本課題をそのまま一次選考としますので\r\n奮ってご応募ください。','課題曲はこちら\r\nhttps://www.youtube.com/watch?v=S8i_hLefUA0\r\n\r\n課題曲以外に音源を使用する場合\r\n提出時にお知らせください。\r\n\r\n------------------------------------------------\r\nDJブース「Techno-Classic」\r\n香川県高松市〇〇-......','345605557f2bb5f91862d5162e7a04cfd06782dc.jpg',1,9,9,'2017-08-30 15:34:49','2017-08-30 19:16:16',NULL,7,'7','22,23,24,25,26,27'),(9,'依頼！！至急！！漫画家アシスタント',0,'Illustratorを使える方、急募！\r\n\r\nべた塗りしてくれる方を募集していますヾ(｡>﹏<｡)ﾉ\r\n関東にお住まいの方に限らせていただきます。。','当方からの依頼ですので 0 円出品とさせて頂きますヾ(｡>﹏<｡)ﾉ\r\n','22225ebcdaedcf6cb702261c80209dea8b739abf.png',1,1,10,'2017-08-30 15:44:41','2017-08-30 19:16:16',NULL,5,'5','16,17'),(10,'ニュース映像制作',6000,'あなたが最も衝撃を受けた出来事について\r\nオリジナルの編集でニュースにしなさい。','但し、使用可能な素材は\r\n\r\n・本人によって撮影、録音したもの\r\n・いらすとや（http://www.irasutoya.com/）のフリー素材\r\n\r\nに限る。','970ea9a9b82a68537eae14d54b03fcfec32dce9a.png',0,20,11,'2017-08-30 15:53:48','2017-08-30 15:55:23',NULL,6,'6','16,17,18,19,20,21'),(11,'料理紹介ページ制作',5000,'HTML / CSS を使用して\r\n料理紹介ページを作成してください。\r\n素材は提供いたします。','【要件】\r\n\r\n以下の要件を満たすように作成してください。\r\n\r\n全体\r\n1. コンテンツの横幅は960pxとする\r\n2. ブラウザの横幅を変更してもコンテンツが中央にある\r\n3. ブラウザの横幅を960px以下に狭めてもレイアウトが崩れない\r\n4. ヘッダーとフッター部分は背景色に白を指定\r\n5. ナビゲーションとメインコンテンツの背景には外枠をつけない。ナビゲーションの区切り 線は点線とする\r\n6. ナビゲーションとメインコンテンツのタイトルは角丸で背景色を設定し、アイコンとテキストの高さを揃え、上下に等分の余白を設ける\r\n7. リセットCSSを導入し、ブラウザのデフォルトのCSSをリセットする\r\n\r\nロゴとディスクリプション\r\n1. ロゴの位置を左端上部に固定する\r\n2. ロゴの下の説明文の位置は、ロゴと同じく左端に揃えて固定する\r\n\r\n検索フォーム\r\n1. 検索フォームの位置は右端上部に固定する\r\n2. 検索ボックス内にプレースホルダーを記述する\r\n\r\n中央のヘッダーメニュー\r\n1. メニューそれぞれの横幅は等倍とする\r\n2. メニュー内の文字の周囲に上下、左右それぞれ等幅の余白がある\r\n3. テキスト同士の間のみを実線で区切る\r\n4. メニューブロックをそれぞれリンクにする\r\n5. ヘッダーに下線をつけ、下線の幅はブラウザ幅一杯とする\r\n\r\n左のナビゲーション\r\n1. ナビゲーションを上下に2つ並べる\r\n2. アイコン及びメニューテキストの高さを揃える\r\n3. ナビゲーション間及び上下に適切な余白を設ける\r\n4. メニューブロックをそれぞれリンクにする\r\n\r\n中央のメインコンテンツ\r\n1. コンテンツを上下に3つ並べる\r\n2. コンテンツ間及び上下に適切な余白を設ける\r\n\r\n上段のコンテンツ\r\n1. 画像を等間隔に配置する\r\n2. 画像の下の説明文は改行されない。また画像の横幅から大幅にはみ出さない\r\n\r\n中段のコンテンツ\r\n1. 右側の説明文が画像の下に回りこまない\r\n2. 画像と説明文の間に余白を設ける\r\n3. 説明文内を段落化し、先頭文字は一文字分下げる\r\n4. 矢印アイコン及び\"続きを読む\"は、最終行の右端に配置する\r\n\r\n下段のコンテンツ\r\n1. 段落に見出しをつけ、色を変える\r\n\r\n右側の広告\r\n1. 広告メニューを上下に2つ並べる\r\n2. 広告メニュー間及び上下に適切な余白を設ける\r\n3. ブロック全体がリンクになっている\r\n\r\nフッターナビゲーションとコピーライト\r\n1. テキスト同士の間を実線で区切る\r\n2. テキストをそれぞれリンクにする\r\n3. コピーライトを記述する\r\n4. フッターに上線をつけ、上線の幅はブラウザの幅一杯とする','b23cd1aa5ff414b5b95e70e0e59e680e265d2b2c.jpg',1,29,12,'2017-08-30 16:04:17','2017-08-30 17:39:33',NULL,4,'4,9','14,15'),(12,'プロフィールムービー作成',5000,'一生に一度の、素敵な思い出を...。\r\nブライダル業界のスタートアップ企業で働いてみませんか？？\r\n\r\n私たち BridalWedding では\r\n新たな門出を迎えるお二人を\r\n映像・写真でバックアップする仲間を募集しています。\r\n\r\n技術職のため、まずはこちらの課題をお試しください。\r\n使用ソフトについて、推奨は以下のものですが\r\n指定は致しません。\r\n\r\n【使用ソフト(推奨)】\r\n・AfterEffects\r\n・EDIUS','素材はこちらを、取り扱いに十分に注意した上で使用してください。\r\nhttps://drive.google.com/open?id=0B0WqmbXDMZlqaEZCcHJFVzJsc2s\r\n\r\n\r\nご不明点がございましたら\r\nお気軽にお問い合わせください！\r\n\r\n担当：西川みき\r\n\r\n゜+.――゜+.――゜+.――゜+.――゜+.――゜+.――゜+. \r\n\r\n　　　　　魅力ある映像・写真には力がある\r\n\r\n　　　　　　 - BridalWedding Co., Ltd. -\r\n\r\n　素敵なシーンでこだわりの写真を残す前撮りから\r\n\r\n　挙式当日の演出アイテム・写真ビデオ撮影まで\r\n\r\n　　　　トータルコーディネートでご提案します\r\n\r\n゜+.――゜+.――゜+.――゜+.――゜+.――゜+.――゜+.','62581f2422fadf4e3fa206859e4ff133f34b6c0a.jpg',0,29,13,'2017-08-30 16:23:07','2017-08-30 17:39:33',NULL,6,'5,6','16,17,18,19,20,21'),(13,'【完成記念！】マニュアル作成',500,'当サイト、Show me! の公開に向けて\r\nご来賓に伝わりやすい資料を作成しなさい。','【当日のスケジュール】\r\n\r\n1. 自己紹介\r\n　→　ご自身の紹介なので顔出しでの発表\r\n（名前・年齢・現職となぜエンジニアになりたいと考えているか）\r\n\r\n2. ECサイトのコンセプト（どういうものを作ったか）の紹介\r\n　→　成果物を画面共有してTOPページを見せながら発表\r\n\r\n3. どこが難しかったか、どう乗り越えたか、拘ったポイント\r\n→　成果物を画面共有して該当ページを見せながら発表','34dd6952abfb9612a3623a99728b702889606d14.png',1,0,1,'2017-08-30 16:28:27','2017-08-30 17:39:33',NULL,2,'2,5,9','16,17'),(14,'パンフレット作成',500,'CodeIncubateのパンフレットを作成してください。','使用ソフトは問いません。','85c7c05534996e5f16681e1914f7b982f2f89e37.png',1,8,15,'2017-08-30 19:14:58','2017-08-30 19:14:58',NULL,2,'2,4,5','16,17,18'),(15,'【先着10名】ロゴ作成',500,'株式会社メイクハピネスでは、都内で20店舗のカフェを運営しています。\r\n今回「足湯 + カフェ」をコンセプトにした\r\n新規事業のデザイナーを Show me! からも募集致します。\r\n課題として、カフェのロゴを作成してください。','店名：足湯カフェ（仮称）\r\n足湯につかりながらゆったりとした時間を過ごして頂く、都会のオアシスを目指しています。\r\n都内でチェーン店運営を予定しています。\r\n素材・使用ソフトは指定致しません。\r\n\r\n------------------------------------------------------------\r\nご不明な点がございましたらお気軽にお問い合わせください。\r\n\r\n株式会社メイクハピネス\r\nカフェ運営事業部 マネージャー\r\n北川 優紀\r\n----------------------------------------------------------','3680f1c91f9ec7292e5fdb5b454f3a7ca35406e7.jpg',1,9,16,'2017-09-02 00:59:25','2017-09-02 01:08:38',NULL,5,'5','16,17');
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '作品ID',
+  `cart_id` int(11) NOT NULL COMMENT '購入時のカートID',
+  `product_link` varchar(200) CHARACTER SET utf8 DEFAULT NULL COMMENT '制作物へのリンク',
+  `product_img` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '制作物のサムネイル画像',
+  `product_comment` varchar(2000) CHARACTER SET utf8 DEFAULT NULL COMMENT '制作者コメント',
+  `product_status` int(11) NOT NULL DEFAULT '0' COMMENT '公開フラグ / 0:未完成 1:完成(公開) 2:完成(非公開)',
+  `created_datetime` datetime NOT NULL COMMENT '登録日時',
+  `updated_datetime` datetime NOT NULL COMMENT '更新日時',
+  `deleted_datetime` datetime DEFAULT NULL COMMENT '削除フラグ',
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 COMMENT='制作リスト';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,1,NULL,NULL,NULL,0,'2017-08-27 16:34:53','2017-08-27 16:34:53',NULL),(2,2,NULL,NULL,NULL,0,'2017-08-27 16:34:53','2017-08-27 16:34:53',NULL),(3,2,NULL,NULL,NULL,0,'2017-08-27 16:34:53','2017-08-27 16:34:53',NULL),(4,3,NULL,NULL,NULL,0,'2017-08-27 18:32:00','2017-08-27 18:32:00',NULL),(5,5,NULL,NULL,NULL,0,'2017-08-27 19:28:42','2017-08-27 19:28:42',NULL),(6,7,NULL,NULL,NULL,0,'2017-08-27 21:41:06','2017-08-27 21:41:06',NULL),(7,8,NULL,NULL,NULL,0,'2017-08-27 21:42:18','2017-08-27 21:42:18',NULL),(8,9,'https://codeincubate-tanakanoboru.c9users.io/show_me/mypage.php',NULL,'てｓってｓｔ',1,'2017-08-27 21:43:47','2017-08-28 21:18:04',NULL),(9,10,NULL,NULL,NULL,0,'2017-08-27 21:46:02','2017-08-27 21:46:02','2017-08-28 19:24:47'),(10,12,NULL,NULL,NULL,0,'2017-08-30 11:25:36','2017-08-30 11:25:36',NULL),(11,13,'https://codeincubate-tanakanoboru.c9users.io/show_me/login.php','b5b1e9c81eba9664563641440ab9b98fce1cff0e.jpg','testtest<br>\r\nてｓつてｓつ',1,'2017-08-30 11:43:15','2017-08-30 14:01:42',NULL),(12,15,NULL,NULL,NULL,0,'2017-08-30 11:47:45','2017-08-30 11:47:45',NULL),(13,16,NULL,NULL,NULL,0,'2017-08-30 11:48:12','2017-08-30 11:48:12',NULL),(14,17,NULL,NULL,NULL,0,'2017-08-30 11:49:40','2017-08-30 11:49:40',NULL),(15,18,'https://drive.google.com/open?id=0B0WqmbXDMZlqTWJUOFBuRkoyMTQ','sample.gif','ご指定いただいた素材からは\r\n暖かくも、どこかまだお互いのことをよく知らない不安さも感じ取れました。\r\n\r\nですがコメントで\r\n婦 → 郎 の第一印象が「話しかけ辛かった」のが\r\n「意外といい奴」と変化していると書かれていましたので\r\n徐々に変化する機微を表してみました。\r\n\r\nドライブの車の中でプロポーズされたとのことでしたので\r\nBGMは、くるりの「魔法のじゅうたん」を使用しました。',1,'2017-08-30 17:39:33','2017-08-30 17:58:30',NULL),(16,19,'https://codeincubate-tanakanoboru.c9users.io/html/11/cookcamp.html','b834bf079db178a2f106fc4c7d669613f0545242.jpg','CodeIncubateでの、初めての添削課題でした。\r\n初めて扱うCSSの仕様に慣れず\r\n特にblock要素とinline要素の違いや\r\n各オブジェクトの中央配置（特に縦の！）が\r\n悩んだポイントでした。',1,'2017-08-30 17:39:33','2017-08-30 18:16:46',NULL),(17,20,NULL,NULL,NULL,0,'2017-08-30 17:39:33','2017-08-30 17:39:33',NULL),(18,21,NULL,NULL,NULL,0,'2017-08-30 19:16:16','2017-08-30 19:16:16',NULL),(19,22,NULL,NULL,NULL,0,'2017-08-30 19:16:16','2017-08-30 19:16:16',NULL),(20,23,'','c1ae1b2886ea86ac6bf08fbd72a3b5f230d33e0c.png','\"足\" 湯カフェ、そして \"都会のオアシス\" というサービスで\r\nお客様に \"幸福感\" を持って頂く。\r\n\r\nそんなメイクハピネス様の掲げるテーマに\r\n大阪通天閣の福の神である、ビリケン様がぴったりなのではないかな？\r\nと思いました。\r\n\r\n勝手ながら、店名が未定とのことでしたので\r\n制作物には仮名として \"BILLIKEN\" と名付けました！',1,'2017-09-02 01:08:38','2017-09-02 01:17:18',NULL);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `skills_mastar`
+--
+
+DROP TABLE IF EXISTS `skills_mastar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `skills_mastar` (
+  `skill_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'スキルID',
+  `skill_name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT 'スキル名',
+  PRIMARY KEY (`skill_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 COMMENT='スキル（使用ソフト）マスタ';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `skills_mastar`
+--
+
+LOCK TABLES `skills_mastar` WRITE;
+/*!40000 ALTER TABLE `skills_mastar` DISABLE KEYS */;
+INSERT INTO `skills_mastar` VALUES (1,'VectorWorks'),(2,'AutoCAD Design Suite'),(3,'Shade'),(4,'3dsMAX'),(5,'Jw_cad'),(6,'auto cad'),(7,'Maya'),(8,'Softimage'),(9,'Cinema 4D'),(10,'LightWave'),(11,'modo'),(12,'InDesign'),(13,'QuarkXPress'),(14,'Coda2'),(15,'Dreamweaver'),(16,'Illustrator'),(17,'Photoshop'),(18,'AfterEffects'),(19,'Premiere'),(20,'FinalCut'),(21,'Edius'),(22,'Logic'),(23,'FL Studio'),(24,'SONAR'),(25,'Ableton Live'),(26,'Digital Perfomer'),(27,'ACID');
+/*!40000 ALTER TABLE `skills_mastar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ユーザーID',
+  `password` varchar(40) CHARACTER SET utf8 NOT NULL COMMENT 'パスワード',
+  `user_name` varchar(100) CHARACTER SET utf8 NOT NULL COMMENT 'ユーザー名',
+  `user_affiliation` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '所属企業・団体',
+  `user_self_introduction` varchar(2000) CHARACTER SET utf8 DEFAULT NULL COMMENT '自己紹介文',
+  `user_img` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT 'プロフィール画像',
+  `is_admin` bit(1) NOT NULL DEFAULT b'0' COMMENT 'システム管理者フラグ',
+  `created_datetime` datetime NOT NULL COMMENT '登録日時',
+  `updated_datetime` datetime DEFAULT NULL COMMENT '登録内容更新日時',
+  `last_login_datetime` datetime NOT NULL COMMENT '最終ログイン日時',
+  `deleted_datetime` datetime DEFAULT NULL COMMENT '削除日時',
+  `categories` varchar(100) CHARACTER SET utf8 NOT NULL COMMENT '対応カテゴリ',
+  `skills` varchar(100) CHARACTER SET utf8 NOT NULL COMMENT '使用ソフト',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1 COMMENT='ユーザー情報';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'adminadmin','Admin','Show me! 運営部','管理者テストアカウントです。\r\n管理者テストアカウントです。\r\n管理者テストアカウントです。\r\n管理者テストアカウントです。\r\n管理者テストアカウントです。','4b79483198ca88c1692b4a963600cc1c6bb696ef.gif','','2017-08-23 01:24:12','2017-08-30 08:54:21','2017-08-30 08:54:21',NULL,'1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27'),(2,'111111','test001','','','','\0','2017-08-23 01:36:40','2017-08-27 17:36:53','2017-08-27 17:36:53',NULL,'2,9','1,27'),(3,'222222','test002','','','','\0','2017-08-23 01:40:55','2017-08-23 01:40:55','2017-08-23 01:40:55',NULL,'',''),(4,'333333','test003','','','','\0','2017-08-23 01:41:42','2017-08-23 01:41:42','2017-08-23 01:41:42',NULL,'',''),(5,'444444','test004','test','testtest','27057f8c220b8091cc9b6732f7fb8a36ca344471.png','\0','2017-08-23 13:39:47','2017-08-23 13:40:10','2017-08-23 13:40:10',NULL,'2,6,8','7,8,14,16'),(6,'testtest','test','testtest','あなたを失(な)くして 私の胸の小さな庭は\r\n荒れ果てたあなたの笑顔が 太陽でいつでも優しく 照らしてた\r\n泣いてばかりの 毎日をまるで空から 見守るように\r\n咲いた咲いた咲いた咲いた\r\n桜が咲いた\r\n一人で生きてく 私にとって\r\nこの世は少し 広すぎる\r\nあなたの隣が 私に ...','f039f2d9e79f419bc3b348c0e7febb5863aafa26.jpeg','\0','2017-08-27 18:30:43','2017-08-30 04:50:49','2017-08-30 04:50:49',NULL,'1,2,3,4,5,6,7,8,9','1,7,14,15,19'),(7,'tanaka','tanaka','','【映像制作】<br>\r\n・photoshop<br>\r\n・aftereffects<br>\r\n・EDIUS<br>\r\n<br>\r\n【システム開発】<br>\r\n・C#<br>\r\n・PHP<br>\r\n・HTML<br>\r\n・SQLServer<br>\r\n・mysql<br>\r\n<br>\r\nを扱えます。<br>\r\n','f14b2792594c6e68a0efbcf79fd702f7b2824965.gif','\0','2017-08-30 14:25:52','2017-08-30 14:28:08','2017-08-30 14:28:08',NULL,'4,5,6,9','16,17,18,19,21'),(8,'kitajima','北島 菜緒','株式会社ガガーリン工務店','【新戦力大募集！！】\r\n株式会社ガガーリン工務店では、これまでの常識に囚われず\r\n新たな形の住まい作りに挑戦しています！\r\n設計、建築に少しでも興味があるクリエイターの皆様！\r\n弊社の課題にぜひチャレンジしてくださいね！‹‹＼(´ω` )/››','60501670b46fd541f01ff1b0bc7f2a18a3520151.jpg','\0','2017-08-30 15:19:19','2017-08-30 15:19:19','2017-08-30 15:19:19',NULL,'1','1,2,3,4,5,16,17'),(9,'sugisugi','sUgi-P','Techno-Classic','香川でDJやってます。&lt;br&gt;<br>\r\nコラボ・DJバトルは遠方でも駆けつけるんで誘ってください。','9d1bd38e2c8f501377ede18fd575537a324e28f6.jpg','\0','2017-08-30 15:26:57','2017-08-30 15:27:22','2017-08-30 15:27:22',NULL,'','22,24,26,27'),(10,'moonbird','やま(ू•ᴗ•ू❁)ぽん','','フリーのイラストレーターです♡♡\r\n主にpixivで活動しています(*´﹀`*)','8883db37494b3e73814205e176a06d5cbd7bbc73.jpg','\0','2017-08-30 15:39:16','2017-08-30 15:39:16','2017-08-30 15:39:16',NULL,'5','16,17'),(11,'shimane','島根 祐司','有限会社フルテレビ','どうも、映像畑の島根です。\r\nCMやCATVをはじめ企業PVなどの制作をしています。','d76fdc85c770ef709b8f0294bd8a279d2807cbcd.jpg','\0','2017-08-30 15:49:24','2017-08-30 15:49:24','2017-08-30 15:49:24',NULL,'2,6','18,19,20,21'),(12,'codecode','codey','CodeCamp','CodeCamp課題配信用のアカウントです。','920d0a5787a9c24e79c2abfeaa8edf84c080ffae.jpg','\0','2017-08-30 15:58:24','2017-08-30 15:58:24','2017-08-30 15:58:24',NULL,'4','13,14,15'),(13,'nisikawa','西川みき','BridalWedding Co., Ltd.','゜+.――゜+.――゜+.――゜+.――゜+.――゜+.――゜+. \r\n\r\n　　　　　魅力ある映像・写真には力がある\r\n\r\n　　　　　　  - BridalWedding Co., Ltd. -\r\n\r\n　素敵なシーンでこだわりの写真を残す前撮りから\r\n\r\n　挙式当日の演出アイテム・写真ビデオ撮影まで\r\n\r\n　　　　トータルコーディネートでご提案します\r\n\r\n゜+.――゜+.――゜+.――゜+.――゜+.――゜+.――゜+. ','eb7ad09459dbfaac5719fb94da3fed7e3facec70.jpg','\0','2017-08-30 16:21:39','2017-08-30 16:21:39','2017-08-30 16:21:39',NULL,'4,5,6,9','14,15,16,17,18,19,20,21'),(14,'codecamp','codecamp','','','bb9732e9507acc91352f0b2b9abcc9083a523192.jpg','\0','2017-08-30 18:30:46','2017-08-30 18:31:24','2017-08-30 18:31:24',NULL,'1,2,3','1'),(15,'tanaka2','tanaka2','aaaaaaaa','田中です！','288a9dca17dbce6165ebf6731ba61ee9e5db174e.jpg','\0','2017-08-30 19:13:24','2017-08-30 19:13:24','2017-08-30 19:13:24',NULL,'4,5,6,9','16,17,18,19,20,21'),(16,'kitagawa','北川 優紀','株式会社メイクハピネス','株式会社メイクハピネスの北川です。\r\n都内でカフェを運営したい方を募集しています。','52ad15d55a4c7ffdf6a6a2c81d1a490a26769739.png','\0','2017-09-02 00:44:27','2017-09-02 00:44:27','2017-09-02 00:44:27',NULL,'','');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-09-03  9:52:08

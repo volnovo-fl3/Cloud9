@@ -104,7 +104,7 @@
           <h2>商品名</h2>
           <p><?php print str_is_regist($look_item[0]['item_name'])?></p>
           <h2>価格</h2>
-          <p><?php print str_is_regist($look_item[0]['price'])?></p>
+          <p>¥<?php print str_is_regist($look_item[0]['price'])?></p>
           <h2>商品紹介</h2>
           <p>
             <?php print nl2br(str_is_regist($look_item[0]['item_introduction']), false)?>
