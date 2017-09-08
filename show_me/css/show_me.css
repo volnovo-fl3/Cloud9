@@ -359,8 +359,6 @@ footer p {
 }
 
 
-
-
 /* ----------------------------------
 ユーザー情報確認画面用
 ----------------------------------*/
@@ -552,6 +550,49 @@ footer p {
   padding-left:15px;
   margin-top: 5px;
   font-size: 24px;
+}
+
+
+/* ----------------------------------
+アイテムリスト(汎用)
+----------------------------------*/
+.panel_board{
+  margin: 5px;
+}
+.panel_board h3{
+  padding-bottom: 3px;
+  color: #494949;
+  border-bottom: 1px dashed #494949;
+}
+.panel_board .link{
+  text-align: right;
+  font-size: 14px;
+}
+
+.panel_board .panel_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.panel_board .panel_list .item_panel{
+  width: 200px;
+  height: 250px;
+  padding: 10px;
+  margin: 5px;
+}
+.panel_board .panel_list .item_panel img{
+  display: block;
+  max-height: 190px;
+  width: 190px;
+  margin: 0px auto;
+  border-radius: 5px;
+}
+.panel_board .panel_list .item_panel p{
+  margin: 5px;
+  height: 50px;
+  overflow: hidden;
+  font-size: 14px;
+  text-align: center;
 }
 
 

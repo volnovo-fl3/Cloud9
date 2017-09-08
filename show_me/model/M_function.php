@@ -946,7 +946,7 @@ function get_products_table_list($dbh, $where) {
     	left join users as productor on cart.buyer_user_id = productor.user_id
     $where
     ;";
-    
+
   // クエリ実行
   return get_as_array($dbh, $sql);
     
@@ -1201,6 +1201,31 @@ function array_to_str_where($str_column, $array)
   }
   
   return $str_where;
+}
+
+/**
+* 【マイページ / あなたにおすすめの商品】
+* 商品一覧ページでチェックボックスを入れた時と同じ形式の文字列にする
+* item_list.php?『checked_categories%5B%5D=3』 みたいに。
+*
+* @param str $str_colmun 列名
+* @param array $array 配列
+* @return url $str_url 返すURL
+*/
+function array_to_str_url($str_column, $array)
+{
+  $str_url = '';
+  
+  $i = 1;
+  foreach($array as $key => $materal){
+    if($i > 1){
+      $str_url = $str_url . '&';
+    }
+    $str_url = $str_url . $str_column . '%5B%5D=' . $materal;
+    $i++;
+  }
+  
+  return $str_url;
 }
 
 

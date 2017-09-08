@@ -171,7 +171,7 @@
                 <p class="block_center_height">自己紹介</p>
               </div>
               <div class="flex_3">
-                <textarea name="user_self_introduction"><?php print nl2br(htmlspecialchars($user_self_introduction, ENT_QUOTES, "UTF-8"), false)?></textarea>
+                <textarea name="user_self_introduction"><?php print $user_self_introduction?></textarea>
               </div>
             </div>
             <p class="tips inline_center_width">自己紹介は 2000文字以内 で入力してください</p>

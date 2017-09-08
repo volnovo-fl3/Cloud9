@@ -76,7 +76,7 @@
       
         <!-- 左側 -->
         <div class="flex_1">
-          <div class="add_row user_profiles_panel_back">
+          <div class="user_profiles_panel_back">
             <div class="user_profiles_panel">
               <div class="image_panel_200 block_center_width">
                 <img src="<?php print IMAGE_DIRECTORY . $user_img; ?>" class="image_size_to_panel_radius"></img>
@@ -97,7 +97,7 @@
               <h3>使用ソフト</h3>
               <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
 
-              <form method="post" enctype="multipart/form-data" action='user_profile.php'>
+              <form action='user_profile.php'>
                 <div class="add_row">
                   <input type="hidden" name="process_kind" value="to_user_profile">
                   <input type="hidden" name="target_user_id" value="<?php print $user_id?>">
@@ -110,7 +110,7 @@
         </div>
         
         <!-- 右側 -->
-        <div class="flex_3 add_colmun_right">
+        <div class="flex_3">
           <?php
             if((isset($carts_unpaid) === TRUE) && (count($carts_unpaid) > 0)){
           ?>
@@ -122,6 +122,69 @@
           <?php
             }
           ?>
+          
+          <div class="panel_board">
+            <h3>あなたの作品</h3>
+            
+            <?php
+              if(count($user_products) > 0){
+            ?>
+            <p class="link"><a href="product_list.php">→ 制作リストへ</a></p>
+            <div class="panel_list">
+            <?php
+                foreach($user_products as $key => $product){
+            ?>
+              <div class="item_panel" style="background-color:<?php print $product['category_color']?>">
+                <a href="product_details.php?target_product_id=<?php print $product['product_id']?>">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>"></img>
+                  <p><?php print $product['item_name']?></p>
+                </a>
+              </div>
+            <?php
+                }
+            ?>
+            </div>
+            <?php
+              } else {
+            ?>
+            <p>作品が登録されていません。</p>
+            <?php
+              }
+            ?>
+          </div>
+          
+          <div class="add_row panel_board">
+            <h3>あなたにおすすめの商品</h3>
+            
+            <?php
+              if(count($recommended_items) > 0){
+            ?>
+            <p class="link">
+              <a href="<?php print $url_recommended_items_list?>">→ もっと見る</a>
+            </p>
+            <div class="panel_list">
+            <?php
+                foreach($recommended_items as $key => $item){
+            ?>
+              <div class="item_panel" style="background-color:<?php print $item['category_color']?>">
+                <a href="product_details.php?target_product_id=<?php print $item['item_id']?>">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>"></img>
+                  <p><?php print $item['item_name']?></p>
+                </a>
+              </div>
+            <?php
+                }
+            ?>
+            </div>
+            <?php
+              } else {
+            ?>
+            <p>おすすめの商品を表示するために、対応カテゴリ・使用ソフトを登録してください。</p>
+            <?php
+              }
+            ?>
+          </div>
+          
         </div>
         
       </div>

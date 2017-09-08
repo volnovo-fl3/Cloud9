@@ -107,7 +107,7 @@
           <p><?php print str_is_regist($look_user[0]['user_affiliation'])?></p>
           <h2>自己紹介</h2>
           <p>
-            <?php print nl2br(htmlspecialchars(str_is_regist($look_user[0]['user_self_introduction']), ENT_QUOTES, "UTF-8"), false)?>
+            <?php print nl2br(str_is_regist($look_user[0]['user_self_introduction']), false)?>
           </p>
           
           <h2>対応カテゴリ</h2>

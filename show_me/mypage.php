@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=UTF-8');
 /*------------------------------------------
 マイページ
 ------------------------------------------*/
@@ -20,9 +21,16 @@ $categories_name_list = '';
 $skills_name_list = '';
 
 $carts_unpaid = [];
+$user_products = [];
 
+$selected_categories = [];
+$selected_skills = [];
+$recommended_items = [];
+$url_recommended_items_list = 'item_list.php';
+$url_recommended_items_list_material = '';
+
+$search_array = '';
 $search_where = '';
-
 $header_user_name = '';
 $header_user_img = '';
 //----------------------//
@@ -69,8 +77,51 @@ try {
       $categories_name_list = id_to_name($categories_master, $user[0]['categories'], 'category_id', 'category_name');
       $skills_name_list = id_to_name($skills_master, $user[0]['skills'], 'skill_id', 'skill_name');
       
-      // 検索条件のwhere文を作成し、検索
-      $items_list = get_items_table_list($dbh, $search_where);
+      // 値が入っていれば配列化
+      if(mb_strlen($user[0]['categories'], HTML_CHARACTER_SET) > 0) {
+        $selected_categories = explode(',', $user[0]['categories']);
+      }
+      if(mb_strlen($user[0]['skills'], HTML_CHARACTER_SET) > 0) {
+        $selected_skills = explode(',', $user[0]['skills']);
+      }
+      
+      //---------------------------------------------------------------------------------------------
+      // 制作したものリスト
+      $search_where = "where p.deleted_datetime is null and p.product_status <> 2 and productor.user_id = $user_id order by p.updated_datetime desc limit 4";
+      $user_products = get_products_table_list($dbh, $search_where);
+      
+      //---------------------------------------------------------------------------------------------
+      // あなたへのおすすめ(登録したカテゴリ・使用ソフトが含まれる商品を抽出)
+      $search_where = "where i.deleted_datetime is null and i.item_status <> 0";
+      
+      // カテゴリが選択されていれば
+      if(count($selected_categories) > 0) {
+        $search_array = $search_array . '(' . array_to_str_where('i.categories', $selected_categories) .')';
+        $url_recommended_items_list_material = array_to_str_url('checked_categories', $selected_categories);
+      }
+      
+      // 使用ソフトが選択されていれば
+      if(count($selected_skills) > 0) {
+        if (mb_strlen($search_array) > 0) {
+          $search_array = $search_array . ' or ';
+          $url_recommended_items_list_material = $url_recommended_items_list_material . '&';
+        }
+        $search_array = $search_array . '(' . array_to_str_where('i.skills', $selected_skills) .')';
+        $url_recommended_items_list_material = $url_recommended_items_list_material . array_to_str_url('checked_skills', $selected_skills);
+      }
+      
+      if (mb_strlen($search_array) > 0){
+        $search_where = $search_where . ' and (' . $search_array . ')';
+      }
+      
+      $search_where = $search_where . 'order by i.updated_datetime desc limit 4';
+      $recommended_items = get_items_table_list($dbh, $search_where);
+      
+      if (mb_strlen($url_recommended_items_list_material) > 0){
+        $url_recommended_items_list = $url_recommended_items_list . '?' . $url_recommended_items_list_material;
+      }
+      
+      //---------------------------------------------------------------------------------------------
       
     } catch (PDOException $e) {
         // 例外をスロー
