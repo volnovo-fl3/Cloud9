@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
     <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/show_me.css">
+    <link type="text/css" rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
   </head>
 
   <body class="wf-notosansjapanese Background_Color_default">
@@ -184,6 +187,150 @@
               }
             ?>
           </div>
+          
+          <div class="add_row panel_board">
+            <h3>あなたにおすすめの書籍</h3>
+            <div class="add_row">
+              <input
+                id="books_search_word"
+                type="text"
+                value="<?php
+                  $array = array_merge($categories_name_list, $skills_name_list);
+                  print $array[array_rand($array)];
+                ?>"/>
+              <input id="search" type="button" value="GoogleBooks 検索"/>
+              <p id="search_message">キーワードを入れ、検索してください。</p>
+            </div>
+            <div id="books_list" class="panel_list">
+            </div>
+          </div>
+          
+          
+          <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+          <!-- ▼ ▼ ▼ ▼ ▼ ▼  ここから javascript  ▼ ▼ ▼ ▼ ▼ ▼ -->
+          <script>
+            //-------------------------------------------------
+            // オートコンプリート
+            //-------------------------------------------------
+            //JSON.parseを使って配列を受け取る
+            var autocomplete = JSON.parse('<?php echo json_encode($array_for_autocomplete); ?>');
+            
+            $(document).ready(function() {
+             $("#books_search_word").autocomplete({
+              source:autocomplete,
+             })
+            });
+            
+            
+            //-------------------------------------------------
+            // GoogleBooks から検索して表示
+            //-------------------------------------------------
+            function search_books(){
+              var search_word = '';
+              search_word = document.getElementById("books_search_word").value;
+              
+              if(search_word.replace(/\s+/g, "").length > 0){
+                
+                // APIの呼び出し・取得データの表示
+                var url = "https://www.googleapis.com/books/v1/volumes";
+                
+                jQuery.getJSON(
+                  url,
+                  {
+                    q:search_word,
+                  },
+                  function(json) {
+                    if(json.items){
+                      
+                      document.getElementById("search_message").innerHTML = "";
+                      $("#search_message").append('<a href=https://www.google.co.jp/search?tbm=bks&q=' + encodeURIComponent(search_word) + '>GoogleBooksで『' + search_word + '』を検索</a>');
+                      document.getElementById("search_message").className = "link";
+                
+                      // 初期化！！
+                      document.getElementById("books_list").innerHTML = "";
+                      
+                      var books = 0;
+                      for(var i in json.items){
+                        
+                        if(books > 3){
+                          break;
+                        }
+                        
+                        // 日本出版で販売中のもののみ
+                        if(json.items[i].saleInfo !== undefined){
+                          
+                          if((json.items[i].volumeInfo.language !== undefined) && (json.items[i].saleInfo.saleability !== undefined)){
+                            if(json.items[i].volumeInfo.language === "ja"){
+                              
+                              $("#books_list").append('<div id="book_' + i + '" class="item_panel"></div>');
+                              
+                              // リンク
+                              if(json.items[i].volumeInfo.infoLink !== undefined){
+                                $("#book_" + i).append('<a id="book_link_' + i + '" href=' + json.items[i].volumeInfo.infoLink + '></a>');
+                              } else {
+                                $("#book_" + i).append('<a id="book_link_' + i + '" href=https://books.google.co.jp/></a>');
+                              }
+                              
+                              // 画像
+                              if(
+                                  (json.items[i].volumeInfo.imageLinks !== undefined)
+                                  && (json.items[i].volumeInfo.imageLinks.thumbnail !== undefined)
+                                )
+                              {
+                                $("#book_link_" + i).append('<img src=' + json.items[i].volumeInfo.imageLinks.thumbnail + '></img>');
+                              } else {
+                                $("#book_link_" + i).append('<img src=https://books.google.co.jp/googlebooks/images/no_cover_thumb.gif></img>');
+                              }
+                              
+                              // 書籍名 + 著者
+                              var book_name = '';
+                              if(json.items[i].volumeInfo.title !== undefined){
+                                book_name = json.items[i].volumeInfo.title;
+                              } else {
+                                book_name = '(タイトル情報なし)';
+                              }
+                              if(json.items[i].volumeInfo.authors !== undefined){
+                                book_name = book_name + '<br> / ' + json.items[i].volumeInfo.authors.join(" , ");
+                              } else {
+                                book_name = book_name + '<br> / (著者情報なし)';
+                              }
+                              $("#book_link_" + i).append('<p>' + book_name + '</p>');
+                              
+                              books = books + 1;
+                              
+                            }
+                          }
+                          
+
+                        }
+                      }
+                    } else{
+                      document.getElementById("search_message").innerHTML = "";
+                      $("#search_message").text('検索結果は 0 件です。');
+                    }
+                  }
+                );
+      
+              } else {
+                document.getElementById("search_message").innerHTML = "";
+                $("#search_message").text('データを取得できませんでした。');
+              }
+            }
+            
+            // 画面を表示したタイミングで動かす
+            $(function() {
+              search_books();
+            });
+            
+            // 検索ボタンをクリックした場合の処理
+            $('#search').click(function() {
+              search_books();
+            });
+            
+          </script>
+          <!-- ▲ ▲ ▲ ▲ ▲ ▲  ここまで javascript  ▲ ▲ ▲ ▲ ▲ ▲ -->
+          <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+          
           
         </div>
         

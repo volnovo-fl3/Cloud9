@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery | カウントダウンタイマー</title>
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var timerId;
+    
+    // カウントダウンの終了日時
+    var endDateTime   = new Date("2020/07/24 20:00:00");
+    
+    function countDownTimer() {
+      var startDateTime = new Date();
+      var diff = Math.floor((endDateTime - startDateTime) / 1000); //差分の秒数
+      
+      // 差分がマイナスなら
+      if(diff < 0 ){
+        $("#tokyo_olp").text('東京オリンピック・パラリンピック 開催中です');
+        // 繰り返し動作を停止 
+        clearInterval(timerId);
+        return
+      }      
+      
+      var oneday_seconds = 24 * 60 * 60;
+      
+      var day = Math.floor(diff / oneday_seconds);
+      var hour = Math.floor((diff % oneday_seconds) / (60 * 60));
+      var minute = Math.floor((diff % oneday_seconds) / 60 % 60);
+      var second = Math.floor(diff % oneday_seconds % 60 % 60);
+
+      $("#TimeRemaining").text(day + '日 ' + hour + '時間 ' + minute + '分 ' + second + '秒');
+    }
+    
+    $(function() {
+      // 指定した一定時間ごとに関数countDownTimer()を呼び出す
+      timerId = setInterval('countDownTimer()', 1000);
+      back_size_get();
+    });
+  
+    //------------------------------------------
+    // ブラウザ上の表示領域の高さ・幅を取得して id="back" の要素に適用
+    //------------------------------------------
+    function back_size_get(){
+      var element = document.getElementById("back");
+      $('#back').append('<p class="window_size">高さ:'+document.documentElement.clientHeight+'px / 幅:'+document.documentElement.clientWidth+'px</p>');
+  		element.style.height = (document.documentElement.clientHeight - 40) +'px';
+  		element.style.width = (document.documentElement.clientWidth - 40) / 2 + 'px';
+		}
+    window.onresize = function () {
+        back_size_get();
+    }
+    
+  </script>
+  <style>
+    html body {
+      background-color: black;
+      background-image : url(http://livedoor.blogimg.jp/megane_photo/imgs/c/6/c68373f6.jpg);
+      background-size:cover;
+    }
+    div p {
+      color: white;
+	  }
+  	#back {
+  	  display: block;
+      position: relative;
+  	}
+	  #contents{
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 0;
+    	margin: auto;
+    	width: 100%;
+    	height: 220px;
+	  }
+	  #contents p{
+	    text-align: center;
+	  }
+	  img{
+	    display: block;
+	    /*
+	    height: 208px;
+	    width: 302px;
+	    */
+	    height: 10%;
+	    width: auto;
+	    margin: 5px auto 5px 0px;
+	  }
+  	#tokyo_olp{
+  	  font-size: 24px;
+  	}
+  	#TimeRemaining{
+  	  font-size: 36px;
+  	}
+  	
+  	.window_size{
+  	  font-size: 10px;
+  	}
+	  .wf-sawarabimincho {
+	    font-family: "Sawarabi Mincho";
+	  }
+    
+  </style>
+</head>
+<body>
+  <div id="back">
+    <img src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/once_in_a_lifetime_encounter/20160425/20160425151044.jpg"></img>
+    <div id='contents' class='wf-sawarabimincho'>
+      <p id='tokyo_olp'>東京オリンピック・パラリンピックまで</p>
+      <p id="TimeRemaining"></p>
+    </div>
+  </div>
+</body>
+</html>

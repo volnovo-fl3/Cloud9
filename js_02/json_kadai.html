@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>JSON 課題</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="output"></div>
+    <script>
+      var jsonData =
+      [{
+        "division": "A組",
+         "person": [
+          {
+            "name" : "阿部",
+            "age"  : 22
+           },
+           {
+              "name" : "本田",
+              "age"  : 46
+            },
+            {
+               "name" : "田中",
+               "age": 35
+            }
+            ]
+      },
+      {
+        "division": "B組",
+         "person": [
+          {
+            "name" : "大谷",
+            "age"  : 21
+           },
+           {
+             "name" : "大野",
+             "age"  : 41
+            },
+            {
+               "name" : "中田",
+               "age": 32
+             }
+             ]
+      }];
+      
+      for(var i in jsonData){
+        $("#output").append("<p>【" + jsonData[i].division + "】</p>")
+        
+        for(var p in jsonData[i].person){
+          $("#output").append("<li>" + jsonData[i].person[p].name + " (" + jsonData[i].person[p].age + "才) </li>")
+        }
+        
+        $("#output").append("<br>")
+      }
+    </script>
+  </body>
+</html>

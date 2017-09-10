@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>History Web Strage</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  </head>
+  
+  <body>
+    <p>参考サイト：<a href="http://bashalog.c-brains.jp/15/08/14-164907.php">バシャログ。</a>様</p>
+    <hr>
+    <form method="POST">
+      <input type="text" id="history_check" name="search"/>
+      <input type="submit" value="検索">
+    </form>
+    
+    <script>
+      //Web Storage が使用可能か判定する関数
+      $.fn.checkLocalStorage = function () {
+        if (typeof window.localStorage === "undefined") {
+          return false;
+        }
+        return true;
+      };
+      
+      //Web Storage から 値を読み込む関数(キー指定)
+      $.fn.readStorage = function(key) {
+        var keyValue = window.localStorage.getItem(key);
+        //Web Storageからキーを指定して取り出した結果が空の場合
+        if (keyValue === null) {
+          keyValue = JSON.stringify({});
+        }
+        //取得した値をparseする(保存時には
+        keyValue = JSON.parse(keyValue);
+        return keyValue;
+      };
+      
+      //フォームにサジェストを実装する関数
+      $.fn.setSuggest = function(historyObj) {
+        //検索用ワード配列
+        var historyArray = [];   //取得したオブジェクトを補完する配列
+        var filterHistoryArray = []; //取得したオブジェクトを整形した配列
+        //オブジェクトを配列に変換 (スペースだけのものを弾く)
+        for (var k in historyObj) {
+          if (typeof historyObj[k] !== "undefined" &&
+      　　　　historyObj[k].replace(/\s+/g, "") !== "") {
+            historyArray.push(historyObj[k]);
+          }
+        }
+        //同じ入力値を弾く
+      　if (historyArray.length !== 0) {
+          filterHistoryArray = historyArray.filter(function(x, i, self) {
+            return self.indexOf(x) === i;
+          });
+        }
+        var $target = $('#history_check').autocomplete({
+          autoFocus:true,
+          source: filterHistoryArray
+        });
+      };
+      
+      $.fn.writeHistory = function (historyObj, history, historyKey) {
+        var tmpHistories = $(historyObj)[0];
+        var keyNumber = 0;
+        for (var hk in tmpHistories) {
+          if (typeof tmpHistories[hk] === "undefined") {
+            return true;
+          }
+          keyNumber = parseInt(hk);
+        }
+        historyObj[keyNumber+1] = history;
+        window.localStorage.setItem(historyKey, JSON.stringify(historyObj));
+        console.log(historyObj);
+        return true;
+      };
+      
+      $.fn.setSubmitAction = function(historyObj) {
+        $('form').on('submit', function(e) {
+          $.fn.writeHistory(historyObj, $('#history_check').val(), 'history');
+        });
+      };
+      
+      $(function() {
+        if (!$.fn.checkLocalStorage()) {
+          return false;
+        }
+        var historyObj = $.fn.readStorage('history');
+        $.fn.setSuggest(historyObj);
+        $.fn.setSubmitAction(historyObj);
+      });
+      
+    </script>    
+    
+  </body>
+</html>

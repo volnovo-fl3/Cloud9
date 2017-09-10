@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>JSONテスト</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="output"></div>
+    <script>
+        $(function() {
+          
+          $("#output").append("<p>json取得開始</p>");
+          $.getJSON("searchword.json", function(jsonData) {
+            //alert(jsonData);
+            alert(OK);
+          });          /*
+          $("#output").append("<p>json取得開始</p>");
+          $.getJSON("search_word.json" , function(data) {
+            
+            $("#output").append("<p>json取得完了</p>");
+            
+            if (data !== undefined){
+              for(var i in data){
+                $("#output").append("<p>" + data[i].word + " (" + data[i].count + "回)</p>");
+                $("#output").append("<br>");
+              }
+            } else {
+              $("#output").append("<p>データを取得できませんでした。</p>");
+            }
+            
+          });
+          */
+        });
+      
+    </script>
+  </body>
+</html>

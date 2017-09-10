@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>webAPI | 課題</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <form>
+      <label for="division">CodeCampのサーバーから呼び出すクラス（学級的な意味の）</label>
+      <br>
+      <input id="division" type="text" value="A" />
+      <input id="search" type="button" value="API実行" />
+    </form>
+    <div id="output"></div>
+    
+    <script>
+      $(function() {
+        
+        // 検索ボタンをクリックした場合の処理
+        $('#search').click(function() {
+          
+          // APIの呼び出し・取得データの表示
+          var url = "http://codecamp5493.lesson5.codecamp.jp/api/person.php";
+          jQuery.getJSON(
+            url,
+            {
+              division:document.getElementById("division").value,
+            },
+            function(json) {
+              if(json.division){
+                // 出力する前に初期化
+                document.getElementById("output").innerHTML = "";
+                
+                $("#output").append("<p>【" + json.division + "】</p>");
+                
+                $("#output").append('<ol id="memberlist"></ol>');
+                // クラスのメンバーを表示
+                for(var i in json.person){
+                  $("#memberlist").append("<li>" + json.person[i].name + " (" + json.person[i].age + "才)</li>");
+                }
+
+              } else{
+                document.getElementById("output").innerHTML = "データがありません。";
+              }
+            }
+          );
+        });
+        
+      });
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    // p要素を追加[javascript...?]
+    function add_element() {
+      $('#box').append('<p>p要素を追加しました</p>');
+    }
+    
+    // HTMLの読み込みが完了したら実行[jQuery]
+    $(function() {
+      // ボタンをクリック → 関数「add_element」を実行する
+      $('#add').click(add_element);
+    });
+  </script>
+</head>
+<body>
+  <button id="add">要素を追加</button>
+  <div id="box"></div>
+</body>
+</html>

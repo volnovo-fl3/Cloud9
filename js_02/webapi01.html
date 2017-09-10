@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>webAPI01</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <form>
+      <label for="price">税抜価格</label>
+      <input id="price" type="text" value="100" />
+      <input id="search" type="button" value="API実行" />
+    </form>
+    <div id="output"></div>
+    
+    <script>
+      $(function() {
+        
+        // 検索ボタンをクリックした場合の処理
+        $('#search').click(function() {
+          
+          // APIの呼び出し・取得データの表示
+          var url = "http://codecamp5493.lesson5.codecamp.jp/api/calc.php";
+          jQuery.getJSON(
+            url,
+            {
+              price:document.getElementById("price").value,
+            },
+            function(json) {
+              if(json){
+                document.getElementById("output").innerHTML = json[0].post_tax_price;
+              } else{
+                document.getElementById("output").innerHTML = "データを取得できませんでした。";
+              }
+            }
+          );
+        });
+        
+      });
+    </script>
+    
+  </body>
+</html>

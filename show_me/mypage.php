@@ -33,6 +33,8 @@ $search_array = '';
 $search_where = '';
 $header_user_name = '';
 $header_user_img = '';
+
+$array_for_autocomplete = [];
 //----------------------//
 
 // Cookieにページ遷移履歴を保存
@@ -84,6 +86,9 @@ try {
       if(mb_strlen($user[0]['skills'], HTML_CHARACTER_SET) > 0) {
         $selected_skills = explode(',', $user[0]['skills']);
       }
+      
+      // オートコンプリート用の配列を作成
+      $array_for_autocomplete = array_merge(array_column($categories_master, 'category_name'), array_column($skills_master, 'skill_name'));
       
       //---------------------------------------------------------------------------------------------
       // 制作したものリスト

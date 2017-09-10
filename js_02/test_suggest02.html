@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>History Web Strage</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    <p>参考サイト：<a href="https://ja.stackoverflow.com/questions/19854/input%E3%81%AE%E6%A4%9C%E7%B4%A2%E5%B1%A5%E6%AD%B4%E4%B8%80%E8%A6%A7%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">stackoverflow</a> 様</p>
+    <hr>
+    <input type="search" id="s_words" name="s_words" placeholder="検索語を入力してください。" list="search_history" />
+    <button onclick="fake_search();">検索</button>
+    <datalist id="search_history">
+    
+    <script>
+    
+      //検索履歴配列
+      var history_list = [];
+      
+      function fake_search(){
+        //検索語を取得しクリア
+        var sword = $("#s_words").val();
+        $("#s_words").val("");
+        
+        //既に登録した語句でなければ追加
+        if(0>$.inArray(sword, history_list)){
+          //Suggestに履歴を追加
+          $("#search_history").append($("<option>").val(sword));
+          //単語リストに追加
+          history_list.push(sword);
+        }
+        
+        alert("擬似検索しました。\n検索履歴に語句を追加しました。");
+      }
+      
+    </script>    
+    
+  </body>
+</html>
