@@ -29,6 +29,8 @@ $checked_skills = [];
 
 $header_user_name = '';
 $header_user_img = '';
+
+$recommended_items = [];
 //----------------------//
 
 // Cookieにページ遷移履歴を保存
@@ -98,6 +100,7 @@ try {
       $categories_master = get_categories_table_list($dbh);
       $skills_master = get_skills_table_list($dbh);
       $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
+      $recommended_items = get_autocomplete($dbh);
       
       if ($page_type === 'all_list') {
         // 検索条件のwhere文を作成し、検索
@@ -126,10 +129,12 @@ try {
           $search_where = $search_where . ' or i.item_introduction_detail like \'%'. $search_word .'%\'';
           $search_where = $search_where . ' or u.user_name like \'%'. $search_word .'%\'';
           $search_where = $search_where . ' or u.user_affiliation like \'%'. $search_word .'%\'';
+          
+          // 各マスタと重複するワードでなければ検索履歴を取得する
+          mnt_serach_history_table($dbh, $search_word, $access_datetime);
         }
         
         //------------------------------------------
-        
         
         $items_list = get_items_table_list($dbh, $search_where);
       }

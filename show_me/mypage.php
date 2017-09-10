@@ -119,8 +119,9 @@ try {
         $search_where = $search_where . ' and (' . $search_array . ')';
       }
       
-      $search_where = $search_where . 'order by i.updated_datetime desc limit 4';
+      $search_where = $search_where . ' order by i.updated_datetime desc limit 4';
       $recommended_items = get_items_table_list($dbh, $search_where);
+      //var_dump($search_where);
       
       if (mb_strlen($url_recommended_items_list_material) > 0){
         $url_recommended_items_list = $url_recommended_items_list . '?' . $url_recommended_items_list_material;

@@ -195,7 +195,12 @@
                 id="books_search_word"
                 type="text"
                 value="<?php
-                  $array = array_merge($categories_name_list, $skills_name_list);
+                  $array = [];
+                  if((count($categories_name_list) > 0)&&(count($skills_name_list) > 0)){
+                    $array = array_merge($categories_name_list, $skills_name_list);
+                  } else {
+                    $array = $array_for_autocomplete;
+                  }
                   print $array[array_rand($array)];
                 ?>"/>
               <input id="search" type="button" value="GoogleBooks 検索"/>
@@ -218,6 +223,7 @@
             $(document).ready(function() {
              $("#books_search_word").autocomplete({
               source:autocomplete,
+              minLength: 2,
              })
             });
             

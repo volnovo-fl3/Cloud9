@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
     <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/show_me.css">
+    <link type="text/css" rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
   </head>
 
   <body class="wf-notosansjapanese Background_Color_default">
@@ -106,7 +109,25 @@
                   
                   <h3>検索ワード</h3>
                   <p class="tips">商品名・商品説明・出品者・所属団体から検索できます。</p>
-                  <input type="text" name="search_word" value="<?php print $search_word?>" class="search_word">
+                  <input id="search_word" type="text" name="search_word" value="<?php print $search_word?>" class="search_word">
+                  
+                  <!-- ▼ ▼ ▼ ▼ ▼ ▼  ここから javascript  ▼ ▼ ▼ ▼ ▼ ▼ -->
+                  <script>
+                    //-------------------------------------------------
+                    // オートコンプリート
+                    //-------------------------------------------------
+                    //JSON.parseを使って配列を受け取る
+                    var autocomplete = JSON.parse('<?php echo json_encode($recommended_items); ?>');
+
+                    $(document).ready(function() {
+                     $("#search_word").autocomplete({
+                      source:autocomplete,
+                      minLength: 2,
+                     })
+                    });
+        
+                  </script>
+                  <!-- ▲ ▲ ▲ ▲ ▲ ▲  ここまで javascript  ▲ ▲ ▲ ▲ ▲ ▲ -->
                   
                   <h3>カテゴリ</h3>
                   <?php

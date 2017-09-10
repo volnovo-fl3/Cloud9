@@ -1086,6 +1086,125 @@ function update_product_image
 }
 
 
+
+//------------------------------------------------------------
+// データベース操作系
+// (オートコンプリート系)
+//------------------------------------------------------------
+/**
+* 検索履歴を登録・更新
+*
+* @param obj $dbh DBハンドル
+* @param str $search_word 検索ワード
+* @param str $access_datetime 登録・更新日時
+*/
+function mnt_serach_history_table
+  ($dbh, $search_word, $access_datetime) {
+  
+  $chk_exists = [];
+  
+  //SQL文を作成
+  $sql = '
+    select
+    	ifnull((select count(user_id) from users where user_name = "' . $search_word . '" group by user_name), 0) as c_user_name
+    	,ifnull((select count(user_id) from users where user_affiliation  = "' . $search_word . '" group by user_name), 0) as c_user_affiliation 
+    	,ifnull((select count(item_id) from items where item_name = "' . $search_word . '" group by item_name), 0) as c_item_name
+    	,ifnull((select count(category_id) from categories_mastar where category_name = "' . $search_word . '" group by category_name), 0) as c_category_name
+    	,ifnull((select count(skill_id) from skills_mastar where skill_name = "' . $search_word . '" group by skill_name), 0) as c_skill_name
+    	,ifnull((select count(last_datetime) from search_history where search_word = "' . $search_word . '" group by search_word), 0) as c_search_word
+    ;';
+  
+  // クエリ実行 → 各テーブルでの登録数を取得
+  $chk_exists = get_as_array($dbh, $sql);
+  
+  
+  // ユーザー名・所属・商品名・カテゴリ・使用ソフト にヒットしなくて
+  if(
+      ($chk_exists[0]['c_user_name'] === 0)
+      &&($chk_exists[0]['c_user_affiliation'] === 0)
+      &&($chk_exists[0]['c_item_name'] === 0)
+      &&($chk_exists[0]['c_category_name'] === 0)
+      &&($chk_exists[0]['c_skill_name'] === 0)
+    ){
+
+    // 検索履歴にもなければ新規登録
+    if($chk_exists[0]['c_search_word'] === 0){
+      $sql = '
+        insert into search_history
+        (
+          search_word,search_count,last_datetime
+        )
+        values
+        (
+          ?,1,?
+        )
+        ;';
+        
+        //SQL実行準備
+        $stmt = $dbh->prepare($sql);
+        
+        //値をバインド
+        $stmt->bindValue(1, $search_word, PDO::PARAM_STR);
+        $stmt->bindValue(2, $access_datetime, PDO::PARAM_STR);
+        
+    // 検索履歴にあれば更新
+    } else {
+
+      $sql = '
+        update search_history
+        set
+          search_count = search_count + 1
+          ,last_datetime = ?
+        where
+          search_word = ?
+        ;';
+        
+        //SQL実行準備
+        $stmt = $dbh->prepare($sql);
+        
+        //値をバインド
+        $stmt->bindValue(1, $access_datetime, PDO::PARAM_STR);
+        $stmt->bindValue(2, $search_word, PDO::PARAM_STR);
+    }
+    
+    //SQLを実行
+    $stmt->execute();
+  }
+}
+
+/**
+* オートコンプリート候補を取得
+* ユーザー名 / 所属団体 / 商品名 / 検索履歴
+*
+* @param obj $dbh DBハンドル
+* @return array オートコンプリートの候補となる語句
+*/
+function get_autocomplete($dbh) {
+  
+  $get_array = [];
+  $result_array = [];
+  
+  //SQL文を作成
+  $sql = '
+      (select user_name as word from users where deleted_datetime is null)
+      union
+      (select user_affiliation as word from users where deleted_datetime is null and CHAR_LENGTH(user_affiliation) > 0)
+      union
+      (select item_name as word from items where deleted_datetime is null and item_status <> 0)
+      union
+      (select search_word as word from search_history order by search_count, last_datetime limit 100)
+    ;';
+  
+  // DBからサジェスト候補を取得 → 一次元的な配列に組み替えてreturn!!
+  $get_array = get_as_array($dbh, $sql);
+  foreach($get_array as $key => $ma){
+    $result_array[] = $ma['word'];
+  }
+  return $result_array;
+}
+
+
+
 //------------------------------------------------------------
 // ログアウト処理
 //------------------------------------------------------------
