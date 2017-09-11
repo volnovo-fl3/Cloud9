@@ -25,6 +25,9 @@ $product_link = '';
 $product_status = '';
 $product_comment = '';
 
+$categories_name_list = '';
+$skills_name_list = '';
+
 $header_user_name = '';
 $header_user_img = '';
 //----------------------//
@@ -151,8 +154,8 @@ try {
             $look_item_img = image_link($look_product[0]['item_img']);
             
             // カテゴリ・使用ソフトを名前の配列に変換して取得
-            $categories_name_list = id_to_name($categories_mastar, $look_product[0]['categories'], 'category_id', 'category_name');
-            $skills_name_list = id_to_name($skills_mastar, $look_product[0]['skills'], 'skill_id', 'skill_name');
+            $categories_name_list = id_to_name($categories_mastar, $look_product[0]['item_categories'], 'category_id', 'category_name');
+            $skills_name_list = id_to_name($skills_mastar, $look_product[0]['item_categories'], 'skill_id', 'skill_name');
             
           // 取得できていない時
           } else {

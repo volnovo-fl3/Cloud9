@@ -120,9 +120,8 @@
         if((isset($look_product) === TRUE) && (count($look_product) > 0)){
       ?>
 
-      <h1>作品情報</h1>
-      
       <div class="insert_update_form">
+      <h1>作品情報</h1>
         
         <form method="post" enctype="multipart/form-data">
         
@@ -158,7 +157,7 @@
                 <p class="block_center_height">制作者コメント</p>
               </div>
               <div class="flex_3">
-                <textarea name="product_comment"><?php print nl2br($product_comment, false)?></textarea>
+                <textarea name="product_comment"><?php print $product_comment?></textarea>
               </div>
             </div>
             <p class="tips inline_center_width">制作者コメントは 2000文字以内 で入力してください</p>

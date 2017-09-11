@@ -116,9 +116,8 @@
       }
       ?>
       
-      <h1><?php print $page_name ?></h1>
-      
       <div class="insert_update_form">
+      <h1><?php print $page_name ?></h1>
         
         <form method="post" enctype="multipart/form-data">
           <h2>基本情報</h2>

@@ -140,7 +140,7 @@
               <div class="item_panel" style="background-color:<?php print $product['category_color']?>">
                 <a href="product_details.php?target_product_id=<?php print $product['product_id']?>">
                   <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>"></img>
-                  <p><?php print $product['item_name']?></p>
+                  <p><?php print $product['item_name']?> / <?php print product_status_int_to_str($product['product_status'])?></p>
                 </a>
               </div>
             <?php
@@ -170,7 +170,7 @@
                 foreach($recommended_items as $key => $item){
             ?>
               <div class="item_panel" style="background-color:<?php print $item['category_color']?>">
-                <a href="product_details.php?target_product_id=<?php print $item['item_id']?>">
+                <a href="item_details.php?target_item_id=<?php print $item['item_id']?>">
                   <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>"></img>
                   <p><?php print $item['item_name']?></p>
                 </a>
@@ -203,7 +203,7 @@
                   }
                   print $array[array_rand($array)];
                 ?>"/>
-              <input id="search" type="button" value="GoogleBooks 検索"/>
+              <input id="search" type="button" value="検索"/>
               <p id="search_message">キーワードを入れ、検索してください。</p>
             </div>
             <div id="books_list" class="panel_list">
@@ -249,7 +249,7 @@
                     if(json.items){
                       
                       document.getElementById("search_message").innerHTML = "";
-                      $("#search_message").append('<a href=https://www.google.co.jp/search?tbm=bks&q=' + encodeURIComponent(search_word) + '>GoogleBooksで『' + search_word + '』を検索</a>');
+                      $("#search_message").append('<a href=https://www.google.co.jp/search?tbm=bks&q=' + encodeURIComponent(search_word) + '>Googleブックスで『' + search_word + '』を検索</a>');
                       document.getElementById("search_message").className = "link";
                 
                       // 初期化！！

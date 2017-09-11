@@ -911,24 +911,28 @@ function get_products_table_list($dbh, $where) {
     	,i.item_img
     	,i.item_status
     	,i.stock
-    	,i.created_datetime
-    	,i.updated_datetime
-    	,i.deleted_datetime
+    	,i.created_datetime as item_created_datetime
+    	,i.updated_datetime as item_updated_datetime
+    	,i.deleted_datetime as item_deleted_datetime
     	,i.main_category
     	,cm.category_name as main_category_name
     	,cm.category_color
-    	,i.categories
-    	,i.skills
+    	,i.categories as item_categories
+    	,i.skills as item_skills
     	/* 出品者 */
     	,i.seller_user_id
     	,seller.user_name as seller_user_name
     	,seller.user_affiliation as seller_user_affiliation
     	,seller.user_img as seller_user_img
+    	,seller.categories as seller_user_categories
+    	,seller.skills as seller_user_skills
     	/* 制作者 */
     	,cart.buyer_user_id as productor_user_id
     	,productor.user_name as productor_user_name
     	,productor.user_affiliation as productor_user_affiliation
     	,productor.user_img as productor_user_img
+    	,productor.categories as productor_user_categories
+    	,productor.skills as productor_user_skills
     	/* 作品情報 */
     	,p.product_link
     	,p.product_img

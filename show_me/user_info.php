@@ -262,7 +262,7 @@ try {
                   
                   setcookie('user_id', $new_user_id);
                   setcookie('user_name', $user_name);
-                  setcookie('user_img', $new_img_filename);
+                  setcookie('user_img', image_link($new_img_filename));
                   
                   //---------- マイページへ ----------//
                   header('location: mypage.php');
@@ -298,12 +298,17 @@ try {
                   // 画像以外の基本情報を更新
                   update_user_infomation
                     ($dbh, $_POST['target_user_id'], $password, $user_name, $user_affiliation, $user_self_introduction, $categories, $skills, $access_datetime);
+                    
+                  setcookie('user_id', $_POST['target_user_id']);
+                  setcookie('user_name', $user_name);
                 }
                 
                 if (isset($_POST['radio_img_change']) === TRUE){
                   // 画像を更新
                   if ($_POST['radio_img_change'] === '1') {
                     update_user_image($dbh, $_POST['target_user_id'], $new_img_filename, $access_datetime);
+                    
+                    setcookie('user_img', image_link($new_img_filename));
                   }
                 }
                 

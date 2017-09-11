@@ -96,26 +96,97 @@
       ?>
       
         <h1><?php print $look_user[0]['user_name']?> さんのプロフィール</h1>
-        <div class="details">
+        
+        <div class="flexbox">
           
-          <div class="add_row inline_center_width">
-            <img src="<?php print IMAGE_DIRECTORY . $look_user_img; ?>" class="user_profiles_image">
+          <div class="details">
+            
+            <div class="add_row inline_center_width">
+              <img src="<?php print IMAGE_DIRECTORY . $look_user_img; ?>" class="user_profiles_image">
+            </div>
+            <h2>ユーザー名</h2>
+            <p><?php print str_is_regist($look_user[0]['user_name'])?></p>
+            <h2>所属企業・団体</h2>
+            <p><?php print str_is_regist($look_user[0]['user_affiliation'])?></p>
+            <h2>自己紹介</h2>
+            <p>
+              <?php print nl2br(str_is_regist($look_user[0]['user_self_introduction']), false)?>
+            </p>
+            
+            <h2>対応カテゴリ</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $categories_name_list))) ?></p>
+            
+            <h2>使用ソフト</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
+            
           </div>
-          <h2>ユーザー名</h2>
-          <p><?php print str_is_regist($look_user[0]['user_name'])?></p>
-          <h2>所属企業・団体</h2>
-          <p><?php print str_is_regist($look_user[0]['user_affiliation'])?></p>
-          <h2>自己紹介</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_user[0]['user_self_introduction']), false)?>
-          </p>
           
-          <h2>対応カテゴリ</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $categories_name_list))) ?></p>
+          <div class="details">
+            <h2><?php print $look_user[0]['user_name']?> さんの出品リスト</h2>
+            <div class="add_row panel_board">
+              <?php
+                if(count($seller_list) > 0){
+              ?>
+              <p class="link">
+                <a href="<?php print $url_seller_items_list?>">→ もっと見る</a>
+              </p>
+              <div class="panel_list">
+              <?php
+                  foreach($seller_list as $key => $item){
+              ?>
+                <div class="item_panel" style="background-color:<?php print $item['category_color']?>">
+                  <a href="item_details.php?target_item_id=<?php print $item['item_id']?>">
+                    <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>"></img>
+                    <p><?php print $item['item_name']?></p>
+                  </a>
+                </div>
+              <?php
+                  }
+              ?>
+              </div>
+              <?php
+                } else {
+              ?>
+              <p>データがありません</p>
+              <?php
+                }
+              ?>
+            </div>
+            
+            <h2><?php print $look_user[0]['user_name']?> さんの制作リスト</h2>
+            <div class="add_row panel_board">
+              <?php
+                if(count($product_list) > 0){
+              ?>
+              <p class="link">
+                <a href="<?php print $url_product_list?>">→ もっと見る</a>
+              </p>
+              <div class="panel_list">
+              <?php
+                  foreach($product_list as $key => $product){
+              ?>
+                <div class="item_panel" style="background-color:<?php print $product['category_color']?>">
+                  <a href="product_details.php?target_product_id=<?php print $product['product_id']?>">
+                    <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>"></img>
+                    <p><?php print $product['item_name']?> / <?php print product_status_int_to_str($product['product_status'])?></p>
+                  </a>
+                </div>
+              <?php
+                  }
+              ?>
+              </div>
+              <?php
+                } else {
+              ?>
+              <p>データがありません</p>
+              <?php
+                }
+              ?>
+            </div>
+          </div>
           
-          <h2>使用ソフト</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
-          
+        </div>
+        
         <?php
           if ($target_user_id === $my_user_id) {
         ?>
@@ -131,13 +202,6 @@
         <?php
           }
         ?>
-        
-        </div>
-
-        <h1 class="add_row"><?php print $look_user[0]['user_name']?> さんの制作リスト</h1>
-        <div class=add_row>
-          <p>登録されていません</p>
-        </div>
         
       </div>
       

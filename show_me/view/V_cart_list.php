@@ -72,139 +72,142 @@
     <!-- 中段 -->
     <main class="Background_Color_white">
       <div class="container padding_top_10">
-        
-        <h1><?php print 'カート'?></h1>
-
-        <?php // エラーがあれば表示
-        if (isset($err_msg) && count($err_msg) > 0) {
-        ?>
-          <div class="add_row error_message_box">
-            <ul>
-        <?php
-          foreach ($err_msg as $key => $error) {
-        ?>
-              <li><p><?php print entity_str($error)?></p></li>
-        <?php
-          }
-        ?>
-            </ul>
-          </div>
-        <?php
-        }
-        ?>
-        
-        <?php
-          if((isset($user) === TRUE) && (count($user) > 0)){
-        ?>
-        <div class="add_row">
-          <p class="inline_center_width"><?php print $user[0]['user_name']; ?> さん</p>
-        </div>
-        <?php
-          }
-        ?>
-        
-        <?php
-          if((isset($carts_unpaid_sum) === TRUE) && (count($carts_unpaid_sum) > 0)){
-        ?>
-        <div class="add_row">
-          <p class="inline_center_width">カートに <?php print entity_str($carts_unpaid_sum[0]['cart_sum_amount']); ?> 点の商品があります。</p>
-        </div>
-        <?php
-          } else {
-        ?>
-        <div class="add_row">
-          <p class="inline_center_width">カートに商品が入っていません。</p>
-        </div>
-        <?php
-          }
-        ?>
-        
-        <?php
-          if((isset($carts_unpaid_sum) === TRUE) && (count($carts_unpaid_sum) > 0)){
-        ?>
-        <?php
-            if((isset($carts_unpaid_list) === TRUE) && (count($carts_unpaid_list) > 0)){
-              foreach($carts_unpaid_list as $key => $cart){
-        ?>
-          <div class="add_row">
-            <div class="item_panel01" style="background-color:<?php print $cart['category_color']?>;">
-              <div class="item_img">
-                <img src="<?php print IMAGE_DIRECTORY . image_link($cart['item_img']); ?>" class="image_size_to_panel_radius"></img>
-              </div>
-              <div class="item_info">
-                <div class="item_title">
-                  <p><?php print $cart['item_name']?></p>
-                </div>
-                <p class="price">¥<?php print $cart['price']?> × <?php print $cart['amount']?> 個</p>
-                <p class="seller_name">
-                  <?php print $cart['seller_user_name']?> さん
-                  <?php
-                    if((isset($cart['seller_user_affiliation']) === TRUE) && (mb_strlen($cart['seller_user_affiliation']) > 0)) {
-                      print ' ('. $cart['seller_user_affiliation'] .') ';
-                    }
-                  ?>
-                  による出品</p>
-              </div>
-              <div class="item_button_parent">
-                <div class="item_button02">
-                  <div>
-                    <form method="post" enctype="multipart/form-data">
-                      (
-                      <input type="number" class="item_amont" name="amount_change">
-                      個に
-                      <input type="hidden" name="process_kind" value="cart_item_amount_change">
-                      <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
-                      <input type="submit" value="変更">
-                      )
-                    </form>
-                  </div>
-                  <div class="add_row">
-                    <form method="post" enctype="multipart/form-data">
-                      <input type="hidden" name="process_kind" value="cart_item_delete">
-                      <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
-                      <input type="submit" class="block" value="カートから削除">
-                    </form>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>        
-        
-        <?php
+        <div class="container">
+          
+          <h1><?php print 'カート'?></h1>
+  
+          <?php // エラーがあれば表示
+          if (isset($err_msg) && count($err_msg) > 0) {
+          ?>
+            <div class="add_row error_message_box">
+              <ul>
+          <?php
+            foreach ($err_msg as $key => $error) {
+          ?>
+                <li><p><?php print entity_str($error)?></p></li>
+          <?php
             }
-        ?>
-        
-        <hr>
-        
-        <div class="add_row_last flexbox">
-          <div class="flex_1 ">
-            <p class="flex_right_center_height">合計</p>
-          </div>
-          <div class="flex_1 add_colmun_right">
-            <p>¥<?php print entity_str($carts_unpaid_sum[0]['cart_sum_price']); ?></p>
-          </div>
-        </div>
-        <div class="add_row_last flexbox">
-          <div class="flex_1 flex_right_center_height">
-            <p>お支払い金額</p>
-          </div>
-          <div class="flex_1 add_colmun_right">
-            <form method="post" enctype="multipart/form-data">
-              <div>
-                <label>¥<input type="number" name="pay_money"></label>
-                <input type="hidden" name="process_kind" value="cart_item_pay">
-                <input type="submit" value="購入する">
-              </div>
-            </form>    
-          </div>
-        </div>
-        
-        <?php
+          ?>
+              </ul>
+            </div>
+          <?php
           }
-        }
-        ?>    
+          ?>
+          
+          <?php
+            if((isset($user) === TRUE) && (count($user) > 0)){
+          ?>
+          <div class="add_row">
+            <p class="inline_center_width"><?php print $user[0]['user_name']; ?> さん</p>
+          </div>
+          <?php
+            }
+          ?>
+          
+          <?php
+            if((isset($carts_unpaid_sum) === TRUE) && (count($carts_unpaid_sum) > 0)){
+          ?>
+          <div class="add_row">
+            <p class="inline_center_width">カートに <?php print entity_str($carts_unpaid_sum[0]['cart_sum_amount']); ?> 点の商品があります。</p>
+          </div>
+          <?php
+            } else {
+          ?>
+          <div class="add_row">
+            <p class="inline_center_width">カートに商品が入っていません。</p>
+          </div>
+          <?php
+            }
+          ?>
+          
+          <?php
+            if((isset($carts_unpaid_sum) === TRUE) && (count($carts_unpaid_sum) > 0)){
+          ?>
+          <?php
+              if((isset($carts_unpaid_list) === TRUE) && (count($carts_unpaid_list) > 0)){
+                foreach($carts_unpaid_list as $key => $cart){
+          ?>
+            <div class="add_row">
+              <a href="item_details.php?target_item_id=<?php print $cart['item_id']?>">
+                
+                <div class="item_panel01" style="background-color:<?php print $cart['category_color']?>;">
+                  <div class="item_img">
+                    <img src="<?php print IMAGE_DIRECTORY . image_link($cart['item_img']); ?>" class="image_size_to_panel_radius"></img>
+                  </div>
+                  <div class="item_info">
+                    <div class="item_title">
+                      <p><?php print $cart['item_name']?></p>
+                    </div>
+                    <p class="price">¥<?php print $cart['price']?> × <?php print $cart['amount']?> 個</p>
+                    <p class="seller_name">
+                      <?php print $cart['seller_user_name']?> さん
+                      <?php
+                        if((isset($cart['seller_user_affiliation']) === TRUE) && (mb_strlen($cart['seller_user_affiliation']) > 0)) {
+                          print ' ('. $cart['seller_user_affiliation'] .') ';
+                        }
+                      ?>
+                      による出品</p>
+                      
+                      <div class="add_row padding_side_10">
+                        <form method="post" enctype="multipart/form-data">
+                          (
+                          <input type="number" class="item_amont" name="amount_change">
+                          個に
+                          <input type="hidden" name="process_kind" value="cart_item_amount_change">
+                          <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
+                          <input type="submit" value="変更">
+                          )
+                        </form>
+                      </div>
+                      <div class="add_row padding_side_10">
+                        <form method="post" enctype="multipart/form-data">
+                          <input type="hidden" name="process_kind" value="cart_item_delete">
+                          <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
+                          <input type="submit" class="block" value="カートから削除">
+                        </form>
+                      </div>
+                      
+                  </div>
+                </div>
+                
+              </a>
+            </div>        
+          
+          <?php
+              }
+          ?>
+          
+          <hr>
+          
+          <div class="add_row_last flexbox">
+            <div class="flex_1 ">
+              <p class="flex_right_center_height">合計</p>
+            </div>
+            <div class="flex_1 add_colmun_right">
+              <p>¥<?php print entity_str($carts_unpaid_sum[0]['cart_sum_price']); ?></p>
+            </div>
+          </div>
+          <div class="add_row_last flexbox">
+            <div class="flex_1 flex_right_center_height">
+              <p>お支払い金額</p>
+            </div>
+            <div class="flex_1 add_colmun_right">
+              <form method="post" enctype="multipart/form-data">
+                <div>
+                  <label>¥<input type="number" name="pay_money"></label>
+                  <input type="hidden" name="process_kind" value="cart_item_pay">
+                  <input type="submit" value="購入する">
+                </div>
+              </form>    
+            </div>
+          </div>
+          
+          <?php
+            }
+          }
+          ?>    
         
+        </div>
       </div>
     </main>
     

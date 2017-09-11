@@ -103,97 +103,182 @@
         <div class="add_row">
           <p class="inline_center_width"><?php print $look_product[0]['productor_user_name']?> さんの作品です</p>
         </div>
-        <div class="add_row">
-          <p class="inline_center_width"><?php print entity_str(product_status_int_to_str($look_product[0]['product_status']))?></p>
-        </div>
         
-        <div class="details">
+        <div class="add_box">
           
-          <div class="add_row inline_center_width">
-            <img src="<?php print IMAGE_DIRECTORY . $look_product_img; ?>" class="product_details_image">
+          <div class="add_row flexbox">
+            <div class="details flex_3">
+              <div class="add_row inline_center_width">
+                <img src="<?php print IMAGE_DIRECTORY . $look_product_img; ?>" class="product_details_image">
+              </div>
+              <h2>ステータス</h2>
+              <p><?php print entity_str(product_status_int_to_str($look_product[0]['product_status']))?></p>
+              <h2>作品リンク</h2>
+              <?php
+                if(mb_strlen($look_product[0]['product_link']) > 0) {
+              ?>
+                <a target="blank" href="<?php print $look_product[0]['product_link']?>"><p>→ リンク先へ</p></a>
+              <?php
+                } else {
+              ?>
+                <p>登録されていません</p>
+              <?php
+                }
+              ?>
+              <h2>制作者コメント</h2>
+              <p><?php print nl2br(str_is_regist($look_product[0]['product_comment']), false)?></p>
+            </div>
+            
+            <div class="details flex_1">
+              <div class="flex_1 add_colmun_right details">
+                <div class="add_row user_profiles_panel_back">
+                  <h2>制作者</h2>
+                  <div class="user_profiles_panel">
+                    <div class="image_panel_200 block_center_width">
+                      <img src="<?php print IMAGE_DIRECTORY . image_link($look_product[0]['productor_user_img']); ?>" class="image_size_to_panel_radius"></img>
+                    </div>
+                    <p class="inline_center_width"><?php print $look_product[0]['productor_user_name'] ?> さん</p>
+                    <?php
+                      if (mb_strlen($look_product[0]['productor_user_affiliation']) > 0){
+                    ?>
+                    <p class="inline_center_width"><?php print $look_product[0]['productor_user_affiliation'] ?></p>
+                    <?php
+                      }
+                    ?>
+                    
+                    <hr>
+                    <h3>対応カテゴリ</h3>
+                    <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $productor_user_categories_name_list))) ?></p>
+                    
+                    <h3>使用ソフト</h3>
+                    <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $productor_user_skills_name_list))) ?></p>
+      
+                    <form action='user_profile.php'>
+                      <div class="add_row">
+                        <input type="hidden" name="process_kind" value="to_user_profile">
+                        <input type="hidden" name="target_user_id" value="<?php print $look_product[0]['productor_user_id']?>">
+                        <input type="submit" class="display_block block_center_width" value="プロフィールを見る">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
           </div>
           
-          <h2>作品リンク</h2>
           <?php
-            if(mb_strlen($look_product[0]['product_link']) > 0) {
+            //ログイン者 = 制作者であれば更新・削除できる
+            if ((string)$my_user_id === (string)$look_product[0]['productor_user_id']) {
           ?>
-            <a href="<?php print $look_product[0]['product_link']?>"><p>→ リンク先へ</p></a>
-          <?php
-            } else {
-          ?>
-            <p>登録されていません</p>
-          <?php
-            }
-          ?>
-
-          <h2>制作者コメント</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_product[0]['product_comment']), false)?>
-          </p>
-
           <hr>
+          <div class="add_row">
+            <form method="post" enctype="multipart/form-data" action='product_info.php'>
+              <input type="hidden" name="process_kind" value="to_update_product_info">
+              <input type="hidden" name="target_product_id" value="<?php print $look_product[0]['product_id']?>">
+              <input type="submit" class="display_block block_center_width" value="制作情報を更新する">
+            </form>
+          </div>
+          <div class="add_row">
+            <form method="post" enctype="multipart/form-data">
+              <input type="hidden" name="process_kind" value="delete_product">
+              <input type="hidden" name="target_product_id" value="<?php print $look_product[0]['product_id']?>">
+              <input type="submit" class="display_block block_center_width" value="この作品を削除する">
+            </form>
+          </div>
+          
+          <?php
+              }
+            }
+          }
+          ?>
+          
         </div>
+        
+        
           
         <h1>商品情報</h1>
-        <div class="details">
-
-          <div class="add_row">
-            <p class="inline_center_width"><?php print $look_product[0]['item_name']?></p>
+        <div class="add_row flexbox">
+          <div class="details flex_3">
+  
+            <div class="add_row inline_center_width">
+              <img src="<?php print IMAGE_DIRECTORY . $look_item_img; ?>" class="user_profiles_image">
+            </div>
+            <h2>商品名</h2>
+            <p><?php print $look_product[0]['item_name']?></p>
+            <h2>商品紹介</h2>
+            <p>
+              <?php print nl2br(str_is_regist($look_product[0]['item_introduction']), false)?>
+            </p>
+            <h2>商品紹介(詳細)</h2>
+            <p>
+              <?php print nl2br(str_is_regist($look_product[0]['item_introduction_detail']), false)?>
+            </p>
+            
+            <h2>対応カテゴリ</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $item_categories_name_list))) ?></p>
+            
+            <h2>使用ソフト</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $item_skills_name_list))) ?></p>
+            
+            <hr>
+            <?php
+              if(isset($look_product[0]['item_deleted_datetime'])===TRUE){
+            ?>
+              <p class="inline_center_width Text_Color_red">この商品は削除されました。</p>  
+            <?php
+              } else if($look_product[0]['item_status']) {
+            ?>
+              <p class="inline_center_width Text_Color_red">この商品は非公開に設定されています。</p>  
+            <?php
+              } else {
+            ?>
+            <form action="item_details.php">
+              <input type="hidden" name="target_item_id" value="<?php print $look_product[0]['item_id']?>">
+              <input type="submit" class="display_block block_center_width" value="この商品の詳細を見る">
+            </form>
+            <?php
+              }
+            ?>
+            
           </div>
           
-          <div class="add_row inline_center_width">
-            <img src="<?php print IMAGE_DIRECTORY . $look_item_img; ?>" class="user_profiles_image">
+          <div class="flex_1 add_colmun_right details">
+            <div class="add_row user_profiles_panel_back">
+              <h2>出品者</h2>
+              <div class="user_profiles_panel">
+                <div class="image_panel_200 block_center_width">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($look_product[0]['seller_user_img']); ?>" class="image_size_to_panel_radius"></img>
+                </div>
+                <p class="inline_center_width"><?php print $look_product[0]['seller_user_name'] ?> さん</p>
+                <?php
+                  if (mb_strlen($look_product[0]['seller_user_affiliation']) > 0){
+                ?>
+                <p class="inline_center_width"><?php print $look_product[0]['seller_user_affiliation'] ?></p>
+                <?php
+                  }
+                ?>
+                
+                <hr>
+                <h3>対応カテゴリ</h3>
+                <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $seller_user_categories_name_list))) ?></p>
+                
+                <h3>使用ソフト</h3>
+                <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $seller_user_skills_name_list))) ?></p>
+  
+                <form action='user_profile.php'>
+                  <div class="add_row">
+                    <input type="hidden" name="process_kind" value="to_user_profile">
+                    <input type="hidden" name="target_user_id" value="<?php print $look_product[0]['seller_user_id']?>">
+                    <input type="submit" class="display_block block_center_width" value="プロフィールを見る">
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <h2>商品紹介</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_product[0]['item_introduction']), false)?>
-          </p>
-          <h2>商品紹介(詳細)</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_product[0]['item_introduction_detail']), false)?>
-          </p>
-          
-          <h2>対応カテゴリ</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $categories_name_list))) ?></p>
-          
-          <h2>使用ソフト</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
-          
-          <hr>
+        </div>
+      </div>
 
-        </div>
-      
-
-        <?php
-          //ログイン者 = 制作者であれば更新・削除できる
-            if ((string)$my_user_id === (string)$look_product[0]['productor_user_id']) {
-        ?>
-        <div class="add_row">
-          <form method="post" enctype="multipart/form-data" action='product_info.php'>
-            <input type="hidden" name="process_kind" value="to_update_product_info">
-            <input type="hidden" name="target_product_id" value="<?php print $look_product[0]['product_id']?>">
-            <input type="submit" class="display_block block_center_width" value="制作情報を更新する">
-          </form>
-        </div>
-        <div class="add_row">
-          <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="process_kind" value="delete_product">
-            <input type="hidden" name="target_product_id" value="<?php print $look_product[0]['product_id']?>">
-            <input type="submit" class="display_block block_center_width" value="この作品を削除する">
-          </form>
-        </div>
-        
-        <?php
-            }
-        ?>
-        <?php
-          }
-        ?>
-        
-      <?php
-      }
-      ?>
-      
     </main>    
     
     

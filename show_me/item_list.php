@@ -14,6 +14,7 @@ $page_name = '商品一覧';
 
 $user_id = '';
 $user = [];
+$target_user_id = '';
 $categories_master = [];
 $skills_master = [];
 $carts_unpaid = [];
@@ -44,6 +45,7 @@ if ((isset($_COOKIE['user_id']) === TRUE) && ($_COOKIE['user_id'] > 0)){
   $user_id = $_COOKIE['user_id'];
   $header_user_name = $_COOKIE['user_name'];
   $header_user_img = $_COOKIE['user_img'];
+  $target_user_id = $user_id;
 }
 
 else {
@@ -64,6 +66,9 @@ if((isset($_GET) === TRUE) && (count($_GET) > 0)){
     if($_GET['page_type'] === 'seller_list'){
       $page_name = '出品一覧';
       $page_type = $_GET['page_type'];
+      if(isset($_GET['target_user_id'])){
+        $target_user_id = $_GET['target_user_id'];
+      }
     }
   }
   
@@ -95,14 +100,15 @@ try {
 
     try {
       
-      // ユーザー情報、カテゴリ・使用ソフトマスタを取得
-      $user = get_user_by_id($dbh, $user_id);
-      $categories_master = get_categories_table_list($dbh);
-      $skills_master = get_skills_table_list($dbh);
-      $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
-      $recommended_items = get_autocomplete($dbh);
-      
       if ($page_type === 'all_list') {
+        
+        // ユーザー情報、カテゴリ・使用ソフトマスタを取得
+        $user = get_user_by_id($dbh, $user_id);
+        $categories_master = get_categories_table_list($dbh);
+        $skills_master = get_skills_table_list($dbh);
+        $carts_unpaid = get_carts_unpaid_sum($dbh, $user_id);
+        $recommended_items = get_autocomplete($dbh);
+        
         // 検索条件のwhere文を作成し、検索
         $search_where = 'where i.deleted_datetime is null';
         
@@ -139,8 +145,16 @@ try {
         $items_list = get_items_table_list($dbh, $search_where);
       }
       else if ($page_type === 'seller_list') {
+        
+        $user = get_user_by_id($dbh, $target_user_id);
+        $page_name = $user[0]['user_name'] . ' さんの' . $page_name;
+
         // 検索条件のwhere文を作成し、検索
-        $search_where = 'where i.seller_user_id = ' . $user_id;
+        $search_where = 'where i.deleted_datetime is null and i.seller_user_id = ' . $target_user_id;
+        if($target_user_id !== $user_id){
+          $search_where = $search_where . ' and i.item_status <> 0';
+        }
+        $search_where = $search_where . ' order by i.updated_datetime desc limit 3';
         $items_list = get_items_table_list($dbh, $search_where);
       }
       

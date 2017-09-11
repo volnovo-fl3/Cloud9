@@ -75,8 +75,20 @@
     <main class="Background_Color_white">
       <div class="container padding_top_10">
 
-        <h1>制作リスト</h1>
-
+        <h1><?php print $page_name?></h1>
+        
+        <?php
+          if($page_type === 'by_user'){
+            if((mb_strlen($target_user_id) > 0) && ($target_user_id === $user_id)){
+        ?>
+        <div class='add_row message_box'>
+          <p>本人による閲覧のため、非公開の作品も表示されます。</p>
+        </div>
+        <?php
+            }
+          }
+        ?>
+        
         <?php // エラーがあれば表示
         if (isset($err_msg) && count($err_msg) > 0) {
         ?>
@@ -120,35 +132,36 @@
         ?>
           <div class="add_row">
             <div class="item_panel02" style="background-color:<?php print $product['category_color']?>;">
-              
-              <div class="item_img">
-                <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>" class="image_size_to_panel_radius"></img>
-              </div>
-              
-              <div class="item_info">
-                <div class="item_title">
-                  <p><?php print $product['item_name']?></p>
+              <a href="product_details.php?target_product_id=<?php print $product['product_id']?>">
+                <div class="item_img">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>" class="image_size_to_panel_radius"></img>
                 </div>
-                <p class="seller_name">
-                  <?php print $product['seller_user_name']?> さん
+                
+                <div class="item_info">
+                  <div class="item_title">
+                    <p><?php print $product['item_name']?> / <?php print product_status_int_to_str($product['product_status'])?></p>
+                  </div>
                   <?php
-                    if((isset($product['seller_user_affiliation']) === TRUE) && (mb_strlen($product['seller_user_affiliation']) > 0)) {
-                      print ' ('. $product['seller_user_affiliation'] .') ';
+                    if($page_type === 'by_user'){
+                  ?>
+                  <p class="seller_name">
+                    <?php print $product['seller_user_name']?> さん
+                    <?php
+                      if((isset($product['seller_user_affiliation']) === TRUE) && (mb_strlen($product['seller_user_affiliation']) > 0)) {
+                        print ' ('. $product['seller_user_affiliation'] .') ';
+                      }
+                    ?>
+                    による出品</p>
+                  <?php
+                    } else if($page_type === 'by_item') {
+                  ?>
+                  <p class="seller_name">
+                    <?php print $product['productor_user_name']?> さんによる作品</p>
+                  <?php
                     }
                   ?>
-                  による出品</p>
-              </div>
-  
-              <div class="add_row">
-                <form method="post" enctype="multipart/form-data" action="product_details.php">
-                  <div>
-                    <input type="hidden" name="process_kind" value="to_product_detail">
-                    <input type="hidden" name="target_product_id" value="<?php print $product['product_id']?>">
-                    <input type="submit" class="display_block block_center_width" value="詳細を見る">
-                  </div>
-                </form>
-              </div>
-  
+                </div>
+              </a>
             </div>
           </div>
         <?php

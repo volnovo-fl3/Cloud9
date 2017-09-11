@@ -79,10 +79,6 @@ else
   //------------------------------------------------------------
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
-    print '【$_POST】';
-    var_dump($_POST);
-    print "<br>";
-    
     //--- 変数に入力値を代入 ---//
     
     if(isset($_POST['item_name']) === TRUE) {
@@ -118,10 +114,7 @@ else
       $skills = implode(',', $_POST['checked_skills']);
     }
     
-    print '【$checked_categories】';  
-    var_dump($checked_categories);
-    
-    
+
     //--- 出品登録エラーチェック ---//
     
     if(check_null($item_name) === FALSE) {
@@ -177,11 +170,6 @@ else
     }
   }
 }
-
-print "mode : $mode";
-print "<br>";
-var_dump($_POST);
-print "<br>";
 
 
 //------------------------------------------------------------
@@ -280,7 +268,6 @@ try {
           //------------------------------------------------------------
           if ($_POST['process_kind'] === 'item_insert') {
             
-            var_dump($_POST['process_kind']);
             try {
             
               // DBにINSERTし、返り値として新レコードのIDも取得

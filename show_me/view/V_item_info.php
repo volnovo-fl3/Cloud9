@@ -117,9 +117,8 @@
       }
       ?>
       
-      <h1><?php print $page_name ?></h1>
-      
       <div class="insert_update_form">
+      <h1><?php print $page_name ?></h1>
         
         <form method="post" enctype="multipart/form-data">
           <h2>商品情報</h2>
@@ -159,7 +158,7 @@
                 <p class="block_center_height">商品説明</p>
               </div>
               <div class="flex_3">
-                <textarea name="item_introduction"><?php print nl2br($item_introduction, false)?></textarea>
+                <textarea name="item_introduction"><?php print $item_introduction?></textarea>
               </div>
             </div>
             <p class="tips inline_center_width">商品説明は 2000文字以内 で入力してください</p>
@@ -171,7 +170,7 @@
                 <p class="block_center_height">商品詳細(詳細)</p>
               </div>
               <div class="flex_3">
-                <textarea name="item_introduction_detail"><?php print nl2br($item_introduction_detail, false)?></textarea>
+                <textarea name="item_introduction_detail"><?php print $item_introduction_detail?></textarea>
               </div>
             </div>
             <p class="tips inline_center_width">商品詳細(詳細)は 2000文字以内 で入力してください</p>

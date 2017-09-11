@@ -94,124 +94,148 @@
     <main class="Background_Color_white">
       <div class="container padding_top_10">
         
+        <?php
+          if($page_type === 'all_list'){
+        ?>
         <h1><?php print $page_name ?></h1>
         <div class="flexbox">
-        
-          <!-- 左側 -->
-          <div class="flex_1">
-            <div class="add_row user_profiles_panel_back">
-              <div class="user_profiles_panel">
-                <h2 class="inline_center_width">検索条件</h2>
+        <!-- 左側 -->
+        <div class="flex_1">
+          <div class="add_row user_profiles_panel_back">
+            <div class="user_profiles_panel">
+              <h2 class="inline_center_width">検索条件</h2>
+              
+              <input type="button" class="display_block block_center_width" onclick="search_reset()" value="検索条件をリセット">
+              
+              <form action="#">
                 
-                <input type="button" class="display_block block_center_width" onclick="search_reset()" value="検索条件をリセット">
+                <h3>検索ワード</h3>
+                <p class="tips">商品名・商品説明・出品者・所属団体から検索できます。</p>
+                <input id="search_word" type="text" name="search_word" value="<?php print $search_word?>" class="search_word">
                 
-                <form action="#">
-                  
-                  <h3>検索ワード</h3>
-                  <p class="tips">商品名・商品説明・出品者・所属団体から検索できます。</p>
-                  <input id="search_word" type="text" name="search_word" value="<?php print $search_word?>" class="search_word">
-                  
-                  <!-- ▼ ▼ ▼ ▼ ▼ ▼  ここから javascript  ▼ ▼ ▼ ▼ ▼ ▼ -->
-                  <script>
-                    //-------------------------------------------------
-                    // オートコンプリート
-                    //-------------------------------------------------
-                    //JSON.parseを使って配列を受け取る
-                    var autocomplete = JSON.parse('<?php echo json_encode($recommended_items); ?>');
+                <!-- ▼ ▼ ▼ ▼ ▼ ▼  ここから javascript  ▼ ▼ ▼ ▼ ▼ ▼ -->
+                <script>
+                  //-------------------------------------------------
+                  // オートコンプリート
+                  //-------------------------------------------------
+                  //JSON.parseを使って配列を受け取る
+                  var autocomplete = JSON.parse('<?php echo json_encode($recommended_items); ?>');
 
-                    $(document).ready(function() {
-                     $("#search_word").autocomplete({
-                      source:autocomplete,
-                      minLength: 2,
-                     })
-                    });
-        
-                  </script>
-                  <!-- ▲ ▲ ▲ ▲ ▲ ▲  ここまで javascript  ▲ ▲ ▲ ▲ ▲ ▲ -->
-                  
-                  <h3>カテゴリ</h3>
-                  <?php
-                    if (count($categories_master) > 0) {
-                      foreach($categories_master as $key => $category) {
-                  ?>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="checked_categories[]"
-                      class="serch_chkbox"
-                      value="<?php print $category['category_id']?>"
-                      <?php
-                        if (count($checked_categories) > 0){
-                          foreach($checked_categories as $key => $checked_category_id) {
-                            if ($category['category_id'] === (int)$checked_category_id) {
-                      ?>
-                      checked="checked"
-                      <?php
-                            }
+                  $(document).ready(function() {
+                   $("#search_word").autocomplete({
+                    source:autocomplete,
+                    minLength: 2,
+                   })
+                  });
+      
+                </script>
+                <!-- ▲ ▲ ▲ ▲ ▲ ▲  ここまで javascript  ▲ ▲ ▲ ▲ ▲ ▲ -->
+                
+                <h3>カテゴリ</h3>
+                <?php
+                  if (count($categories_master) > 0) {
+                    foreach($categories_master as $key => $category) {
+                ?>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="checked_categories[]"
+                    class="serch_chkbox"
+                    value="<?php print $category['category_id']?>"
+                    <?php
+                      if (count($checked_categories) > 0){
+                        foreach($checked_categories as $key => $checked_category_id) {
+                          if ($category['category_id'] === (int)$checked_category_id) {
+                    ?>
+                    checked="checked"
+                    <?php
                           }
                         }
-                      ?>
-                    ><?php print $category['category_name']?>
-                  </div>
-                  <?php
                       }
+                    ?>
+                  ><?php print $category['category_name']?>
+                </div>
+                <?php
                     }
-                  ?>                
-                  
-                  <h3>使用ソフト</h3>
-                  <?php
-                    if (count($skills_master) > 0) {
-                      foreach($skills_master as $key => $skill) {
-                  ?>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="checked_skills[]"
-                      class="serch_chkbox"
-                      value="<?php print $skill['skill_id']?>"
-                      <?php
-                        if (count($checked_skills) > 0){
-                          foreach($checked_skills as $key => $checked_skill_id) {
-                            if ($skill['skill_id'] === (int)$checked_skill_id) {
-                      ?>
-                      checked="checked"
-                      <?php
-                            }
+                  }
+                ?>                
+                
+                <h3>使用ソフト</h3>
+                <?php
+                  if (count($skills_master) > 0) {
+                    foreach($skills_master as $key => $skill) {
+                ?>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="checked_skills[]"
+                    class="serch_chkbox"
+                    value="<?php print $skill['skill_id']?>"
+                    <?php
+                      if (count($checked_skills) > 0){
+                        foreach($checked_skills as $key => $checked_skill_id) {
+                          if ($skill['skill_id'] === (int)$checked_skill_id) {
+                    ?>
+                    checked="checked"
+                    <?php
                           }
                         }
-                      ?>
-                      ><?php print $skill['skill_name']?>
-                  </div>
-                  <?php
                       }
+                    ?>
+                    ><?php print $skill['skill_name']?>
+                </div>
+                <?php
                     }
-                  ?>
+                  }
+                ?>
 
-                  <hr>
-                  
-                  <input type="submit" class="display_block block_center_width" value="この条件で検索">
-
-                </form>
+                <hr>
                 
+                <input type="submit" class="display_block block_center_width" value="この条件で検索">
 
-              </div>
+              </form>
+              
+
             </div>
           </div>
+        </div>
+        
+        <!-- 右側 -->
+        <div class="flex_3 add_colmun_right">
+        
+        <?php
+        } else {
+        ?>
+        <div class="container">
+          <h1><?php print $page_name ?></h1>
+        <?php
+        }
+        ?>
+        
           
-          <!-- 右側 -->
-          <div class="flex_3 add_colmun_right">
-
-            <?php
-              if((isset($carts_unpaid) === TRUE) && (count($carts_unpaid) > 0)){
-            ?>
-            <div class='add_row message_box'>
-              <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/cart_list.php">
-                <p class="Text_Color_red">カートに <?php print entity_str($carts_unpaid[0]['cart_sum_amount']); ?> 点の商品があります。</p>
-              </a>
-            </div>
-            <?php
+          <?php
+            if((isset($carts_unpaid) === TRUE) && (count($carts_unpaid) > 0)){
+          ?>
+          <div class='add_row message_box'>
+            <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/cart_list.php">
+              <p class="Text_Color_red">カートに <?php print entity_str($carts_unpaid[0]['cart_sum_amount']); ?> 点の商品があります。</p>
+            </a>
+          </div>
+          <?php
+            }
+          ?>
+          
+          <?php
+            if($page_type === 'seller_list'){
+              if((mb_strlen($target_user_id) > 0) && ($target_user_id === $user_id)){
+          ?>
+          <div class='add_row message_box'>
+            <p>本人による閲覧のため、非公開の商品も表示されます。</p>
+          </div>
+          <?php
               }
-            ?>
+            }
+          ?>
             
           <?php // エラーがあれば表示
           if (isset($err_msg) && count($err_msg) > 0) {
@@ -245,36 +269,27 @@
               foreach ($items_list as $key => $item){
           ?>
             <div class="add_row">
-              <div class="item_panel01" style="background-color:<?php print $item['category_color']?>;">
-                <div class="item_img">
-                  <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>" class="image_size_to_panel_radius"></img>
+              <a href="item_details.php?target_item_id=<?php print $item['item_id']?>">
+                <div class="item_panel01" style="background-color:<?php print $item['category_color']?>;">
+                    <div class="item_img">
+                      <img src="<?php print IMAGE_DIRECTORY . image_link($item['item_img']); ?>" class="image_size_to_panel_radius"></img>
+                    </div>
+                    <div class="item_info">
+                      <div class="item_title">
+                        <p><?php print $item['item_name']?></p>
+                      </div>
+                      <p class="price">¥<?php print $item['price']?></p>
+                      <p class="seller_name">
+                        <?php print $item['seller_user_name']?> さん
+                        <?php
+                          if((isset($item['seller_user_affiliation']) === TRUE) && (mb_strlen($item['seller_user_affiliation']) > 0)) {
+                            print ' ('. $item['seller_user_affiliation'] .') ';
+                          }
+                        ?>
+                        による出品</p>
+                    </div>
                 </div>
-                <div class="item_info">
-                  <div class="item_title">
-                    <p><?php print $item['item_name']?></p>
-                  </div>
-                  <p class="price">¥<?php print $item['price']?></p>
-                  <p class="seller_name">
-                    <?php print $item['seller_user_name']?> さん
-                    <?php
-                      if((isset($item['seller_user_affiliation']) === TRUE) && (mb_strlen($item['seller_user_affiliation']) > 0)) {
-                        print ' ('. $item['seller_user_affiliation'] .') ';
-                      }
-                    ?>
-                    による出品</p>
-                </div>
-                <div class="item_button_parent">
-                  <div class="item_button">
-                    <form method="post" enctype="multipart/form-data" action='item_details.php'>
-                      <input type="hidden" name="process_kind" value="to_item_details">
-                      <input type="hidden" name="target_item_id" value="<?php print $item['item_id']?>">
-                      <input type="submit" class="block" value="商品の詳細を見る">
-                    </form>
-                  </div>
-                </div>
-                
-
-              </div>
+              </a>
             </div>
           <?php
               }

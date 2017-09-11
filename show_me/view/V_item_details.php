@@ -74,10 +74,12 @@
     <main class="Background_Color_white">
       <div class="container padding_top_10">
         
+        <h1><?php print $page_title?></h1>
+        
       <?php // エラーがあれば表示
       if (isset($err_msg) && count($err_msg) > 0) {
       ?>
-        <div class="error_message_box">
+        <div class="error_message_box add_box">
           <ul>
       <?php
         foreach ($err_msg as $key => $error) {
@@ -95,79 +97,117 @@
       else {
       ?>
       
-        <h1><?php print $page_title?></h1>
-        <div class="details">
+        <div class="flexbox">
           
-          <div class="add_row inline_center_width">
-            <img src="<?php print IMAGE_DIRECTORY . $look_item_img; ?>" class="user_profiles_image">
+          <div class="details flex_3">
+            
+            <div class="add_row inline_center_width">
+              <img src="<?php print IMAGE_DIRECTORY . $look_item_img; ?>" class="user_profiles_image">
+            </div>
+            <h2>商品名</h2>
+            <p><?php print str_is_regist($look_item[0]['item_name'])?></p>
+            <h2>価格</h2>
+            <p>¥<?php print str_is_regist($look_item[0]['price'])?></p>
+            <h2>商品紹介</h2>
+            <p>
+              <?php print nl2br(str_is_regist($look_item[0]['item_introduction']), false)?>
+            </p>
+            <h2>商品紹介(詳細)</h2>
+            <p>
+              <?php print nl2br(str_is_regist($look_item[0]['item_introduction_detail']), false)?>
+            </p>
+            
+            <h2>対応カテゴリ</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $categories_name_list))) ?></p>
+            
+            <h2>使用ソフト</h2>
+            <p><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
+            
+            <hr>
+            <?php //在庫があれば購入できる
+              if($look_item[0]['stock'] > 0) {
+            ?>
+            <div class="stock">
+              <label>在庫 <?php print $look_item[0]['stock']?> 点</label>
+            </div>
+            <label class="add_colmun_right">
+              <form method="post" enctype="multipart/form-data">
+                <div>
+                  <input type="number" name="item_to_carts_amount" value=<?php print $item_to_carts_amount?>>
+                  <input type="hidden" name="item_to_carts_stock" value=<?php print $look_item[0]['stock']?>>
+                  <input type="hidden" name="target_item_id" value="<?php print $look_item[0]['item_id']?>">
+                  <input type="hidden" name="process_kind" value="item_to_carts">
+                  <input type="submit" value="カートに入れる">
+                </div>
+              </form>
+            </label >
+            <?php //在庫がなければ売り切れ
+              } else {
+            ?>
+            <label class="Text_Color_red">売り切れ</label>
+            <?php
+              }
+            ?>
+            <?php // (カート用の)エラーがあれば表示
+            if (isset($err_to_cart) && count($err_to_cart) > 0) {
+            ?>
+            <div class="error_message_box";>
+              <ul>
+            <?php
+              foreach ($err_to_cart as $key => $c_err) {
+            ?>
+                <li><p><?php print entity_str($c_err)?></p></li>
+            <?php
+              }
+            ?>
+              </ul>
+            </div>
+            <?php
+            }
+            ?>
+            
           </div>
-          <h2>商品名</h2>
-          <p><?php print str_is_regist($look_item[0]['item_name'])?></p>
-          <h2>価格</h2>
-          <p>¥<?php print str_is_regist($look_item[0]['price'])?></p>
-          <h2>商品紹介</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_item[0]['item_introduction']), false)?>
-          </p>
-          <h2>商品紹介(詳細)</h2>
-          <p>
-            <?php print nl2br(str_is_regist($look_item[0]['item_introduction_detail']), false)?>
-          </p>
           
-          <h2>対応カテゴリ</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $categories_name_list))) ?></p>
-          
-          <h2>使用ソフト</h2>
-          <p><?php print entity_str(str_is_regist(implode(' / ', $skills_name_list))) ?></p>
-          
-          <hr>
-          <?php //在庫があれば購入できる
-            if($look_item[0]['stock'] > 0) {
-          ?>
-          <div class="stock">
-            <label>在庫 <?php print $look_item[0]['stock']?> 点</label>
-          </div>
-          <label class="add_colmun_right">
-            <form method="post" enctype="multipart/form-data">
-              <div>
-                <input type="number" name="item_to_carts_amount" value=<?php print $item_to_carts_amount?>>
-                <input type="hidden" name="item_to_carts_stock" value=<?php print $look_item[0]['stock']?>>
-                <input type="hidden" name="target_item_id" value="<?php print $look_item[0]['item_id']?>">
-                <input type="hidden" name="process_kind" value="item_to_carts">
-                <input type="submit" value="カートに入れる">
+          <div class="flex_1 add_colmun_right details">
+            <div class="add_row user_profiles_panel_back">
+              <h2>出品者</h2>
+              <div class="user_profiles_panel">
+                <div class="image_panel_200 block_center_width">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($seller_user[0]['user_img']); ?>" class="image_size_to_panel_radius"></img>
+                </div>
+                <p class="inline_center_width"><?php print $seller_user[0]['user_name'] ?> さん</p>
+                <?php
+                  if (mb_strlen($user[0]['user_affiliation']) > 0){
+                ?>
+                <p class="inline_center_width"><?php print $seller_user[0]['user_affiliation'] ?></p>
+                <?php
+                  }
+                ?>
+                
+                <hr>
+                <h3>対応カテゴリ</h3>
+                <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $seller_user_categories_name_list))) ?></p>
+                
+                <h3>使用ソフト</h3>
+                <p class="name_list"><?php print entity_str(str_is_regist(implode(' / ', $seller_user_skills_name_list))) ?></p>
+  
+                <form action='user_profile.php'>
+                  <div class="add_row">
+                    <input type="hidden" name="process_kind" value="to_user_profile">
+                    <input type="hidden" name="target_user_id" value="<?php print $seller_user[0]['user_id']?>">
+                    <input type="submit" class="display_block block_center_width" value="プロフィールを見る">
+                  </div>
+                </form>
               </div>
-            </form>
-          </label >
-          <?php //在庫がなければ売り切れ
-            } else {
-          ?>
-          <label class="Text_Color_red">売り切れ</label>
-          <?php
-            }
-          ?>
-          <?php // (カート用の)エラーがあれば表示
-          if (isset($err_to_cart) && count($err_to_cart) > 0) {
-          ?>
-          <div class="error_message_box";>
-            <ul>
-          <?php
-            foreach ($err_to_cart as $key => $c_err) {
-          ?>
-              <li><p><?php print entity_str($c_err)?></p></li>
-          <?php
-            }
-          ?>
-            </ul>
+            </div>
           </div>
-          <?php
-          }
-          ?>
           
+        </div>
+        
           
         <?php
           if ((int)$my_user_id === (int)$look_item[0]['seller_user_id']) {
         ?>
-        
         <hr>
         <form method="post" enctype="multipart/form-data" action='item_info.php'>
           <div>
@@ -185,21 +225,45 @@
         </form>
         <?php
           }
+        }
         ?>
-        
+      
+        <h1 class="add_row">『<?php print $page_title?>』の制作リスト</h1>
+        <div class="flex_right_center_height">
+          <p class="link">
+            <a href="<?php print $url_products_list?>">→ もっと見る</a>
+          </p>
         </div>
-
-        <h1 class="add_row"><?php print $page_title?> の作品</h1>
-        <div class=add_row>
-          <p>登録されていません</p>
+        <div class="add_row item_plate">
+        <?php
+          if((isset($products_list) === TRUE) && (count($products_list) > 0)){
+            foreach($products_list as $key => $product){
+        ?>
+          <div class="add_row">
+            <div class="item_panel02" style="background-color:<?php print $product['category_color']?>;">
+              <a href="product_details.php?target_product_id=<?php print $product['product_id']?>">
+                <div class="item_img">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($product['product_img']); ?>" class="image_size_to_panel_radius"></img>
+                </div>
+                
+                <div class="item_info">
+                  <div class="item_title">
+                    <p><?php print $product['item_name']?> / <?php print product_status_int_to_str($product['product_status'])?></p>
+                  </div>
+                  <p class="seller_name">
+                    <?php print $product['productor_user_name']?> さんによる作品</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        <?php
+            }
+          }
+        ?>
+          
         </div>
-        
       </div>
-      
-      <?php
-      }
-      ?>
-      
+
     </main>
     
     

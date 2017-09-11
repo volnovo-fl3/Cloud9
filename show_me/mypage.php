@@ -92,7 +92,7 @@ try {
       
       //---------------------------------------------------------------------------------------------
       // 制作したものリスト
-      $search_where = "where p.deleted_datetime is null and p.product_status <> 2 and productor.user_id = $user_id order by p.updated_datetime desc limit 4";
+      $search_where = "where p.deleted_datetime is null and p.product_status <> 2 and productor.user_id = $user_id order by (CASE WHEN product_status = 1 THEN 1 WHEN product_status = 0 THEN 2 ELSE 9 END) asc, p.updated_datetime desc limit 4";
       $user_products = get_products_table_list($dbh, $search_where);
       
       //---------------------------------------------------------------------------------------------
