@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/icon_portfolio.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery.fullPage.min.js"></script>
+    <title>田中 昇 | profile</title>
+  </head>
+
+  <body>
+
+    <main>
+      
+      <script>
+        /*-----------------------------------------------
+        ページごとスクロール
+        -----------------------------------------------*/
+        $(function(){
+        	$('#fullpage').fullpage({
+        	  anchors: ['toppage', 'profile', 'movie', 'WEB_Picture'],
+        	  scrollBar: true,
+        	  navigation: true,
+        	  //scrollOverflow: true,
+        	  slidesNavigation: true,
+        	  slidesNavPosition:'top'
+        	});
+        });
+        
+        /*-----------------------------------------------
+        マウスオン、クリックで表示・非表示を切り替える
+        http://weboook.blog22.fc2.com/blog-entry-403.html 様を大いに参考にさせて頂きました。
+        -----------------------------------------------*/
+        $(function() {
+          $('#folding_box > div > a').click(function(){
+             $("+ div",this).toggle();
+             return false;
+          });
+          $("#folding_box > div")
+          .mouseover(function(){
+            $("> div",this).show();
+          })
+          .mouseout(function(){
+            $("> div",this).hide();
+          });
+        });      
+        
+      </script>
+      
+      <article id="fullpage">
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ TOP ▼ ▼ ▼ -->
+        <section class="toppage section">
+          <div class="container">
+            <div>
+              <p class="title">Product List</p>
+              <img src="img/tanaka_001.jpg"></img>
+              <p class="name"><span>by.</span> Noboru Tanaka</p>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ TOP ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ プロフィール ▼ ▼ ▼ -->
+        <section class="profile section">
+          <div class="container">
+            <h1>Profile</h1>
+            <div>
+              <!-- 概要 -->
+              <div>
+                <p>1988年5月8日 生</p>
+                <p>大阪府寝屋川市 出身</p>
+              </div>
+              
+              <!-- 詳細 -->
+              <script>
+              </script>
+              
+              <div id="folding_box">
+                
+                <!-- ▼ ▼ ▼ 映像 ▼ ▼ ▼ -->
+                <div>
+                  <a href="#">映像制作</a>
+                  <div>
+                    <div>
+                      <p>2011年4月 〜 現在</p>
+                      <p>また、学生時代はテレビ大阪にてカメラアシスタントを経験。</p>
+                      <table>
+                        <tr>
+                          <th rowspan=4>使用ソフト</th>
+                          <td>Adobe Photoshop (6 / 7 / CS4)</td>
+                        </tr>
+                        <tr>
+                          <td>Adobe AfterEffects (6.5 / 7 / CS4)</td>
+                        </tr>
+                        <tr>
+                          <td>Adobe Illustrator (CS4)</td>
+                        </tr>
+                        <tr>
+                          <td>Grass Valley EDIUS (Neo3 / 6 / 7 / 8)</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- ▲ ▲ ▲ 映像 ▲ ▲ ▲ -->
+                
+                <!-- ▼ ▼ ▼ 開発 ▼ ▼ ▼ -->
+                <div>
+                  <a href="#">システム開発</a>
+                  <div>
+                    <div>
+                      <p>2015年5月 〜 2017年5月</p>
+                      <p>バージョン管理ツール TortoiseSVN 、自動テストツール Jenkins を使用。</p>
+                      <table>
+                        <tr>
+                          <th rowspan=4>開発環境</th>
+                          <td>Windows Server (2008 R2 / 2012 R2)</td>
+                        </tr>
+                        <tr>
+                          <td>IIS (7 / 8)</td>
+                        </tr>
+                        <tr>
+                          <td>Visual Studio (2012 / 2014)</td>
+                        </tr>
+                        <tr>
+                          <td>.NET Framework (3.5 / 4.5.2)</td>
+                        </tr>
+                        <tr>
+                          <th rowspan=3>使用言語</th>
+                          <td>C#.NET</td>
+                        </tr>
+                        <tr>
+                          <td>Transact-SQL</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- ▲ ▲ ▲ 開発 ▲ ▲ ▲ -->
+                
+                <!-- ▼ ▼ ▼ WEB ▼ ▼ ▼ -->
+                <div>
+                  <a href="#">WEB制作</a>
+                  <div>
+                    <div>
+                      <p>2017年7月〜</p>
+                      <table>
+                        <tr>
+                          <th rowspan=2>開発環境</th>
+                          <td>Cloud9</td>
+                        </tr>
+                        <tr>
+                          <td>Git</td>
+                        </tr>
+                        <tr>
+                          <th rowspan=5>使用言語</th>
+                          <td>HTML5 / CSS3</td>
+                        </tr>
+                        <tr>
+                          <td>PHP5.5</td>
+                        </tr>
+                        <tr>
+                          <td>JavaScript</td>
+                        </tr>
+                        <tr>
+                          <td>jQuery</td>
+                        </tr>
+                        <tr>
+                          <td>MySQL5.5</td>
+                        </tr>
+                      </table>
+                      <p>また、現在はLAMP環境・MAMP環境の構築について勉強中</p>
+                      <p>(↑ 構築したサーバーを当ページのサーバーとして利用しています。)</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ▲ ▲ ▲ WEB ▲ ▲ ▲ -->
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ プロフィール ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ 映像制作 ▼ ▼ ▼ -->
+        <section class="section">
+          <div class="container">
+            <h1>Movie</h1>
+            <div class="slide">
+              <div>
+                <p>披露宴会場で上映する生い立ちムービー・当日撮影エンドロール</p>
+                <p>その他、イベント会場で上映する演出映像の制作</p>
+                <p>使用ソフト</p>
+              </div>
+              <div class="flexbox">
+                <div class="flex_1">
+                  <h2>新郎新婦の気持ちを伝えるムービー作成</h2>
+                </div>
+                <div class="flex_1">
+                  <div>
+                    <div class="flexbox">
+                      <div class="flex_1">
+                        <p>sample02</p>
+                      </div>
+                      <div class="flex_1">
+                        <p>sample03</p>
+                      </div>
+                    </div>
+                    <div class="flexbox">
+                      <div class="flex_1">
+                        <p>sample04</p>
+                      </div>
+                      <div class="flex_1">
+                        <p>sample05</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <h2>生い立ちムービー<br></h2>
+              <p>見どころ</p>
+            </div>
+            <div class="slide">
+              <h2>オープニングムービー<br>とにかく夏っぽく！</h2>
+              <p>見どころ</p>
+            </div>
+            <div class="slide">
+              <h2>当日撮影エンドロール<br></h2>
+              <p>見どころ</p>
+            </div>
+            <div class="slide">
+              <h2>ホテル ザ・リッツ・カールトン大阪 様<br>ブライダルフェアサンプル</h2>
+              <p>見どころ</p>
+            </div>
+            <div class="slide">
+              <h2>ジッピーダンススタジオ 様<br>講師紹介ムービー</h2>
+              <p>見どころ</p>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ 映像制作 ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ WEB / 静止画 ▼ ▼ ▼ -->
+        <section class="section">
+          <div class="container">
+            <div class="flexbox">
+              <div class="flex_1">
+                <h1>WEB</h1>
+              </div>
+              <div class="flex_1">
+                <h1>Image</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ WEB / 静止画 ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+      </article>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>

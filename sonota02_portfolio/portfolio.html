@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/icon_portfolio.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery.fullPage.min.js"></script>
+    <title>田中 昇 | portfolio</title>
+  </head>
+
+  <body>
+
+    <main>
+      
+      <script>
+        /*-----------------------------------------------
+        ページごとスクロール
+        -----------------------------------------------*/
+        var page_anchors = ['toppage', 'movie', 'image', 'development'];
+        
+        $(function(){
+        	$('#fullpage').fullpage({
+        	  recordHistory: false,
+        	  anchors: page_anchors,
+        	  scrollBar: true,
+        	  navigation: true,
+        	  loopBottom: true,
+        	  loopTop: true,
+        	  slidesNavigation: true,
+        	  slidesNavPosition:'bottom',
+        	  paddingTop: '80px',
+        	  
+            /*-----------------------------------------------
+            画面上部のナビゲーション操作
+            -----------------------------------------------*/
+          	afterLoad: function(anchorLink, index){
+          		var loadedSection = $(this);
+          		var nav_elements = document.getElementById('nav_' + anchorLink);
+        			nav_elements.classList.add('selection_viewing');
+          	},
+        	  onLeave: function (index,nextIndex) {
+        	    var prev_page_nav = 'nav_' + page_anchors[index-1];
+        	    var next_page_nav = 'nav_' + page_anchors[nextIndex-1];
+        			var prev_elements = document.getElementById(prev_page_nav);
+        			var next_elements = document.getElementById(next_page_nav);
+        			prev_elements.classList.remove('selection_viewing');
+        			next_elements.classList.add('selection_viewing');
+            },
+            
+            /*-----------------------------------------------
+            ムービー表示部分のサイズを取得
+            -----------------------------------------------*/
+          	afterLoad: function(anchorLink, index){
+          	  if(anchorLink === 'movie'){
+                set_movie_size();
+          	  }
+          	},
+
+        	});
+        });
+        
+        function set_movie_size(){
+          var elements_flex_plate = document.getElementsByClassName("flex_plate");
+          var height_flex_plate = elements_flex_plate[0].clientHeight;
+          var elements_movie_comment = document.getElementsByClassName("movie_comment");
+          var height_movie_comment = [0];
+          for( var i=0,l=elements_movie_comment.length; l>i; i++ ) {
+          	height_movie_comment.push(elements_movie_comment[i].clientHeight);
+          }
+          var max_height_movie_comment = Math.max.apply(null, height_movie_comment);
+          var movie_height = height_flex_plate - max_height_movie_comment - 200;
+
+          var elements_movie_link = document.getElementsByClassName("movie_link");
+          for( var i=0,l=elements_movie_link.length; l>i; i++ ) {
+          	var element = elements_movie_link[i] ;
+          	element.style.height = movie_height + "px";
+          }
+        }
+        window.onresize = function () {
+            set_movie_size();
+        }        
+        
+        
+        /*-----------------------------------------------
+        マウスオン、クリックで表示・非表示を切り替える
+        http://weboook.blog22.fc2.com/blog-entry-403.html 様を大いに参考にさせて頂きました。
+        -----------------------------------------------*/
+        $(function() {
+          $('#folding_box > div > a').click(function(){
+             $("+ div",this).toggle();
+             return false;
+          });
+          $("#folding_box > div")
+          .mouseover(function(){
+            $("> div",this).show();
+          })
+          .mouseout(function(){
+            $("> div",this).hide();
+          });
+        });      
+        
+      </script>
+      
+      
+      <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+      <!-- ▼ ▼ ▼ ナビ ▼ ▼ ▼ -->
+      <nav id="nav">
+        <div class="container">
+          <ul>
+            <li data-menuanchor="toppage">
+              <div id="nav_toppage">
+                <a href="#toppage"><span><i class="icon-user"></i>&nbsp;TOP</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="movie">
+              <div id="nav_movie">
+                <a href="#movie"><span><i class="icon-youtube"></i>&nbsp;Movie</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="image">
+              <div id="nav_image">
+                <a href="#image"><span><i class="icon-picture-1"></i>&nbsp;Image</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="development">
+              <div id="nav_development">
+                <a href="#development"><span><i class="icon-code"></i>&nbsp;Development</span></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- ▲ ▲ ▲ ナビ ▲ ▲ ▲ -->
+      <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+      
+        
+      <article id="fullpage">
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ TOP ▼ ▼ ▼ -->
+        <section class="toppage section">
+          <div class="container">
+            <div>
+              <p class="title">Product List</p>
+              <img src="img/tanaka_001.jpg"></img>
+              <p class="name"><span>by.</span> Noboru Tanaka</p>
+              <div class="skill">
+                <hr>
+                <p>Adobe Photoshop / Adobe AfterEffects / Adobe Illustrator / EDIUS</p>
+                <p>C#.NET / SQLServer</p>
+                <p>HTML / CSS / PHP / JavaScript/ jQuery / MySQL</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ TOP ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ 映像制作 ▼ ▼ ▼ -->
+        <section class="movie section">
+          <div class="container">
+            <h1><i class="icon-youtube"></i>&nbsp; Movie</h1>
+            <div class="slide">
+              <div class="canvas">
+                <div>
+                  <div class="flex_plate">
+                    
+                    <div>
+                      <div class="text_center">
+                        <p>お2人の特別な1日を華やかに演出する</p>
+                        <p>生い立ちムービーやエンドロールを中心に</p>
+                        <p>イベントでの演出映像も制作致します。</p>
+                      </div>
+                    </div>
+                    
+                    <!--
+                    <div class="text_center">
+                      <p>お2人の特別な1日を華やかに演出する</p>
+                      <p>生い立ちムービーやエンドロールを中心に</p>
+                      <p>イベントでの演出映像も制作致します</p>
+                    </div>
+                    <div>
+                      <div class="movie_contains">
+                        <div class="index_main_slide">
+                          <a href="#movie/1">
+                            <h2>Opening Movie</h2>
+                            <p>オープニングムービー</p>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="movie_contains">
+                        <div class="index_main_slide">
+                          <a href="#movie/2">
+                            <h2>Profile Movie</h2>
+                            <p>生い立ちムービー</p>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="movie_contains">
+                        <div class="index_main_slide">
+                          <a href="#movie/3">
+                            <h2>Endroll Movie</h2>
+                            <p>エンドロールムービー</p>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="movie_contains">
+                        <div class="index_main_slide">
+                          <a href="#movie/4">
+                            <h2>Others</h2>
+                            <p>その他</p>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      -->
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="slide">
+              <div class="canvas">
+                <div>
+                  <div class="index_sub_slide">
+                    <h2>Opening Movie<span>オープニングムービー</span></h2>
+                    <div class="text_center">
+                      <p>いよいよ始まる披露宴。</p>
+                      <p>お2人の新たな門出をオーダーメイド映像で演出します。</p>
+                    </div>
+                    <div class="flex_plate">
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;本当～にいろんな所に行きました！</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>「だいたいの観光地は巡りました」と話すお2人。</p>
+                          <p>打ち合わせの際にお持ち頂いたお写真は、100枚近くにものぼりました。</p>
+                          <p>国内外問わず足を伸ばすお2人のスケールを地球儀で表現したオープニングムービーです。</p>
+                        </div>
+                      </div>
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;とにかくライブが大好き！！</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>「披露宴を思いっきりカジュアルにしたい！」</p>
+                          <p>ゲスト様には思う存分飲んで、騒いで、楽しんでもらいたいと強いご要望をお持ちでした。</p>
+                          <p>アメコミをテーマにした、POPでFUNKYなお2人のオープニングムービーです。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="slide">
+              <div class="canvas">
+                <div>
+                  <div class="index_sub_slide">
+                    <h2>Profile Movie<span>生い立ちムービー</span></h2>
+                    <div class="text_center">
+                      <p>生まれてから今日まで...</p>
+                      <p>お世話になった皆様に、心をこめて「ありがとう」</p>
+                    </div>
+                    <div class="flex_plate">
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;Mr.Childrenが大好き！</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>Mr.Childrenが大好き！と話すお2人。ライブ映像は特に感動したと仰っていました。</p>
+                          <p>『365日』に合わせ、今日までの思い出を、そしてお2人が出会ってからの出来事を綴ったプロフィールムービーです。</p>
+                        </div>
+                      </div>
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;付き合って数ヶ月のプロポーズ</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>「怖くて話しかけ辛い」⇒「話してると楽しい」<br>でも、まだお互いのことをよく知らないのかも...。</p>
+                          <p>ドライブデートでのプロポーズ。BGMはくるりの『魔法のじゅうたん』に乗せて、徐々に変化する機微を表したプロフィールムービーです。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="slide">
+              <div class="canvas">
+                <div>
+                  <div class="index_sub_slide">
+                    <h2>Endroll Movie<span>エンドロールムービー</span></h2>
+                    <div class="text_center">
+                      <p>皆様からの「おめでとう」、皆様へ「ありがとう」</p>
+                      <p>この素敵な1日を、最後の花束贈呈まで振り返ります。</p>
+                    </div>
+                    <div class="flex_plate">
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;今更だけど...。結婚してください。</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>挙式を控え、新郎様には1つ心残りがありました。</p>
+                          <p>「ちゃんとプロポーズをしていない」</p>
+                          <p>ご親族に見守られ、暖かな雰囲気で進むパーティーの中</p>
+                          <p>意を決して...！</p>
+                        </div>
+                      </div>
+                      <div class="movie_panel">
+                        <h3><i class="icon-commenting-o"></i>&nbsp;現実なんだな、って実感しました。</h3>
+                        <div class="movie_link">
+                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen target="_blank"></iframe>
+                        </div>
+                        <div class="movie_comment">
+                          <p>直前まで「ぜんぜん実感が湧きません(笑)」と新婦様。<br>ギリギリまで準備に追われていたとのことでした。</p>
+                          <p>そして迎えた当日。<br>共に歩く父、正面で待つ彼、友人たちの祝福</p>
+                          <p>...そう、全てはこの瞬間のために。</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="slide">
+              <div class="canvas">
+                <div>
+                  <div class="index_sub_slide">
+                    <h2>Others<span>その他</span></h2>
+                    <div class="text_center">
+                      <p>いよいよ始まる披露宴。</p>
+                      <p>お2人がどんな歩みで晴れの日を迎えられたのか</p>
+                      <p>オーダーメイドの映像で演出します。</p>
+                    </div>
+                    <div class="flex_plate">
+                      <div>
+                        <p>test</p>
+                      </div>
+                      <div>
+                        <p>test</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ 映像制作 ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ WEB / 静止画 ▼ ▼ ▼ -->
+        <section class="development section">
+          <div class="container">
+            <div class="flexbox">
+              <div class="flex_1">
+                <h1>WEB</h1>
+              </div>
+              <div class="flex_1">
+                <h1>Image</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ WEB / 静止画 ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+      </article>
+    </main>
+    
+    <footer>
+      
+    </footer>
+  </body>
+</html>
