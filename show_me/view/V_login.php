@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
     <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/show_me.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 </head>
   
   <body class="Background_Color_default wf-notosansjapanese">
@@ -67,9 +69,44 @@
             <input type="hidden" name="process_kind" value="to_user_insert">
             <input type="submit" class="display_block block_center_width" value="ユーザー新規登録">
           </div>
+          <p id="display_guide"><a href="#">初めての方はこちら</a></p>
         </form>
 
       </div>
     </div>
+    
+    <div id="show_me_guide">
+      <div class="flexbox">
+        <div class="info">Show me! について</div>
+        <div id="exit"><a href="#">×</a></div>
+      </div>
+      <iframe src="https://drive.google.com/file/d/0B0WqmbXDMZlqdTNEa3pudktCekE/preview"></iframe>
+    </div>
+    
+    <script>
+    $(function() {
+      var contents = $("#show_me_guide");
+      
+      $("#display_guide").click(function(){
+        $(contents).toggle();
+        return false;
+      });
+      $("#display_guide")
+      .mouseover(function(){
+        $(contents).show();
+      })
+      $("#exit")
+      .click(function(){
+        $(contents).hide();
+      })
+      
+      /*
+      .mouseout(function(){
+        $(contents).hide();
+      });
+      */
+    });
+    </script>
+    
   </body>
 </html>
