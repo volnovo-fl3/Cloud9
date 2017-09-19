@@ -5,14 +5,16 @@
     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <link rel="stylesheet" href="css/icon_portfolio.css">
-    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:400,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script src="js/jquery.slimscroll.min.js"></script>
     <link rel="stylesheet" href="css/jquery.fullPage.css">
     <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+
     <title>田中 昇 | portfolio</title>
   </head>
 
@@ -22,9 +24,21 @@
       
       <script>
         /*-----------------------------------------------
+        スライドショー
+        -----------------------------------------------*/
+        $(document).ready(function(){
+          $('.bxslider').bxSlider({
+            auto: true,
+            mode: 'fade',
+            randomStart: true,
+            infiniteLoop: true,
+          });
+      	});
+      
+        /*-----------------------------------------------
         ページごとスクロール
         -----------------------------------------------*/
-        var page_anchors = ['toppage', 'movie', 'image', 'development'];
+        var page_anchors = ['toppage', 'movie', 'image', 'web'];
         
         $(function(){
         	$('#fullpage').fullpage({
@@ -37,7 +51,7 @@
         	  slidesNavigation: true,
         	  slidesNavPosition:'bottom',
         	  paddingTop: '80px',
-        	  
+
             /*-----------------------------------------------
             画面上部のナビゲーション操作
             -----------------------------------------------*/
@@ -63,10 +77,10 @@
                 set_movie_size();
           	  }
           	},
-
         	});
         });
         
+        /*----- ムービー表示部分のサイズ -----*/
         function set_movie_size(){
           var elements_flex_plate = document.getElementsByClassName("flex_plate");
           var height_flex_plate = elements_flex_plate[0].clientHeight;
@@ -84,8 +98,9 @@
           	element.style.height = movie_height + "px";
           }
         }
+        /*------------------------------------------*/
         window.onresize = function () {
-            set_movie_size();
+          set_movie_size();
         }        
         
         
@@ -105,7 +120,7 @@
           .mouseout(function(){
             $("> div",this).hide();
           });
-        });      
+        });
         
       </script>
       
@@ -130,9 +145,9 @@
                 <a href="#image"><span><i class="icon-picture-1"></i>&nbsp;Image</span></a>
               </div>
             </li>
-            <li data-menuanchor="development">
-              <div id="nav_development">
-                <a href="#development"><span><i class="icon-code"></i>&nbsp;Development</span></a>
+            <li data-menuanchor="web">
+              <div id="nav_web">
+                <a href="#web"><span><i class="icon-code"></i>&nbsp;WEB</span></a>
               </div>
             </li>
           </ul>
@@ -149,12 +164,12 @@
           <div class="container">
             <div>
               <p class="title">Product List</p>
-              <img src="img/tanaka_001.jpg"></img>
+              <img src="http://volnovo.xyz/profile/files/profile_001.jpg"></img>
               <p class="name"><span>by.</span> Noboru Tanaka</p>
               <div class="skill">
                 <hr>
-                <p>Adobe Photoshop / Adobe AfterEffects / Adobe Illustrator / EDIUS</p>
-                <p>C#.NET / SQLServer</p>
+                <p>Photoshop / AfterEffects / Illustrator / EDIUS</p>
+                <p>C#.NET / WPF/ SQLServer</p>
                 <p>HTML / CSS / PHP / JavaScript/ jQuery / MySQL</p>
               </div>
             </div>
@@ -171,14 +186,29 @@
             <h1><i class="icon-youtube"></i>&nbsp; Movie</h1>
             <div class="slide">
               <div class="canvas">
-                <div>
+                <div id="movie_top">
                   <div class="flex_plate">
-                    
                     <div>
+                      
+                      <div id="slide_images">
+                        <span class="guard"></span>
+                        <ul class="bxslider">
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image01.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image02.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image03.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image04.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image05.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image06.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image07.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image08.jpg"></li>
+                        	<li><img src="http://volnovo.xyz/profile/files/movie_image09.jpg"></li>
+                        </ul>
+                      </div>
+
                       <div class="text_center">
-                        <p>お2人の特別な1日を華やかに演出する</p>
-                        <p>生い立ちムービーやエンドロールを中心に</p>
-                        <p>イベントでの演出映像も制作致します。</p>
+                        <p>お2人の想いをカタチに</p>
+                        <p>特別な1日を華やかに演出する</p>
+                        <p>オーダーメイドムービーを制作致します</p>
                       </div>
                     </div>
                     
@@ -237,24 +267,34 @@
                     <h2>Opening Movie<span>オープニングムービー</span></h2>
                     <div class="text_center">
                       <p>いよいよ始まる披露宴。</p>
-                      <p>お2人の新たな門出をオーダーメイド映像で演出します。</p>
+                      <p>お2人の新たな門出をにぎやかな演出で彩ります</p>
                     </div>
                     <div class="flex_plate">
                       <div class="movie_panel">
-                        <h3><i class="icon-commenting-o"></i>&nbsp;本当～にいろんな所に行きました！</h3>
+                        <h3><i class="icon-commenting-o"></i>&nbsp;夏！夏！夏！！</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_01.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_01.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_01.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_01.webm" type="video/webm" />
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
-                          <p>「だいたいの観光地は巡りました」と話すお2人。</p>
-                          <p>打ち合わせの際にお持ち頂いたお写真は、100枚近くにものぼりました。</p>
-                          <p>国内外問わず足を伸ばすお2人のスケールを地球儀で表現したオープニングムービーです。</p>
+                          <p>ロケ地は思い出の地、琵琶湖・近江舞子。<br>初デートもプロポーズもここで。</p>
+                          <p>初々しさを振り返りながらも、夫婦としての安定感を見せるお2人。</p>
+                          <p>陽気で爽やかな、夏らしいオープニングに仕上がりました。</p>
                         </div>
                       </div>
                       <div class="movie_panel">
                         <h3><i class="icon-commenting-o"></i>&nbsp;とにかくライブが大好き！！</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_02.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_02.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_02.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_02.webm" type="video/webm" />
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
                           <p>「披露宴を思いっきりカジュアルにしたい！」</p>
@@ -279,23 +319,33 @@
                     </div>
                     <div class="flex_plate">
                       <div class="movie_panel">
-                        <h3><i class="icon-commenting-o"></i>&nbsp;Mr.Childrenが大好き！</h3>
+                        <h3><i class="icon-commenting-o"></i>&nbsp;2人が付き合ってから...</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_03.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_03.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_03.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_03.webm" type="video/webm" />
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
                           <p>Mr.Childrenが大好き！と話すお2人。ライブ映像は特に感動したと仰っていました。</p>
-                          <p>『365日』に合わせ、今日までの思い出を、そしてお2人が出会ってからの出来事を綴ったプロフィールムービーです。</p>
+                          <p>『365日』に合わせ、出会ってからの出来事を、そして今日までの思い出を綴ったプロフィールムービーです。</p>
                         </div>
                       </div>
                       <div class="movie_panel">
-                        <h3><i class="icon-commenting-o"></i>&nbsp;付き合って数ヶ月のプロポーズ</h3>
+                        <h3><i class="icon-commenting-o"></i>&nbsp;なんだかんだ飽きない人！(笑)</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_04.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_04.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_04.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_04.webm" type="video/webm" />
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
-                          <p>「怖くて話しかけ辛い」⇒「話してると楽しい」<br>でも、まだお互いのことをよく知らないのかも...。</p>
-                          <p>ドライブデートでのプロポーズ。BGMはくるりの『魔法のじゅうたん』に乗せて、徐々に変化する機微を表したプロフィールムービーです。</p>
+                          <p>怖い人だと思っていたけど、話してみると案外いい人。でも...<br>まだお互いのことをよく知らないままドライブデートでプロポーズ。</p>
+                          <p>BGMはくるりの『魔法のじゅうたん』に乗せて、徐々に変化する機微を表したプロフィールムービーです。</p>
                         </div>
                       </div>
                     </div>
@@ -311,13 +361,18 @@
                     <h2>Endroll Movie<span>エンドロールムービー</span></h2>
                     <div class="text_center">
                       <p>皆様からの「おめでとう」、皆様へ「ありがとう」</p>
-                      <p>この素敵な1日を、最後の花束贈呈まで振り返ります。</p>
+                      <p>この素敵な1日を、最後の花束贈呈まで振り返ります</p>
                     </div>
                     <div class="flex_plate">
                       <div class="movie_panel">
                         <h3><i class="icon-commenting-o"></i>&nbsp;今更だけど...。結婚してください。</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_05.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_05.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_05.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_05.webm" type="video/webm" />                        
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
                           <p>挙式を控え、新郎様には1つ心残りがありました。</p>
@@ -329,7 +384,12 @@
                       <div class="movie_panel">
                         <h3><i class="icon-commenting-o"></i>&nbsp;現実なんだな、って実感しました。</h3>
                         <div class="movie_link">
-                          <iframe src="https://www.youtube.com/embed/jhOVibLEDhA" frameborder="0" allowfullscreen target="_blank"></iframe>
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_06.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_06.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_06.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_06.webm" type="video/webm" />                        
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
                         </div>
                         <div class="movie_comment">
                           <p>直前まで「ぜんぜん実感が湧きません(笑)」と新婦様。<br>ギリギリまで準備に追われていたとのことでした。</p>
@@ -349,21 +409,47 @@
                   <div class="index_sub_slide">
                     <h2>Others<span>その他</span></h2>
                     <div class="text_center">
-                      <p>いよいよ始まる披露宴。</p>
-                      <p>お2人がどんな歩みで晴れの日を迎えられたのか</p>
-                      <p>オーダーメイドの映像で演出します。</p>
+                      <p>イベントや社内コンペに向けて制作した映像です。</p>
+                      <p>どちらもディレクターを担当致しました。</p>
                     </div>
                     <div class="flex_plate">
-                      <div>
-                        <p>test</p>
+                      <div class="movie_panel">
+                        <h3>ダンススタジオ 講師紹介ムービー</h3>
+                        <div class="movie_link">
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_07.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_07.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_07.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_07.webm" type="video/webm" />                        
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
+                        </div>
+                        <div class="movie_comment">
+                          <p>ダンススタジオの発表会で上映された講師紹介ムービーです。</p>
+                          <p>生徒に教えるだけではなく、自身もなお進化を続ける講師陣の情熱を</p>
+                          <p>EGO-WRAPPIN'のパッションに乗せて表現しました。</p>
+                        </div>
                       </div>
-                      <div>
-                        <p>test</p>
+                      <div class="movie_panel">
+                        <h3>2013忘年会 社内コンペ</h3>
+                        <div class="movie_link">
+                          <video controls preload="metadata" poster="http://volnovo.xyz/profile/files/sample_movies/samplemovie_08.jpg" oncontextmenu="return false;">
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_08.m4v" type="video/mp4" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_08.ogv" type="video/ogg" />
+                            <source src="http://volnovo.xyz/profile/files/sample_movies/samplemovie_08.webm" type="video/webm" />                        
+                            <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                          </video>
+                        </div>
+                        <div class="movie_comment">
+                          <p>当時親交の深かった、加賀屋はつみさんを迎えての忘年会。</p>
+                          <p>代表曲「会いたいよ」に乗せて、ご本人とマネージャーの出会いを</p>
+                          <p>内輪ネタも交えて構成し、お喜び頂くことができました。</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
           </div>
         </section>
@@ -372,21 +458,88 @@
         
         
         <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
-        <!-- ▼ ▼ ▼ WEB / 静止画 ▼ ▼ ▼ -->
-        <section class="development section">
-          <div class="container">
-            <div class="flexbox">
-              <div class="flex_1">
-                <h1>WEB</h1>
+        <!-- ▼ ▼ ▼ Image ▼ ▼ ▼ -->
+        <section class="section">
+          <div class="container height_100">
+            <h1><i class="icon-picture-1"></i>&nbsp;Image</h1>
+            <p class="text_center">ムービー制作時の素材や、アイコン・ロゴを作成しています</p>
+            <div class="image_backpaper flexbox">
+              <div class="left">
+                <div>
+                  <h2>Movie's Material</h2>
+                  <div class="image_panel">
+                    
+                    <video autoplay="autoplay" loop controls mute poster="http://volnovo.xyz/profile/files/image_sample_before.jpg" oncontextmenu="return false;">
+                      <source src="http://volnovo.xyz/profile/files/image_sample01.mp4" type="video/mp4" />
+                      <source src="http://volnovo.xyz/profile/files/image_sample01.ogv" type="video/ogg" />
+                      <source src="http://volnovo.xyz/profile/files/image_sample01.webm" type="video/webm" />
+                      <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                    </video>
+                    <video autoplay="autoplay" loop controls mute poster="http://volnovo.xyz/profile/files/image_sample_after.jpg" oncontextmenu="return false;">
+                      <source src="http://volnovo.xyz/profile/files/image_sample02.mp4" type="video/mp4" />
+                      <source src="http://volnovo.xyz/profile/files/image_sample02.ogv" type="video/ogg" />
+                      <source src="http://volnovo.xyz/profile/files/image_sample02.webm" type="video/webm" />                        
+                      <p>お使いのブラウザでは再生できません。申し訳ございません。</p>
+                    </video>
+
+                  </div>
+                </div>
               </div>
-              <div class="flex_1">
-                <h1>Image</h1>
+              
+              <div class="right">
+                
+                <div>
+                  <h2>Icon</h2>
+                  <div class="flexbox">
+                    <div class="image_panel flex_1">
+                      <img class="img_150" src="http://volnovo.xyz/profile/files/sample_logo01.png">
+                      <p>(システム名：<span>さくらシステム</span>)</p>
+                    </div>
+                    <div class="image_panel flex_1">
+                      <img class="img_150" src="http://volnovo.xyz/profile/files/sample_logo02.png">
+                      <p>(システム名：<span>nusnw3</span>)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <hr>
+                
+                <div>
+                  <h2>Logo</h2>
+                  <div class="image_panel">
+                    <img class="img_150" src="http://volnovo.xyz/profile/files/image_billiken.png">
+                    <p>オリジナルECサイト(次ページ) デモ課題</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </section>
-        <!-- ▲ ▲ ▲ WEB / 静止画 ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ Image ▲ ▲ ▲ -->
         <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+        
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ WEB ▼ ▼ ▼ -->
+        <section class="section">
+          <div class="container height_100">
+            <h1><i class="icon-code"></i>&nbsp;WEB</h1>
+            <div id="site_demo">
+              <h2>課題販売サイト『Show me!』</h2>
+              <div class="link">
+                <a href="https://codeincubate-tanakanoboru.c9users.io/show_me/" target="_blank">
+                  <img src="http://volnovo.xyz/profile/files/show_me.gif">
+                  <p>(画像クリックでサイトへリンクします)</p>
+                <a>
+              </div>
+              <p>CodeCampの卒業制作です</p>
+              <p>アカウント名：<span>Guest</span> / pass：<span>guestguest</span> でお試しください</p>
+            </div>
+          </div>
+        </section>
+        <!-- ▲ ▲ ▲ WEB ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
         
       </article>
     </main>

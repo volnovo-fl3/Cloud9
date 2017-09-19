@@ -1,7 +1,6 @@
-/*.wf-sawarabimincho { font-family: "Sawarabi Mincho"; }*/
 
 body {
-  font-family: "Questrial", "Sawarabi Mincho";
+  font-family: 'Catamaran', sans-serif;
   letter-spacing: 0.1em;
 }
 
@@ -108,6 +107,14 @@ nav ul li div a span:hover{
 	border-bottom: 1px solid white;
 }
 
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px);
+}
+
 .selection_viewing{
   background-color: white;
   opacity:0.8;
@@ -156,7 +163,27 @@ nav ul li div a span:hover{
 }
 
 
-.movie .canvas{
+#slide_images{
+  position:relative;
+  width: 70%;
+  height: auto;
+  margin: -10px auto;
+}
+#slide_images img{
+  width:100%;
+  height: 100%;
+}
+.guard{
+  position:absolute;
+  display:block;
+  width:100%;
+  height:100%;
+  z-index: 9999;
+  background-image:url(http://volnovo.xyz/profile/files/stealth000.png);
+}
+
+
+.canvas{
   height: 100%;
   width: 100%;
   position: relative;
@@ -220,7 +247,8 @@ nav ul li div a span:hover{
   margin: 10px auto;
   position: relative;
 }
-.movie_panel .movie_link > iframe{
+.movie_panel .movie_link > video{
+  background-color: black;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -257,6 +285,70 @@ nav ul li div a span:hover{
 }
 
 
+.image_backpaper {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+.image_backpaper h2 {
+  margin: 10px 0;
+}
+.image_backpaper .left {
+  flex: 1;
+  margin: 10px;
+}
+.image_backpaper .right {
+  flex: 2;
+  margin: 10px;
+}
+.image_panel{
+  margin: 15px 0;
+  font-size: 14px;
+}
+.image_panel span{
+  font-weight: 700;
+}
+.image_panel video{
+  background-color: #404040;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 5px auto;
+}
+
+
+
+
+#site_demo{
+  margin: 25px auto;
+  text-align: center;
+  width: 75%;
+}
+#site_demo img{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 5px auto 10px auto;
+  box-shadow:0px 0px 5px;
+}
+#site_demo p{
+  font-size: 14px;
+}
+#site_demo .link{
+  padding: 10px;
+  margin: 5px auto 10px auto;
+}
+#site_demo .link:hover{
+  background-color: #a5d1f4;
+  opacity:0.7;
+}
+#site_demo .link:hover > a > img{
+  box-shadow:0px 0px 0px;
+}
+#site_demo span{
+  font-weight: 700;
+}
+
 
 .flexbox {
   display: flex;
@@ -272,11 +364,29 @@ nav ul li div a span:hover{
   flex: 2;
 }
 
+.height_100{
+  height: 100%;
+}
+
+
 .text_center{
   text-align: center;
 }
 
+.img_150{
+  /*width: 100%;*/
+  max-width: 150px;
+  height: auto;
+}
+.img_300{
+  /*width: 100%;*/
+  max-width: 300px;
+  height: auto;
+}
 
+.BackgroundColor_Red {
+  background-color: red;
+}
 
 .test_image{
   height: 270px;

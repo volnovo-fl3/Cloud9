@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/icon_portfolio.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery.fullPage.min.js"></script>
+    <title>testtest</title>
+  </head>
+
+  <body>
+
+    <main>
+      
+      <script>
+        /*-----------------------------------------------
+        ページごとスクロール
+        -----------------------------------------------*/
+        var page_anchors = ['toppage', 'movie', 'image', 'web'];
+        
+        $(function(){
+        	$('#fullpage').fullpage({
+        	  recordHistory: false,
+        	  anchors: page_anchors,
+        	  scrollBar: true,
+        	  navigation: true,
+        	  loopBottom: true,
+        	  loopTop: true,
+        	  slidesNavigation: true,
+        	  slidesNavPosition:'bottom',
+        	  paddingTop: '80px',
+        	  
+            /*-----------------------------------------------
+            画面上部のナビゲーション操作
+            -----------------------------------------------*/
+          	afterLoad: function(anchorLink, index){
+          		var loadedSection = $(this);
+          		var nav_elements = document.getElementById('nav_' + anchorLink);
+        			nav_elements.classList.add('selection_viewing');
+          	},
+        	  onLeave: function (index,nextIndex) {
+        	    var prev_page_nav = 'nav_' + page_anchors[index-1];
+        	    var next_page_nav = 'nav_' + page_anchors[nextIndex-1];
+        			var prev_elements = document.getElementById(prev_page_nav);
+        			var next_elements = document.getElementById(next_page_nav);
+        			prev_elements.classList.remove('selection_viewing');
+        			next_elements.classList.add('selection_viewing');
+            },
+            
+            /*-----------------------------------------------
+            ムービー表示部分のサイズを取得
+            -----------------------------------------------*/
+          	afterLoad: function(anchorLink, index){
+          	  if(anchorLink === 'movie'){
+                set_movie_size();
+          	  }
+          	},
+
+        	});
+        });
+        
+        function set_movie_size(){
+          var elements_flex_plate = document.getElementsByClassName("flex_plate");
+          var height_flex_plate = elements_flex_plate[0].clientHeight;
+          var elements_movie_comment = document.getElementsByClassName("movie_comment");
+          var height_movie_comment = [0];
+          for( var i=0,l=elements_movie_comment.length; l>i; i++ ) {
+          	height_movie_comment.push(elements_movie_comment[i].clientHeight);
+          }
+          var max_height_movie_comment = Math.max.apply(null, height_movie_comment);
+          var movie_height = height_flex_plate - max_height_movie_comment - 200;
+
+          var elements_movie_link = document.getElementsByClassName("movie_link");
+          for( var i=0,l=elements_movie_link.length; l>i; i++ ) {
+          	var element = elements_movie_link[i] ;
+          	element.style.height = movie_height + "px";
+          }
+        }
+        window.onresize = function () {
+            set_movie_size();
+        }        
+        
+        
+        /*-----------------------------------------------
+        マウスオン、クリックで表示・非表示を切り替える
+        http://weboook.blog22.fc2.com/blog-entry-403.html 様を大いに参考にさせて頂きました。
+        -----------------------------------------------*/
+        $(function() {
+          $('#folding_box > div > a').click(function(){
+             $("+ div",this).toggle();
+             return false;
+          });
+          $("#folding_box > div")
+          .mouseover(function(){
+            $("> div",this).show();
+          })
+          .mouseout(function(){
+            $("> div",this).hide();
+          });
+        });      
+        
+      </script>
+      
+      
+      <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+      <!-- ▼ ▼ ▼ ナビ ▼ ▼ ▼ -->
+      <nav id="nav">
+        <div class="container">
+          <ul>
+            <li data-menuanchor="toppage">
+              <div id="nav_toppage">
+                <a href="#toppage"><span><i class="icon-user"></i>&nbsp;TOP</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="movie">
+              <div id="nav_movie">
+                <a href="#movie"><span><i class="icon-youtube"></i>&nbsp;Movie</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="image">
+              <div id="nav_image">
+                <a href="#image"><span><i class="icon-picture-1"></i>&nbsp;Image</span></a>
+              </div>
+            </li>
+            <li data-menuanchor="web">
+              <div id="nav_web">
+                <a href="#web"><span><i class="icon-code"></i>&nbsp;WEB</span></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- ▲ ▲ ▲ ナビ ▲ ▲ ▲ -->
+      <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+      
+        
+      <article id="fullpage">
+        <!-- ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ -->
+        <!-- ▼ ▼ ▼ TOP ▼ ▼ ▼ -->
+        <section class="toppage section">
+          <video controls="controls" autoplay="autoplay" width="240" height="180">
+            <source src="http://volnovo.xyz/profile/files/image_sample01.mp4" type="video/mp4" />
+          </video>
+          
+          <video controls="controls" autoplay="autoplay" width="240" height="180">
+            <source src="http://volnovo.xyz/profile/files/bg_20140214.mp4" type="video/mp4" />
+          </video>
+          
+          <!--
+          <video autoplay loop muted controls poster="http://webfeelfree.com/sample/img/bg_20140214.jpg" width="400px">
+            <source src="http://webfeelfree.com/sample/img/bg_20140214.mp4" type="video/mp4" />
+            <source src="http://webfeelfree.com/sample/img/bg_20140214.ogv" type="video/ogg" />
+            <source src="http://webfeelfree.com/sample/img/bg_20140214.webm" type="video/webm" />
+            <img src="http://webfeelfree.com/sample/img/bg_20140214.jpg" width="400px" />
+          </video>
+          -->
+          
+        </section>
+        
+        <!-- ▲ ▲ ▲ WEB ▲ ▲ ▲ -->
+        <!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+        
+      </article>
+    </main>
+    
+
+  </body>
+</html>

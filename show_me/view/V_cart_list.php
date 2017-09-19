@@ -128,47 +128,57 @@
                 foreach($carts_unpaid_list as $key => $cart){
           ?>
             <div class="add_row">
-              <a href="item_details.php?target_item_id=<?php print $cart['item_id']?>">
-                
-                <div class="item_panel01" style="background-color:<?php print $cart['category_color']?>;">
-                  <div class="item_img">
-                    <img src="<?php print IMAGE_DIRECTORY . image_link($cart['item_img']); ?>" class="image_size_to_panel_radius"></img>
+              
+              <div class="item_panel01" style="background-color:<?php print $cart['category_color']?>;">
+                <div class="item_img">
+                  <img src="<?php print IMAGE_DIRECTORY . image_link($cart['item_img']); ?>" class="image_size_to_panel_radius"></img>
+                </div>
+                <div class="item_info">
+                  <div class="item_title">
+                    <p><?php print $cart['item_name']?></p>
                   </div>
-                  <div class="item_info">
-                    <div class="item_title">
-                      <p><?php print $cart['item_name']?></p>
+                  <p class="price">¥<?php print $cart['price']?> × <?php print $cart['amount']?> 個</p>
+                  <p class="seller_name">
+                    <?php print $cart['seller_user_name']?> さん
+                    <?php
+                      if((isset($cart['seller_user_affiliation']) === TRUE) && (mb_strlen($cart['seller_user_affiliation']) > 0)) {
+                        print ' ('. $cart['seller_user_affiliation'] .') ';
+                      }
+                    ?>
+                    による出品</p>
+                    
+                    <div class="add_row padding_side_10">
+                      <form method="post" enctype="multipart/form-data">
+                        (
+                        <input type="number" class="item_amont" name="amount_change">
+                        個に
+                        <input type="hidden" name="process_kind" value="cart_item_amount_change">
+                        <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
+                        <input type="submit" value="変更">
+                        )
+                      </form>
                     </div>
-                    <p class="price">¥<?php print $cart['price']?> × <?php print $cart['amount']?> 個</p>
-                    <p class="seller_name">
-                      <?php print $cart['seller_user_name']?> さん
-                      <?php
-                        if((isset($cart['seller_user_affiliation']) === TRUE) && (mb_strlen($cart['seller_user_affiliation']) > 0)) {
-                          print ' ('. $cart['seller_user_affiliation'] .') ';
-                        }
-                      ?>
-                      による出品</p>
-                      
-                      <div class="add_row padding_side_10">
-                        <form method="post" enctype="multipart/form-data">
-                          (
-                          <input type="number" class="item_amont" name="amount_change">
-                          個に
-                          <input type="hidden" name="process_kind" value="cart_item_amount_change">
-                          <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
-                          <input type="submit" value="変更">
-                          )
+                    <div class="add_row padding_side_10 flexbox">
+                      <div>
+                        <form action="item_details.php">
+                          <input type="hidden" name="item_id" value="<?php print $cart['item_id']?>">
+                          <input type="submit" class="block" value="商品を確認">
                         </form>
                       </div>
-                      <div class="add_row padding_side_10">
+                      <div class="padding_side_10">
                         <form method="post" enctype="multipart/form-data">
                           <input type="hidden" name="process_kind" value="cart_item_delete">
                           <input type="hidden" name="cart_id" value="<?php print $cart['cart_id']?>">
                           <input type="submit" class="block" value="カートから削除">
                         </form>
                       </div>
-                      
-                  </div>
+                    </div>
                 </div>
+              </div>
+              
+              
+              <a href="item_details.php?target_item_id=<?php print $cart['item_id']?>">
+                
                 
               </a>
             </div>        
